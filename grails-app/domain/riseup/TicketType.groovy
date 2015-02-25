@@ -1,6 +1,6 @@
 package riseup
 
-class Ticket {
+class TicketType {
 
     static constraints = {
     }
