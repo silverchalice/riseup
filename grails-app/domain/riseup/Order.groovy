@@ -1,7 +1,7 @@
 package riseup
 
 class Order {
-    User user
+    Buyer buyer
     String paymentType
 
     static hasMany = [attendees: Attendee]
