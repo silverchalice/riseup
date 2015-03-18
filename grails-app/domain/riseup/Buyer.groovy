@@ -1,6 +1,6 @@
 package riseup
 
-class User {
+class Buyer {
     String name
     String email
     String password
