@@ -5,6 +5,8 @@ class Room {
     Integer size
     List occupants
 
+    static hasMany = [occupants: Attendee]
+
     static constraints = {
         owner nullable: false
         size nullable: false

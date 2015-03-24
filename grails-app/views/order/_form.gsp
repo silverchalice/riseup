@@ -20,12 +20,12 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: orderInstance, field: 'user', 'error')} required">
-	<label for="user">
-		<g:message code="order.user.label" default="User" />
+<div class="fieldcontain ${hasErrors(bean: orderInstance, field: 'buyer', 'error')} required">
+	<label for="buyer">
+		<g:message code="order.buyer.label" default="Buyer" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="user" name="user.id" from="${riseup.User.list()}" optionKey="id" required="" value="${orderInstance?.user?.id}" class="many-to-one"/>
+	<g:select id="buyer" name="buyer.id" from="${riseup.Buyer.list()}" optionKey="id" required="" value="${orderInstance?.buyer?.id}" class="many-to-one"/>
 
 </div>
 

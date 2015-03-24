@@ -11,9 +11,8 @@ class OrderController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        params.sort = "id"
         params.max = Math.min(max ?: 10, 100)
-        respond Order.list(params)
+        respond Order.list(params), model:[orderInstanceCount: Order.count()]
     }
 
     def show(Order orderInstance) {

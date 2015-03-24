@@ -43,11 +43,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${orderInstance?.user}">
+				<g:if test="${orderInstance?.buyer}">
 				<li class="fieldcontain">
-					<span id="user-label" class="property-label"><g:message code="order.user.label" default="User" /></span>
+					<span id="buyer-label" class="property-label"><g:message code="order.buyer.label" default="Buyer" /></span>
 					
-						<span class="property-value" aria-labelledby="user-label"><g:link controller="user" action="show" id="${orderInstance?.user?.id}">${orderInstance?.user?.encodeAsHTML()}</g:link></span>
+						<span class="property-value" aria-labelledby="buyer-label"><g:link controller="buyer" action="show" id="${orderInstance?.buyer?.id}">${orderInstance?.buyer?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
