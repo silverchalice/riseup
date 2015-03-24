@@ -7,6 +7,11 @@ class UrlMappings {
             }
         }
 
+        "/register" {
+          controller = "order"
+          action = "new_order"
+        }
+
         "/"(view:"/index")
         "500"(view:'/error')
 	}
