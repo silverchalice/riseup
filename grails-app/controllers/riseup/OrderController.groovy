@@ -23,6 +23,10 @@ class OrderController {
         respond new ConfOrder(params)
     }
 
+    def new_order() {
+        respond new ConfOrder(params)
+    }
+
     @Transactional
     def save(ConfOrder orderInstance) {
         if (orderInstance == null) {
