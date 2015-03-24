@@ -248,12 +248,14 @@
 	#banner
 	{
 		position: relative;
-		/* background: #333 url(../images/banner.jpg) no-repeat center; */
+	  background: #333 url(../images/banner.jpg) no-repeat center; */
 		background-size: cover;
+    padding: 6em 0em;
 	}
 	
 	.homepage #banner
 	{
+	  background: none;
 	}
 
 /*********************************************************************************/
