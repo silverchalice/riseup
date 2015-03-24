@@ -24,7 +24,7 @@ import org.codehaus.groovy.grails.validation.ConstrainedProperty;
 import org.springframework.util.Assert;
 
 /**
- * Comparator that uses the domain class property constraints to establish order in sort methods and always
+ * Comparator that uses the domain class property constraints to establish ConfOrder in sort methods and always
  * places the id first.
  *
  * @author Graeme Rocher

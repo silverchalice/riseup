@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<meta name="layout" content="main"/>
+		<meta name="layout" content="public"/>
 		<title>Welcome to Grails</title>
     <g:javascript library="jquery" plugin="jquery"/>
     <g:javascript src="jquery.cycle2.min.js" />

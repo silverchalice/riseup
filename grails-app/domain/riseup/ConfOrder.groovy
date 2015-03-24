@@ -1,6 +1,6 @@
 package riseup
 
-class Order {
+class ConfOrder {
     Buyer buyer
     String paymentType
 

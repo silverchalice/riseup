@@ -19,7 +19,7 @@ The @contentType@ property is used to match a file definition with an incoming f
 
 The @compiledExtension@ property tells asset-pipelines precompiler what the final file extension should be.
 
-Finally, the @processors@ array determines the list of processors that need be run on the file contents before returning a result. This array is executed in order. In this case, we have the @CssProcessor@ (a processor for converting the relative image paths and replacing with their cache digested version).
+Finally, the @processors@ array determines the list of processors that need be run on the file contents before returning a result. This array is executed in ConfOrder. In this case, we have the @CssProcessor@ (a processor for converting the relative image paths and replacing with their cache digested version).
 
 h4. Directive Definition
 

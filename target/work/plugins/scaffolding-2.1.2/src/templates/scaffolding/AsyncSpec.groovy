@@ -9,12 +9,12 @@ class ${className}ControllerSpec extends Specification {
 
     def populateValidParams(params) {
         assert params != null
-        // TODO: Populate valid properties in order to make the test pass
+        // TODO: Populate valid properties in ConfOrder to make the test pass
     }
 
     def populateInvalidParams(params) {
         assert params != null
-        // TODO: Populate properties that fail validation in order to make the test pass
+        // TODO: Populate properties that fail validation in ConfOrder to make the test pass
     }
 
     void "Test the index action returns the correct model"() {

@@ -76,7 +76,7 @@ class ConfigLoader {
 	/**
 	 * Retrieve ConfigObject instances from Config.groovy and *CacheConfig.groovy files.
 	 * @param application the application
-	 * @return the configs, ordered by their 'order' value (or the default value of 1000 if not specified)
+	 * @return the configs, ordered by their 'ConfOrder' value (or the default value of 1000 if not specified)
 	 */
 	List<ConfigObject> loadOrderedConfigs(GrailsApplication application) {
 		ConfigSlurper slurper = new ConfigSlurper(Environment.current.name)
@@ -88,7 +88,7 @@ class ConfigLoader {
 			cacheConfig = config.config
 			if ((cacheConfig instanceof Closure) && processConfig(config, configClass)) {
 				configs << config
-				log.debug "Including configs from $configClass.name with order $cacheConfig.order"
+				log.debug "Including configs from $configClass.name with ConfOrder $cacheConfig.ConfOrder"
 			}
 			else {
 				log.debug "Not including configs from $configClass.name"
@@ -99,7 +99,7 @@ class ConfigLoader {
 
 		if ((cacheConfig.config instanceof Closure) && processConfig(cacheConfig, null)) {
 			configs << cacheConfig
-			log.debug "Including configs from Config.groovy with order $cacheConfig.order"
+			log.debug "Including configs from Config.groovy with ConfOrder $cacheConfig.ConfOrder"
 		}
 		else {
 			log.debug "Not including configs from Config.groovy"
@@ -112,9 +112,9 @@ class ConfigLoader {
 
 	protected boolean processConfig(ConfigObject config, CacheConfigGrailsClass configClass) {
 		if (config.config instanceof Closure) {
-			def order = config.order
-			if (!(order instanceof Number)) {
-				config.order = DEFAULT_ORDER
+			def ConfOrder = config.ConfOrder
+			if (!(ConfOrder instanceof Number)) {
+				config.ConfOrder = DEFAULT_ORDER
 			}
 			config._sourceClassName = configClass == null ? 'Config' : configClass.clazz.name
 			return true
@@ -125,7 +125,7 @@ class ConfigLoader {
 
 	protected void sortConfigs(List<Closure> configs) {
 		configs.sort { c1, c2 ->
-			c1.order == c2.order ? c1._sourceClassName <=> c2._sourceClassName : c1.order <=> c2.order
+			c1.ConfOrder == c2.ConfOrder ? c1._sourceClassName <=> c2._sourceClassName : c1.ConfOrder <=> c2.ConfOrder
 		}
 	}
 }

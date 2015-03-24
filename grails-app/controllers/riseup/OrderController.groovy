@@ -12,19 +12,19 @@ class OrderController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Order.list(params), model:[orderInstanceCount: Order.count()]
+        respond ConfOrder.list(params), model:[orderInstanceCount: ConfOrder.count()]
     }
 
-    def show(Order orderInstance) {
+    def show(ConfOrder orderInstance) {
         respond orderInstance
     }
 
     def create() {
-        respond new Order(params)
+        respond new ConfOrder(params)
     }
 
     @Transactional
-    def save(Order orderInstance) {
+    def save(ConfOrder orderInstance) {
         if (orderInstance == null) {
             notFound()
             return
@@ -39,19 +39,19 @@ class OrderController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'order.label', default: 'Order'), orderInstance.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'ConfOrder.label', default: 'ConfOrder'), orderInstance.id])
                 redirect orderInstance
             }
             '*' { respond orderInstance, [status: CREATED] }
         }
     }
 
-    def edit(Order orderInstance) {
+    def edit(ConfOrder orderInstance) {
         respond orderInstance
     }
 
     @Transactional
-    def update(Order orderInstance) {
+    def update(ConfOrder orderInstance) {
         if (orderInstance == null) {
             notFound()
             return
@@ -66,7 +66,7 @@ class OrderController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Order.label', default: 'Order'), orderInstance.id])
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'ConfOrder.label', default: 'ConfOrder'), orderInstance.id])
                 redirect orderInstance
             }
             '*'{ respond orderInstance, [status: OK] }
@@ -74,7 +74,7 @@ class OrderController {
     }
 
     @Transactional
-    def delete(Order orderInstance) {
+    def delete(ConfOrder orderInstance) {
 
         if (orderInstance == null) {
             notFound()
@@ -85,7 +85,7 @@ class OrderController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Order.label', default: 'Order'), orderInstance.id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'ConfOrder.label', default: 'ConfOrder'), orderInstance.id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -95,7 +95,7 @@ class OrderController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'order.label', default: 'Order'), params.id])
+                flash.message = message(code: 'default.not.found.message', args: [message(code: 'ConfOrder.label', default: 'ConfOrder'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

@@ -274,7 +274,7 @@ when this flag is on:
 
 ### Conditional compilation
 
-You can use the `--define` (`-d`) switch in order to declare global
+You can use the `--define` (`-d`) switch in ConfOrder to declare global
 variables that UglifyJS will assume to be constants (unless defined in
 scope).  For example if you pass `--define DEBUG=false` then, coupled with
 dead code removal UglifyJS will discard the following from the output:
@@ -315,7 +315,7 @@ can pass additional arguments that control the code output:
 
 - `beautify` (default `true`) -- whether to actually beautify the output.
   Passing `-b` will set this to true, but you might need to pass `-b` even
-  when you want to generate minified code, in order to specify additional
+  when you want to generate minified code, in ConfOrder to specify additional
   arguments, so you can use `-b beautify=false` to override it.
 - `indent-level` (default 4)
 - `indent-start` (default 0) -- prefix all lines by that many spaces
@@ -582,7 +582,7 @@ which we care about here are `source_map` and `comments`.
 
 #### Keeping comments in the output
 
-In order to keep certain comments in the output you need to pass the
+In ConfOrder to keep certain comments in the output you need to pass the
 `comments` option.  Pass a RegExp or a function.  If you pass a RegExp, only
 those comments whose body matches the regexp will be kept.  Note that body
 means without the initial `//` or `/*`.  If you pass a function, it will be

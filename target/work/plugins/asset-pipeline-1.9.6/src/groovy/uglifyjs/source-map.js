@@ -444,7 +444,7 @@ define('source-map/source-map-generator', ['require', 'exports', 'module' ,  'so
       var result = '';
       var mapping;
 
-      // The mappings must be guaranteed to be in sorted order before we start
+      // The mappings must be guaranteed to be in sorted ConfOrder before we start
       // serializing them or else the generated line numbers (which are defined
       // via the ';' separators) will be all messed up. Note: it might be more
       // performant to maintain the sorting as we insert them, rather than as we
@@ -1576,16 +1576,16 @@ define('source-map/source-map-consumer', ['require', 'exports', 'module' ,  'sou
    *        Either `SourceMapConsumer.GENERATED_ORDER` or
    *        `SourceMapConsumer.ORIGINAL_ORDER`. Specifies whether you want to
    *        iterate over the mappings sorted by the generated file's line/column
-   *        order or the original's source/line/column order, respectively. Defaults to
+   *        ConfOrder or the original's source/line/column ConfOrder, respectively. Defaults to
    *        `SourceMapConsumer.GENERATED_ORDER`.
    */
   SourceMapConsumer.prototype.eachMapping =
     function SourceMapConsumer_eachMapping(aCallback, aContext, aOrder) {
       var context = aContext || null;
-      var order = aOrder || SourceMapConsumer.GENERATED_ORDER;
+      var ConfOrder = aOrder || SourceMapConsumer.GENERATED_ORDER;
 
       var mappings;
-      switch (order) {
+      switch (ConfOrder) {
       case SourceMapConsumer.GENERATED_ORDER:
         mappings = this._generatedMappings;
         break;
@@ -1593,7 +1593,7 @@ define('source-map/source-map-consumer', ['require', 'exports', 'module' ,  'sou
         mappings = this._originalMappings;
         break;
       default:
-        throw new Error("Unknown order of iteration.");
+        throw new Error("Unknown ConfOrder of iteration.");
       }
 
       var sourceRoot = this.sourceRoot;

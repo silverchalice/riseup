@@ -119,8 +119,8 @@ class CacheGrailsPlugin {
 		def cacheConfig = application.config.grails.cache
 		def proxyTargetClass = cacheConfig.proxyTargetClass
 		if (!(proxyTargetClass instanceof Boolean)) proxyTargetClass = false
-		def order = cacheConfig.aopOrder
-		if (!(order instanceof Number)) order = Ordered.LOWEST_PRECEDENCE
+		def ConfOrder = cacheConfig.aopOrder
+		if (!(ConfOrder instanceof Number)) ConfOrder = Ordered.LOWEST_PRECEDENCE
 		// allow user can to use their own key generator.
 		def cacheKeyGen = cacheConfig.keyGenerator ?: 'customCacheKeyGenerator'
 		customCacheKeyGenerator(CustomCacheKeyGenerator)
@@ -132,7 +132,7 @@ class CacheGrailsPlugin {
 		//                  org.springframework.cache.interceptor.CacheInterceptor#0 (org.springframework.cache.interceptor.CacheInterceptor)
 
 		cache.'annotation-driven'('cache-manager': 'grailsCacheManager' ,'key-generator': cacheKeyGen,
-		                          mode: 'proxy', order: order, 'proxy-target-class': proxyTargetClass)
+		                          mode: 'proxy', ConfOrder: ConfOrder, 'proxy-target-class': proxyTargetClass)
 
 		// updates the AnnotationCacheOperationSource with a custom subclass
 		// and adds the 'cacheOperationSource' alias

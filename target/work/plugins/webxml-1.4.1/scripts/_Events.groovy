@@ -4,7 +4,7 @@ import groovy.xml.XmlUtil
 import groovy.xml.dom.DOMCategory
 
 /**
- * Re-write the web.xml to order the servlet filters the way we need
+ * Re-write the web.xml to ConfOrder the servlet filters the way we need
  */
 eventWebXmlEnd = { String filename ->
 	try {
@@ -35,7 +35,7 @@ private void fixWebXml() {
 
 	def orderedNames = []
 	filterManager.filterOrder.each { k, v ->
-		// invert the map; new map key is int (order) and value is list of names for that order
+		// invert the map; new map key is int (ConfOrder) and value is list of names for that ConfOrder
 		def list = sorted[v]
 		if (!list) {
 			list = []

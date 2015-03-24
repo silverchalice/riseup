@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory
  *   1.0 Roger Cass, Filter/BeanMapping
  *   1.1 ericacm - gmail.com, Listener
  *   1.2 Bob Schulze al.lias - web.de, Context Parameters
- *   1.3 Burt Beckwith; added new feature to order filter-mapping elements
+ *   1.3 Burt Beckwith; added new feature to ConfOrder filter-mapping elements
  *   1.4 Stefano Gualdi; added patch from Daniel Bower to support session-timeout setting
  */
 class WebxmlGrailsPlugin {
