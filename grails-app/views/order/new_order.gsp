@@ -19,12 +19,56 @@
 					<div class="9u">
 						<section>
 							<header>
-								<h2>Right Sidebar</h2>
+								<h2>Register</h2>
 							</header>
-							<a href="#" class="image full"><img src="images/pics12.jpg" alt=""></a>
-							<p>Donec leo. Vivamus fermentum nibh in augue. Praesent a lacus at urna congue rutrum. Nulla enim eros, porttitor eu, tempus id, varius non, nibh. Duis enim nulla, luctus eu, dapibus lacinia, venenatis id, quam. Vestibulum imperdiet, magna nec eleifend rutrum, nunc lectus vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit.</p>
-							<p>Praesent a lacus at urna congue rutrum. Nulla enim eros, porttitor eu, tempus id, varius non, nibh. Duis enim nulla, luctus eu, dapibus lacinia, venenatis id, quam. Vestibulum imperdiet, magna nec eleifend rutrum, nunc lectus vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl. Nullam non wisi a sem semper eleifend. Curabitur sit amet nulla. Donec leo. Vivamus fermentum nibh in augue. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat vel, suscipit in, mattis placerat, nulla. Sed ac leo. Pellentesque imperdiet.</p>
-							<p>Nullam non wisi a sem semper eleifend. Donec leo. Vivamus fermentum nibh in augue. Praesent a lacus at urna congue rutrum. Nulla enim eros, porttitor eu, tempus id, varius non, nibh. Duis enim nulla, luctus eu, dapibus lacinia, venenatis id, quam. Vestibulum imperdiet, magna nec eleifend rutrum, nunc lectus vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat vel, suscipit in, mattis placerat, nulla. Sed ac leo. Pellentesque imperdiet.</p>
+							<!--<a href="#" class="image full"><img src="images/pics12.jpg" alt=""></a>-->
+							<p>Donec leo. Vivamus fermentum nibh in augue. Praesent a lacus at urna congue rutrum. Nulla enim eros, porttitor eu, tempus id, varius non, nibh.</p>
+              <div class="orderForm">
+                <table border="1">
+                  <thead>
+                    <th></th>
+                    <th></th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="name">Name:</td>
+                      <td><input type="text" name="name" value="Ho!" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name">Email address:</td>
+                      <td><input type="text" name="email" value="Ho!" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name">Password:</td>
+                      <td><input type="password" name="password" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name">Confirm password:</td>
+                      <td><input type="password" name="confirm_password" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name">Address:</td>
+                      <td><input type="text" name="address1" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name">Address (line 2):</td>
+                      <td><input type="text" name="address2" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name">City:</td>
+                      <td><input type="text" name="city" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name">State:</td>
+                      <td><input type="text" name="state" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name">Phone number:</td>
+                      <td><input type="text" name="phone" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 							
 						</section>
 					</div>

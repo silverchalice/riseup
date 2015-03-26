@@ -329,3 +329,37 @@
 		text-decoration: none;
 		color: #774535 !important;
 	}		
+
+
+/*********************************************************************************/
+/* Custom                                                                        */
+/*********************************************************************************/
+
+  div.orderForm {
+    background: #eee;
+    padding: 30px;
+    border: 1px solid #000;
+  }
+
+  div.orderForm table {
+    width: 100%;
+  }
+
+  div.orderForm table input[type="text"], div.orderForm table input[type="password"] {
+    height: 30px;
+    width: 95%;
+    font-size: 11pt;
+  }
+
+  div.orderForm table, div.orderForm table td, div.orderForm table tr, div.orderForm table th {
+  }
+
+  div.orderForm table td {
+    padding: 15px 0;
+  }
+
+  div.orderForm table td.name {
+    width: 18%;
+    padding-right: 15px;
+    text-align: right;
+  }
