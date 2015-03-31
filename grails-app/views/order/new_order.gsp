@@ -152,31 +152,13 @@
                     </tr>
                     <tr>
                       <td class="name">Ticket type:</td>
-                      <td><g:select name="ticketType" from="${['Single $399.00', 'Double $299.00', 'Triple 269.00', 'Quad $249.00', 'Family Rate', 'Commuter Plan A $199.00', 'Commuter Plan B $89.00']}" /></td>
+                      <td><g:select name="ticketType" from="${['Single $399.00', 'Double $299.00', 'Triple $269.00', 'Quad $249.00', 'Family Rate', 'Commuter Plan A $199.00', 'Commuter Plan B $89.00']}" /></td>
                     </tr>
                   </tbody>
                 </table>
               </div>
 </div>
-              <div class="attendeeForm">
-                <table border="1">
-                  <thead>
-                    <th>Name</th>
-                    <th>Ticket type</th>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>George Spratt</td>
-                      <td>Single</td>
-                    </tr>
-                    <tr>
-                      <td>Wilbur Wright</td>
-                      <td>Quad</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-
+              <g:render template="attendeeList" />
               <p id="r_end"><span class="left"><input type="submit" value="Purchase" /></span><span class="right"><strong>Total:</strong> $456.78</span></p>
 							
 						</section>
