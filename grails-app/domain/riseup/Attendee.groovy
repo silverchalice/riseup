@@ -17,8 +17,21 @@ class Attendee {
     Seminar seminar6
 
     static constraints = {
-        gender inList: ["Male", "Female"]
+        firstName nullable: true
+        lastName nullable: true
+        age nullable: true
+        gender inList: ["Male", "Female"], nullable: true
         email nullable: true, blank: true
         phone nullable: true, blank: true
+        church nullable: true
+        email email: true, nullable: true
+        phone nullable: true
+        ticketType nullable: true
+        seminar1 nullable: true
+        seminar2 nullable: true
+        seminar3 nullable: true
+        seminar4 nullable: true
+        seminar5 nullable: true
+        seminar6 nullable: true
     }
 }

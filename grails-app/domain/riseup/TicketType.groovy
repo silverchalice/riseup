@@ -6,6 +6,7 @@ class TicketType {
     String comments
 
     static constraints = {
+        comments nullable: true
     }
 
     String toString() {
