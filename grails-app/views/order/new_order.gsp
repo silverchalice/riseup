@@ -21,13 +21,14 @@
     <g:javascript src="jquery.cycle2.min.js" />
     <g:javascript>
       $( document ).ready(function() {
-          function addUser(){
+          function addAttendee(){
               console.log('Hello!');
+              alert('added');
           }
 
           $("#addAttendee").on('click', function() {
               var dialogYo = $("#newAttendee").dialog({ modal: true, width: 800, autoOpen: false,  buttons: {
-                      "Add to attendee list": addUser,
+                      "Add to attendee list": addAttendee,
                       Cancel: function() {
                           dialogYo.dialog( "close" );
                       }
@@ -148,6 +149,10 @@
                     <tr>
                       <td class="name">Phone number:</td>
                       <td><input type="text" name="phone" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name">Ticket type:</td>
+                      <td><g:select name="ticketType" from="${['Single $399.00', 'Double $299.00', 'Triple 269.00', 'Quad $249.00', 'Family Rate', 'Commuter Plan A $199.00', 'Commuter Plan B $89.00']}" /></td>
                     </tr>
                   </tbody>
                 </table>
