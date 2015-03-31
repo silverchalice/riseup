@@ -9,7 +9,35 @@
 		<meta name="layout" content="public_main"/>
 		<title>Welcome to Grails</title>
     <g:javascript library="jquery" plugin="jquery"/>
+    <g:javascript library="jquery-ui" plugin="jquery-ui"/>
+    <link href="${resource(dir: 'css', file: 'jquery-ui.css')}" rel="stylesheet">
+    <link href="${resource(dir: 'css', file: 'jquery-ui.theme.min.css')}" rel="stylesheet">
+    <link href="${resource(dir: 'css', file: 'jquery-ui.theme.css')}" rel="stylesheet">
+    <link href="${resource(dir: 'css', file: 'jquery-ui.structure.min.css')}" rel="stylesheet">
+    <link href="${resource(dir: 'css', file: 'jquery-ui.structure.css')}" rel="stylesheet">
+    <link href="${resource(dir: 'css', file: 'jquery-ui.min.css')}" rel="stylesheet">
+    <g:javascript src="jquery-ui.js" />
+    <g:javascript src="jquery-ui.min.js" />
     <g:javascript src="jquery.cycle2.min.js" />
+    <g:javascript>
+      $( document ).ready(function() {
+          function addUser(){
+              console.log('Hello!');
+          }
+
+          $("#addAttendee").on('click', function() {
+              var dialogYo = $("#newAttendee").dialog({ modal: true, width: 800, autoOpen: false,  buttons: {
+                      "Add to attendee list": addUser,
+                      Cancel: function() {
+                          dialogYo.dialog( "close" );
+                      }
+                  }
+              });
+              dialogYo.dialog('open');
+              return false;
+          });
+      });
+    </g:javascript>
 	</head>
 	<body>
 
@@ -23,6 +51,7 @@
 							</header>
 							<!--<a href="#" class="image full"><img src="images/pics12.jpg" alt=""></a>-->
 							<p>Donec leo. Vivamus fermentum nibh in augue. Praesent a lacus at urna congue rutrum. Nulla enim eros, porttitor eu, tempus id, varius non, nibh.</p>
+              <h3>Your info</h3><br />
               <div class="orderForm">
                 <table border="1">
                   <thead>
@@ -69,6 +98,81 @@
                   </tbody>
                 </table>
               </div>
+              <br />
+              <br />
+              <h3>Attendee info &nbsp;&nbsp;<input id="addAttendee" type="submit" value="Add attendee" /></h3><br />
+<div id="newAttendee" title="Add new attendee">
+              <div class="attendeeInfoForm">
+                <table border="1">
+                  <thead>
+                    <th></th>
+                    <th></th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="name">First name:</td>
+                      <td><input type="text" name="firstName" value="Ho!" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name">Last name:</td>
+                      <td><input type="text" name="lastName" value="Ho!" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name">Age:</td>
+                      <td><input type="text" name="age" value="Ho!" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name">Gender:</td>
+                      <td><g:select name="gender" from="${['Male', 'Female']}" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name">Church:</td>
+                      <td><input type="text" name="church" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name">Email address:</td>
+                      <td><input type="text" name="email" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name">Phone number:</td>
+                      <td><input type="text" name="phone" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name">City:</td>
+                      <td><input type="text" name="city" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name">State:</td>
+                      <td><input type="text" name="state" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name">Phone number:</td>
+                      <td><input type="text" name="phone" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+</div>
+              <div class="attendeeForm">
+                <table border="1">
+                  <thead>
+                    <th>Name</th>
+                    <th>Ticket type</th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>George Spratt</td>
+                      <td>Single</td>
+                    </tr>
+                    <tr>
+                      <td>Wilbur Wright</td>
+                      <td>Quad</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <p id="r_end"><span class="left"><input type="submit" value="Purchase" /></span><span class="right"><strong>Total:</strong> $456.78</span></p>
 							
 						</section>
 					</div>

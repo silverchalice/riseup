@@ -335,17 +335,17 @@
 /* Custom                                                                        */
 /*********************************************************************************/
 
-  div.orderForm {
+  div.orderForm, div.attendeeForm {
     background: #eee;
     padding: 30px;
     border: 1px solid #000;
   }
 
-  div.orderForm table {
+  div.orderForm table, div.attendeeForm table, div.attendeeInfoForm table {
     width: 100%;
   }
 
-  div.orderForm table input[type="text"], div.orderForm table input[type="password"] {
+  div.orderForm table input[type="text"], div.orderForm table input[type="password"], div.attendeeInfoForm table input[type="text"] {
     height: 30px;
     width: 95%;
     font-size: 11pt;
@@ -354,7 +354,7 @@
   div.orderForm table, div.orderForm table td, div.orderForm table tr, div.orderForm table th {
   }
 
-  div.orderForm table td {
+  div.orderForm table td, div.attendeeForm table td, div.attendeeInfoForm table td {
     padding: 15px 0;
   }
 
@@ -362,4 +362,30 @@
     width: 18%;
     padding-right: 15px;
     text-align: right;
+  }
+
+  h3 {
+    font-weight: bold;
+  }
+
+  div.attendeeForm table th {
+    text-align: left;
+    font-weight: bolder;
+    padding: 3px 0 30px 0;
+  }
+
+  p#r_end {
+    padding: 20px 10px 0 0;
+  }
+
+  p#r_end span.right {
+    float: right;
+  }
+
+  p#r_end span.left {
+    text-align: left;
+  }
+
+  div#newAttendee {
+    display: none;
   }
