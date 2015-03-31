@@ -7,4 +7,8 @@ class TicketType {
 
     static constraints = {
     }
+
+    String toString() {
+        description
+    }
 }
