@@ -1,3 +1,5 @@
+
+<%@ page import="riseup.TicketType" %>
 <!DOCTYPE HTML>
 <!--
 	Autonomy by TEMPLATED
@@ -22,8 +24,11 @@
     <g:javascript>
       $( document ).ready(function() {
           function addAttendee(){
-              console.log('Hello!');
-              alert('added');
+              jQuery.ajax({type:'POST', data: $('#attendeeAdd').serialize(), url:'/riseup/order/addAttendee',update: $('#atl'), success:function(data,textStatus){
+                  $('#atl').html(data);
+                  $("#newAttendee").dialog('close');
+                  $('#attendeeAdd')[0].reset();
+              },error:function(XMLHttpRequest,textStatus,errorThrown){}});
           }
 
           $("#addAttendee").on('click', function() {
@@ -104,61 +109,61 @@
               <h3>Attendee info &nbsp;&nbsp;<input id="addAttendee" type="submit" value="Add attendee" /></h3><br />
 <div id="newAttendee" title="Add new attendee">
               <div class="attendeeInfoForm">
-                <table border="1">
-                  <thead>
-                    <th></th>
-                    <th></th>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="name">First name:</td>
-                      <td><input type="text" name="firstName" value="Ho!" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name">Last name:</td>
-                      <td><input type="text" name="lastName" value="Ho!" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name">Age:</td>
-                      <td><input type="text" name="age" value="Ho!" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name">Gender:</td>
-                      <td><g:select name="gender" from="${['Male', 'Female']}" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name">Church:</td>
-                      <td><input type="text" name="church" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name">Email address:</td>
-                      <td><input type="text" name="email" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name">Phone number:</td>
-                      <td><input type="text" name="phone" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name">City:</td>
-                      <td><input type="text" name="city" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name">State:</td>
-                      <td><input type="text" name="state" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name">Phone number:</td>
-                      <td><input type="text" name="phone" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name">Ticket type:</td>
-                      <td><g:select name="ticketType" from="${['Single $399.00', 'Double $299.00', 'Triple $269.00', 'Quad $249.00', 'Family Rate', 'Commuter Plan A $199.00', 'Commuter Plan B $89.00']}" /></td>
-                    </tr>
-                  </tbody>
-                </table>
+                <g:formRemote name="attendeeAdd" id="attendeeAdd" url="[controller: 'order', action: 'addAttendee']" update="atl">
+                  <table border="1">
+                    <thead>
+                      <th></th>
+                      <th></th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="name">First name:</td>
+                        <td><input type="text" name="firstName" value="Ho!" /></td>
+                      </tr>
+                      <tr>
+                        <td class="name">Last name:</td>
+                        <td><input type="text" name="lastName" value="Ho!" /></td>
+                      </tr>
+                      <tr>
+                        <td class="name">Age:</td>
+                        <td><input type="text" name="age" value="Ho!" /></td>
+                      </tr>
+                      <tr>
+                        <td class="name">Gender:</td>
+                        <td><g:select name="gender" from="${['Male', 'Female']}" /></td>
+                      </tr>
+                      <tr>
+                        <td class="name">Church:</td>
+                        <td><input type="text" name="church" /></td>
+                      </tr>
+                      <tr>
+                        <td class="name">Email address:</td>
+                        <td><input type="text" name="email" /></td>
+                      </tr>
+                      <tr>
+                        <td class="name">City:</td>
+                        <td><input type="text" name="city" /></td>
+                      </tr>
+                      <tr>
+                        <td class="name">State:</td>
+                        <td><input type="text" name="state" /></td>
+                      </tr>
+                      <tr>
+                        <td class="name">Phone number:</td>
+                        <td><input type="text" name="phone" /></td>
+                      </tr>
+                      <tr>
+                        <td class="name">Ticket type:</td>
+                        <td><g:select name="ticketType" from="${TicketType.list()}" optionKey="id" /></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </g:formRemote>
               </div>
 </div>
-              <g:render template="attendeeList" />
+              <div id="atl">
+                <g:render template="attendeeList" />
+              </div>
               <p id="r_end"><span class="left"><input type="submit" value="Purchase" /></span><span class="right"><strong>Total:</strong> $456.78</span></p>
 							
 						</section>
