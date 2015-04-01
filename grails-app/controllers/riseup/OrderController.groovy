@@ -96,6 +96,18 @@ class OrderController {
         }
     }
 
+    def addAttendee(){
+        println "\n\n\n in addAttendee action. params are:\n \n $params\n\n\n"
+        def attendee = new Attendee(params)
+        attendee?.save(failOnError: true)
+        def attendees = []
+        attendees << attendee
+
+        println "there are ${attendees?.size()} attendees. They are $attendees"
+        render template: 'attendeeList', model: [attendees: attendees]
+        return false
+    }
+
     protected void notFound() {
         request.withFormat {
             form multipartForm {
