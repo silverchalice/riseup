@@ -1,136 +1,57 @@
 <!DOCTYPE HTML>
 <!--
-	Autonomy by TEMPLATED
+	Ex Machina by TEMPLATED
     templated.co @templatedco
     Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
 	<head>
-		<meta name="layout" content="public"/>
-		<title>Welcome to Grails</title>
+		<title>Ex Machina by TEMPLATED</title>
     <g:javascript library="jquery" plugin="jquery"/>
     <g:javascript src="jquery.cycle2.min.js" />
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="layout" content="public" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700italic,400,300,700' rel='stylesheet' type='text/css'>
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <asset:javascript src="skel.min.js"/>
+    <asset:javascript src="skel-panels.min.js"/>
+    <asset:javascript src="init.js"/>
+		<noscript>
+      <asset:stylesheet src="skel-noscript.css"/>
+      <asset:stylesheet src="style.css"/>
+      <asset:stylesheet src="style-desktop.css"/>
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
 	</head>
 	<body class="homepage">
 
-		<!-- Header -->
-		<div id="header">
-			<div class="container">
+	<!-- Header -->
 
-				<!-- Logo -->
-				<div id="logo">
-					<h1><a href="#">Believers Bible Conference</a></h1>
-          <p>Murfreesboro, TN &nbsp; December 29, 2015&#8211;January 1, 2016</p>
-				</div>
-
-				<!-- Nav -->
-				<nav id="nav">
-				</nav>
-
-			</div>
-		</div>
-
+	<!-- Banner -->
 		<div id="banner">
-		  <img src="${resource(dir:'images/ru', file: 'sd.JPG')}" />
-    </div>
-
-		<div id="featured">
 			<div class="container">
-
-        <h2>Welcome!</h2>
-        <p>Sign up to hear when registration opens.</p>
-              <div id="orderFormYo" class="orderForm">
-                <g:form name="interest" controller="interested" action="ajaxSave">
-                  <table border="1">
-                    <thead>
-                      <th></th>
-                      <th></th>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td class="name">Name:</td>
-                        <td><input type="text" name="name" value="" /></td>
-                      </tr>
-                      <tr>
-                        <td class="name">Email address:</td>
-                        <td><input type="text" name="email" value="" /></td>
-                      </tr>
-                      <tr>
-                        <td class="name"></td>
-                        <td><g:submitToRemote update="orderFormYo" name="Keep Me Up-To-Date" value="Keep Me Up-To-Date" /></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  
-                </g:form>
-              </div>
-
-              <p>&nbsp;</p>
-
-				<div class="row">
-
-					<div class="3u">
-						<section>
-							<a href="#" class="image full"><img src="images/pics02.jpg" alt=""></a>
-							<header>
-								<h2>Map</h2>
-							</header>
-							<p>Pellentesque viverra vulputate enim. Aliquam erat volutpat. Pellentesque tristique ante. Sed vel tellus.</p>				
-						</section>
-					</div>
-
-					<div class="3u">
-						<section>
-							<a href="#" class="image full"><img src="images/pics03.jpg" alt=""></a>
-							<header>
-								<h2>Features</h2>
-							</header>
-							<p>Pellentesque tristique ante. Sed vel tellus. Curabitur sem urna, consequat suscipit mattis placerat, nulla.</p>				
-						</section>
-					</div>
-
-					<div class="3u">
-						<section>
-							<a href="#" class="image full"><img src="images/pics04.jpg" alt=""></a>
-							<header>
-								<h2>Speakers</h2>
-							</header>
-							<p>Pellentesque viverra vulputate enim. Aliquam erat volutpat. Curabitur sem urna, consequat mattis placerat, nulla.</p>				
-						</section>
-					</div>
-
-					<div class="3u">
-						<section>
-							<a href="#" class="image full"><img src="images/pics05.jpg" alt=""></a>
-							<header>
-								<h2>Schedule</h2>
-							</header>
-							<p>Pellentesque viverra vulputate enim. Aliquam erat volutpat. Curabitur sem urna, consequat mattis placerat, nulla.</p>				
-						</section>
-					</div>
-
-				</div>
 			</div>
 		</div>
-		<div id="marketing">
-			<div class="container">
+	<!-- /Banner -->
+
+	<!-- Main -->
+		<div id="page">
+
+			<!-- Extra -->
+			<div id="marketing" class="container">
 				<div class="row">
 					<div class="3u">
 						<section>
 							<header>
-								<h2>Praesent eleifend</h2>
+								<h2>Feugiat Tempus</h2>
 							</header>
-							<ul class="style1">
-								<li class="first"><img src="images/pics06.jpg" width="80" height="80" alt="">
-									<p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
-								</li>
-								<li><img src="images/pics07.jpg" width="80" height="80" alt="">
-									<p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
-								</li>
-								<li><img src="images/pics08.jpg" width="80" height="80" alt="">
-									<p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
-								</li>
-							</ul>
+							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
+							<p><a href="#"><img src="images/pics13.jpg" alt=""></a></p>
+							<a href="#" class="button">More</a>
 						</section>
 					</div>
 					<div class="3u">
@@ -138,78 +59,231 @@
 							<header>
 								<h2>Maecenas lectus</h2>
 							</header>
-							<ul class="style1">
-								<li class="first"><img src="images/pics09.jpg" width="80" height="80" alt="">
-									<p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
-								</li>
-								<li><img src="images/pics10.jpg" width="80" height="80" alt="">
-									<p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
-								</li>
-								<li><img src="images/pics11.jpg" width="80" height="80" alt="">
-									<p>Nullam non wisi a sem eleifend. Donec mattis libero eget urna. </p>
-								</li>
-							</ul>
+							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
+							<p><a href="#"><img src="images/pics14.jpg" alt=""></a></p>
+							<a href="#" class="button">More</a>
 						</section>
 					</div>
+					<div class="3u">
+						<section>
+							<header>
+								<h2>Luctus lectus</h2>
+							</header>
+							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
+							<p><a href="#"><img src="images/pics15.jpg" alt=""></a></p>
+							<a href="#" class="button">More</a>
+						</section>
+					</div>
+					<div class="3u">
+						<section>
+							<header>
+								<h2>Posuere eleifend</h2>
+							</header>
+							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
+							<p><a href="#"><img src="images/pics16.jpg" alt=""></a></p>
+							<a href="#" class="button">More</a>
+						</section>
+					</div>
+				</div>
+			</div>
+			<!-- /Extra -->
+				
+			<!-- Main -->
+			<div id="main" class="container">
+				<div class="row">
 					<div class="6u">
 						<section>
 							<header>
-								<h2>Aenean elementum facilisis ligula</h2>
+								<h2>Integer gravida nibh quis urna</h2>
+								<span class="byline">Augue praesent a lacus at urna congue rutrum</span>
 							</header>
-							<a href="#" class="image full"><img src="images/pics12.jpg" alt=""></a>
-							<p>Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl. Nullam non wisi a sem semper eleifend. Donec mattis libero eget urna. Duis pretium velit ac mauris. Proin eu wisi suscipit nulla suscipit interdum. Aenean lectus lorem, imperdiet. Donec mattis libero eget urna. Duis pretium velit ac mauris.</p>
-						</section>
-					</div>
-				</div>
-			</div>
-		</div>
+							<p>This is <strong>Ex Machina</strong>, a responsive HTML5 site template freebie by <a href="http://templated.co">TEMPLATED</a>. Released for free under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so use it for whatever (personal or commercial) &ndash; just give us credit! Check out more of our stuff at <a href="http://templated.co">our site</a> or follow us on <a href="http://twitter.com/templatedco">Twitter</a>.</p>
+      <h2>Welcome!</h2>
+      <p>Sign up to hear when registration opens.</p>
+            <div id="orderFormYo" class="orderForm">
+              <g:form name="interest">
+                <table border="1">
+                  <thead>
+                    <th></th>
+                    <th></th>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="name">Name:</td>
+                      <td><input type="text" name="name" value="" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name">Email address:</td>
+                      <td><input type="text" name="email" value="" /></td>
+                    </tr>
+                    <tr>
+                      <td class="name"></td>
+                      <td><g:submitToRemote controller="interested" action="ajaxSave" update="orderFormYo" name="Keep Me Up-To-Date" value="Keep Me Up-To-Date" /></td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+              </g:form>
+            </div>
 
-		<div id="main">
-			<div class="container">
-				<div class="row">
-					<div class="8u">
-						<section>
-							<header>
-								<h2>Maecenas luctus lectus at sapien</h2>
-							</header>
-							<p>This is <strong>Autonomy</strong>, a responsive HTML5 site template freebie by <a href="http://templated.co">TEMPLATED</a>. Released for free under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so use it for whatever (personal or commercial) &ndash; just give us credit! Check out more of our stuff at <a href="http://templated.co">our site</a> or follow us on <a href="http://twitter.com/templatedco">Twitter</a>.</p>
-							<p>Donec leo. Vivamus fermentum nibh in augue. Praesent a lacus at urna congue rutrum. Nulla enim eros, porttitor eu, tempus id, varius non, nibh. Duis enim nulla, luctus eu, dapibus lacinia, venenatis id, quam. Vestibulum imperdiet, magna nec eleifend rutrum, nunc lectus vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget, tempus et, tellus. Etiam neque. Vivamus consequat lorem at nisl. Nullam non wisi a sem semper eleifend.</p>
-							<p>Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget lorem ipsum dolor.</p>
+							<p>Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget lorem ipsum dolor. Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat. Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat.</p>
+							<p>Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget lorem ipsum dolor. Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat. Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat.</p>
+							<a href="#" class="button">More Details</a>
 						</section>
 					</div>
-					<div class="4u">
-						<section>
+					<div class="3u">
+						<section class="sidebar">
 							<header>
-								<h2>Lectus at sapien</h2>
+								<h2>Feugiat Tempus</h2>
 							</header>
-							<ul class="style">
-								<li><a href="#">Pellentesque quis elit non gravida blandit.</a></li>
-								<li><a href="#">Lorem ipsum dolor sit amet, adipiscing elit.</a></li>
-								<li><a href="#">Phasellus nec erat sit pellentesque congue.</a></li>
-								<li><a href="#">Cras vitae metus pellentesque pharetra.</a></li>
-								<li><a href="#">Maecenas vitae orci vitae  feugiat eleifend.</a></li>
-								<li><a href="#">Pellentesque quis elit non gravida blandit.</a></li>
-								<li><a href="#">Lorem ipsum dolor sit amet, adipiscing elit.</a></li>
-								<li><a href="#">Maecenas vitae orci  tellus feugiat eleifend.</a></li>
+							<ul class="style2">
+								<li>
+									<a href="#"><img src="images/pics07.jpg" alt=""></a>
+									<p>Donec leo, vivamus fermentum augue praesent a lacus at urna rutrum.</p>
+								</li>
+								<li>
+									<a href="#"><img src="images/pics08.jpg" alt=""></a>
+									<p>Donec leo, vivamus fermentum augue praesent a lacus at urna rutrum.</p>
+								</li>
+								<li>
+									<a href="#"><img src="images/pics09.jpg" alt=""></a>
+									<p>Donec leo, vivamus fermentum augue praesent a lacus at urna rutrum.</p>
+								</li>
+								<li>
+									<a href="#"><img src="images/pics10.jpg" alt=""></a>
+									<p>Donec leo, vivamus fermentum augue praesent a lacus at urna rutrum.</p>
+								</li>
+							</ul>						
+						</section>
+					</div>
+					<div class="3u">
+						<section class="sidebar">
+							<header>
+								<h2>Feugiat Tempus</h2>
+							</header>
+							<ul class="style1">
+								<li><a href="#">Maecenas luctus lectus at sapien</a></li>
+								<li><a href="#">Etiam rhoncus volutpat erat</a></li>
+								<li><a href="#">Donec dictum metus in sapien</a></li>
+								<li><a href="#">Nulla luctus eleifend purus</a></li>
+								<li><a href="#">Maecenas luctus lectus at sapien</a></li>
+							</ul>
+						</section>
+						<section class="sidebar">
+							<header>
+								<h2>Nulla luctus eleifend</h2>
+							</header>
+							<ul class="style1">
+								<li><a href="#">Maecenas luctus lectus at sapien</a></li>
+								<li><a href="#">Donec dictum metus in sapien</a></li>
+								<li><a href="#">Integer gravida nibh quis urna</a></li>
+								<li><a href="#">Etiam posuere augue sit amet nisl</a></li>
+								<li><a href="#">Mauris vulputate dolor sit amet nibh</a></li>
 							</ul>
 						</section>
 					</div>
 				</div>
 			</div>
-		</div>
-	</body>
-  <g:javascript>
-      $(document).ready(function(){
-        var images = [
-            '<img src="http://malsup.github.io/images/p2.jpg">',
-            '<img src="http://malsup.github.io/images/p3.jpg">',
-            '<img src="http://malsup.github.io/images/p4.jpg">'
-        ];
+			<!-- Main -->
 
-        for (var i=0; i < images.length; i++) {
-            $('.cycle-slideshow').cycle('add', images[i]);
-        }
-        $(this).prop('disabled', true)
-          });
-  </g:javascript>
+		</div>
+	<!-- /Main -->
+
+	<!-- Featured -->
+		<div id="featured">
+			<div class="container">
+				<div class="row">
+					<section class="4u">
+						<div class="box">
+							<a href="#" class="image left"><img src="images/pics04.jpg" alt=""></a>
+							<h3>Etiam posuere augue</h3>
+							<p>Donec nonummy magna quis risus eleifend. </p>
+							<a href="#" class="button">More</a>
+						</div>
+					</section>
+					<section class="4u">
+						<div class="box">
+							<a href="#" class="image left"><img src="images/pics05.jpg" alt=""></a>
+							<h3>Etiam posuere augue</h3>
+							<p>Donec nonummy magna quis risus eleifend. </p>
+							<a href="#" class="button">More</a>
+						</div>
+					</section>
+					<section class="4u">
+						<div class="box">
+							<a href="#" class="image left"><img src="images/pics06.jpg" alt=""></a>
+							<h3>Etiam posuere augue</h3>
+							<p>Donec nonummy magna quis risus eleifend. </p>
+							<a href="#" class="button">More</a>
+						</div>
+					</section>
+				</div>
+				<div class="divider"></div>
+			</div>
+		</div>
+	<!-- /Featured -->
+
+	<!-- Footer -->
+		<div id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="3u">
+						<section>
+							<h2>Maecenas lectus</h2>
+							<div class="balloon">
+								<blockquote>&ldquo;&nbsp;&nbsp;Donec leo, vivamus ullamcorper fermentum nibh in augue pulvinar ullamcorper metus praesent a lacus at urna congue ullamcorper  rutrum.&nbsp;&nbsp;&rdquo;<br>
+									<br>
+									<strong>&ndash;&nbsp;&nbsp;John Smith</strong></blockquote>
+							</div>
+							<div class="ballon-bgbtm">&nbsp;</div>
+						</section>
+					</div>
+					<div class="3u">
+						<section>
+							<h2>Donec dictum</h2>
+							<ul class="default">
+								<li>
+									<h3>Mauris vulputate dolor sit amet</h3>
+									<p><a href="#">Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</a></p>
+								</li>
+								<li>
+									<h3>Fusce ultrices fringilla metus</h3>
+									<p><a href="#">Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</a></p>
+								</li>
+								<li>
+									<h3>Donec dictum metus in sapien</h3>
+									<p><a href="#">Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum.</a></p>
+								</li>
+							</ul>
+						</section>
+					</div>
+					<div class="3u">
+						<section>
+							<h2>Nulla leifend</h2>
+							<p>Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat.</p>
+							<ul class="style5">
+								<li><a href="#"><img src="images/pics07.jpg" alt=""></a></li>
+								<li><a href="#"><img src="images/pics08.jpg" alt=""></a></li>
+								<li><a href="#"><img src="images/pics09.jpg" alt=""></a></li>
+								<li><a href="#"><img src="images/pics10.jpg" alt=""></a></li>
+								<li><a href="#"><img src="images/pics11.jpg" alt=""></a></li>
+								<li><a href="#"><img src="images/pics12.jpg" alt=""></a></li>
+							</ul>
+							<a href="#" class="button">More Collections</a>
+						</section>
+					</div>
+					<div class="3u">
+						<section>
+							<h2>Luctus eleifend</h2>
+							<p><strong>Aliquam erat volutpat. Pellentesque tristique ante ut risus. </strong></p>
+							<p>Quisque dictum. Integer nisl risus, sagittis convallis, rutrum id, elementum congue, nibh. Suspendisse dictum porta lectus. Donec placerat odio vel elit.</p>
+							<p>Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat.</p>
+							<a href="#" class="button">More Collections</a>
+						</section>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- /Footer -->
+	</body>
 </html>
