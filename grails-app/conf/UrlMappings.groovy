@@ -12,7 +12,7 @@ class UrlMappings {
           action = "new_order"
         }
 
-        "/"(view:"/index")
+        "/"(controller:"home", action: "index")
         "500"(view:'/error')
 	}
 }
