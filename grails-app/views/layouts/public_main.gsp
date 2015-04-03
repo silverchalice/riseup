@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Autonomy by TEMPLATED</title>
+		<title>Register | Believers Bible Conference 2015</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -35,7 +35,7 @@
 				
 				<!-- Logo -->
 				<div id="logo">
-					<h1><a href="#">Autonomy</a></h1>
+					<h1><a href="#">Believers Bible Conference 2015</a></h1>
 				</div>
 				
 				<!-- Nav -->
