@@ -389,3 +389,9 @@
   div#newAttendee {
     display: none;
   }
+
+  #logo p
+  {
+    font-size: larger;
+    color: #FFF;
+  }
