@@ -45,43 +45,38 @@
 			<div id="marketing" class="container">
 				<div class="row">
 					<div class="3u">
-						<section>
+						<section style="text-align: center;">
 							<header>
-								<h2>Feugiat Tempus</h2>
+								<h2>Mike Atwood</h2>
 							</header>
-							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a href="#"><img src="images/pics13.jpg" alt=""></a></p>
+							<p class="subtitle">Mike Atwood was born in Leeds, England. He was saved by God’s grace at the age of 21.&#8230;</p>
+							<p><a href="#"><img src="${resource(dir: 'images', file: 'Mike-Attwood.jpg')}" alt=""></a></p>
+							<a href="#" class="button">More</a>
+						</section>
+					</div>
+					<div class="3u">
+						<section style="text-align: center;">
+							<header>
+								<h2>Nathan Bramsen</h2>
+							</header>
+							<p class="subtitle">Nathan Bramsen was born and raised in Senegal, West Africa. In 2006, he founded&#8230;</p>
+							<p><a href="#"><img src="${resource(dir: 'images', file: 'bramsen_nathan.jpg')}" alt=""></a></p>
+							<a href="#" class="button">More</a>
+						</section>
+					</div>
+					<div class="3u">
+						<section style="text-align: center;">
+							<header>
+								<h2>Joe Reese</h2>
+							</header>
+							<p class="subtitle">Joe Reese was born and raised in Missis- sippi, and was born again in 1970. He was&#8230;</p>
+							<p><a href="#"><img src="${resource(dir: 'images', file: 'Joe-Reese.jpg')}" alt=""></a></p>
 							<a href="#" class="button">More</a>
 						</section>
 					</div>
 					<div class="3u">
 						<section>
-							<header>
-								<h2>Maecenas lectus</h2>
-							</header>
-							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a href="#"><img src="images/pics14.jpg" alt=""></a></p>
-							<a href="#" class="button">More</a>
-						</section>
-					</div>
-					<div class="3u">
-						<section>
-							<header>
-								<h2>Luctus lectus</h2>
-							</header>
-							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a href="#"><img src="images/pics15.jpg" alt=""></a></p>
-							<a href="#" class="button">More</a>
-						</section>
-					</div>
-					<div class="3u">
-						<section>
-							<header>
-								<h2>Posuere eleifend</h2>
-							</header>
-							<p class="subtitle">In posuere eleifend odio. Quisque semper augue mattis maecenas ligula.</p>
-							<p><a href="#"><img src="images/pics16.jpg" alt=""></a></p>
-							<a href="#" class="button">More</a>
+							<p><a href="#"><img style="margin-top: 120px;" src="${resource(dir: 'images', file: 'Love-Logo.jpg')}" alt=""></a></p>
 						</section>
 					</div>
 				</div>
@@ -94,12 +89,14 @@
 					<div class="6u">
 						<section>
 							<header>
-								<h2>Integer gravida nibh quis urna</h2>
-								<span class="byline">Augue praesent a lacus at urna congue rutrum</span>
+								<h2>Tuesday, December 29th to Friday, January 1st</h2>
+								<span class="byline">Register now! Space is limited!</span>
 							</header>
-							<p>This is <strong>Ex Machina</strong>, a responsive HTML5 site template freebie by <a href="http://templated.co">TEMPLATED</a>. Released for free under the <a href="http://templated.co/license">Creative Commons Attribution</a> license, so use it for whatever (personal or commercial) &ndash; just give us credit! Check out more of our stuff at <a href="http://templated.co">our site</a> or follow us on <a href="http://twitter.com/templatedco">Twitter</a>.</p>
-      <h2>Welcome!</h2>
-      <p>Sign up to hear when registration opens.</p>
+              <p><strong>Check-in Starts:</strong> Tuesday, December 29th, 2015 at 2:00 PM</p>
+              <p><strong>First General Session:</strong> Tuesday, December 29th, 2015 at 7:30 PM</p>
+              <p><strong>Conference Closing:</strong> Friday, January 1st, 2016 at 11:00 AM</p>
+              <p>17 seminars that deal with the practical issues of our day. 3 seminars exclusively for women.</p>
+              <p><strong>Sign up</strong> to hear when registration opens:</p>
             <div id="orderFormYo" class="orderForm">
               <g:form name="interest">
                 <table border="1">
@@ -125,6 +122,17 @@
                 
               </g:form>
             </div>
+            </section>
+
+            <section>
+							<header>
+								<span class="byline">Location</span>
+							</header>
+
+              <p><strong>Embassy Suites & Convention Center</strong></p>
+
+              <p>1200 Conference Center Blvd.<br />Murfreesboro, TN, 37129 USA<br />30 minutes from central Nashville, TN</p>
+            </section>
 
 							<p>Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget lorem ipsum dolor. Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat. Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat.</p>
 							<p>Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget lorem ipsum dolor. Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat. Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat.</p>
@@ -134,24 +142,17 @@
 					<div class="3u">
 						<section class="sidebar">
 							<header>
-								<h2>Feugiat Tempus</h2>
+								<h2>About</h2>
 							</header>
 							<ul class="style2">
 								<li>
 									<a href="#"><img src="images/pics07.jpg" alt=""></a>
-									<p>Donec leo, vivamus fermentum augue praesent a lacus at urna rutrum.</p>
+									<p>The Believers Bible Conference is for all ages! Children, seniors, and everyone in between are welcome. The children can enjoy the Children’s Program (ages 5-12), and their own menu planned just for them.</p>
 								</li>
 								<li>
 									<a href="#"><img src="images/pics08.jpg" alt=""></a>
-									<p>Donec leo, vivamus fermentum augue praesent a lacus at urna rutrum.</p>
-								</li>
-								<li>
-									<a href="#"><img src="images/pics09.jpg" alt=""></a>
-									<p>Donec leo, vivamus fermentum augue praesent a lacus at urna rutrum.</p>
-								</li>
-								<li>
-									<a href="#"><img src="images/pics10.jpg" alt=""></a>
-									<p>Donec leo, vivamus fermentum augue praesent a lacus at urna rutrum.</p>
+									<p>New this year! Optional young adult message and Q&A time after the evening general sessions!
+</p>
 								</li>
 							</ul>						
 						</section>
@@ -159,26 +160,51 @@
 					<div class="3u">
 						<section class="sidebar">
 							<header>
-								<h2>Feugiat Tempus</h2>
+								<h2>Seminars</h2>
 							</header>
 							<ul class="style1">
-								<li><a href="#">Maecenas luctus lectus at sapien</a></li>
-								<li><a href="#">Etiam rhoncus volutpat erat</a></li>
-								<li><a href="#">Donec dictum metus in sapien</a></li>
-								<li><a href="#">Nulla luctus eleifend purus</a></li>
-								<li><a href="#">Maecenas luctus lectus at sapien</a></li>
+								<li>Love the Word</li>
+								<li>Love the Assembly</li>
+								<li>Love the Quiet Place</li>
+								<li>Love Not the World</li>
+								<li>Love Service for the Lord</li>
 							</ul>
 						</section>
 						<section class="sidebar">
 							<header>
-								<h2>Nulla luctus eleifend</h2>
+								<h2>Women Only</h2>
 							</header>
 							<ul class="style1">
-								<li><a href="#">Maecenas luctus lectus at sapien</a></li>
-								<li><a href="#">Donec dictum metus in sapien</a></li>
-								<li><a href="#">Integer gravida nibh quis urna</a></li>
-								<li><a href="#">Etiam posuere augue sit amet nisl</a></li>
-								<li><a href="#">Mauris vulputate dolor sit amet nibh</a></li>
+								<li>Love Hospitality</li>
+								<li>Loving the Lost</li>
+								<li>Loving your Husband/Family</li>
+							</ul>
+						</section>
+						<section class="sidebar">
+							<header>
+								<h2>Young Adult Messages and Q&A</h2>
+							</header>
+							<ul class="style1">
+								<li>Love the Word</li>
+								<li>Love the Assembly</li>
+								<li>Love the Quiet Place</li>
+								<li>Love Not the World</li>
+								<li>Love Service for the Lord</li>
+							</ul>
+						</section>
+						<section class="sidebar">
+							<header>
+								<h2>Speakers</h2>
+							</header>
+							<ul class="style1">
+								<li><a href="#">Robert Brown</a></li>
+								<li><a href="#">Bob Dadd</a></li>
+								<li><a href="#">Grady Dollar</a></li>
+								<li><a href="#">Jesse Gentile</a></li>
+								<li><a href="#">Brian Gunning</a></li>
+								<li><a href="#">Steve Price</a></li>
+								<li><a href="#">Bruce Scott</a></li>
+								<li><a href="#">Rex Trogdon</a></li>
 							</ul>
 						</section>
 					</div>
