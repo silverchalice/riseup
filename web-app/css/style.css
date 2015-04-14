@@ -30,6 +30,7 @@
 		letter-spacing: 1px;
 		text-transform: uppercase;
 		font-weight: 300;
+    line-height: 1.2em;
 	}
 	
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a
@@ -763,7 +764,7 @@
 		#header .container
 		{
 			position: relative;
-			padding: 4em 0em;
+			padding: 6em 0em;
 		}
 
 /*********************************************************************************/
@@ -773,13 +774,18 @@
 	#logo
 	{
 		position: absolute;
-		left: 0em;
-		top: 3em;
+		left: -3em;
+		top: 1.5em;
 	}
 	
 		#logo h1
 		{
 		}
+    
+    #logo img {
+      margin: 0;
+      padding: 0;
+    }
 	
 		#logo a
 		{
