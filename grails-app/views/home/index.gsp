@@ -69,7 +69,7 @@
 							<header>
 								<h2>Joe Reese</h2>
 							</header>
-							<p class="subtitle">Joe Reese was born and raised in Missis- sippi, and was born again in 1970. He was&#8230;</p>
+							<p class="subtitle">Joe Reese was born and raised in Mississippi, and was born again in 1970. He was&#8230;</p>
 							<p><a href="#"><img src="${resource(dir: 'images', file: 'Joe-Reese.jpg')}" alt=""></a></p>
 							<a href="#jr" class="button">More</a>
 						</section>
@@ -90,7 +90,7 @@
 						<section>
 							<header>
 								<h2>Tuesday, December 29th to Friday, January 1st</h2>
-								<span class="byline">Register now! Space is limited!</span>
+								<span class="byline">Space is limited! Sign up to be notified when registration opens.</span>
 							</header>
               <p><strong>Check-in Starts:</strong> Tuesday, December 29th, 2015 at 2:00 PM</p>
               <p><strong>First General Session:</strong> Tuesday, December 29th, 2015 at 7:30 PM</p>
@@ -216,14 +216,14 @@
 								<h2>Speakers</h2>
 							</header>
 							<ul class="style1">
-								<li><a href="#">Robert Brown</a></li>
-								<li><a href="#">Bob Dadd</a></li>
-								<li><a href="#">Grady Dollar</a></li>
-								<li><a href="#">Jesse Gentile</a></li>
-								<li><a href="#">Brian Gunning</a></li>
-								<li><a href="#">Steve Price</a></li>
-								<li><a href="#">Bruce Scott</a></li>
-								<li><a href="#">Rex Trogdon</a></li>
+								<li>Robert Brown</li>
+								<li>Bob Dadd</li>
+								<li>Grady Dollar</li>
+								<li>Jesse Gentile</li>
+								<li>Brian Gunning</li>
+								<li>Steve Price</li>
+								<li>Bruce Scott</li>
+								<li>Rex Trogdon</li>
 							</ul>
 						</section>
 					</div>
@@ -235,6 +235,7 @@
 	<!-- /Main -->
 
 	<!-- Featured -->
+  <!--
 		<div id="featured">
 			<div class="container">
 				<div class="row">
@@ -266,9 +267,11 @@
 				<div class="divider"></div>
 			</div>
 		</div>
+    -->
 	<!-- /Featured -->
 
 	<!-- Footer -->
+    <!--
 		<div id="footer">
 			<div class="container">
 				<div class="row">
@@ -330,5 +333,6 @@
 			</div>
 		</div>
 	<!-- /Footer -->
+  -->
 	</body>
 </html>
