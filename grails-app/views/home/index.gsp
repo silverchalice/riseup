@@ -51,7 +51,7 @@
 							</header>
 							<p class="subtitle">Mike Atwood was born in Leeds, England. He was saved by God’s grace at the age of 21.&#8230;</p>
 							<p><a href="#"><img src="${resource(dir: 'images', file: 'Mike-Attwood.jpg')}" alt=""></a></p>
-							<a href="#" class="button">More</a>
+							<a href="#ma" class="button">More</a>
 						</section>
 					</div>
 					<div class="3u">
@@ -61,7 +61,7 @@
 							</header>
 							<p class="subtitle">Nathan Bramsen was born and raised in Senegal, West Africa. In 2006, he founded&#8230;</p>
 							<p><a href="#"><img src="${resource(dir: 'images', file: 'bramsen_nathan.jpg')}" alt=""></a></p>
-							<a href="#" class="button">More</a>
+							<a href="#nb" class="button">More</a>
 						</section>
 					</div>
 					<div class="3u">
@@ -71,7 +71,7 @@
 							</header>
 							<p class="subtitle">Joe Reese was born and raised in Missis- sippi, and was born again in 1970. He was&#8230;</p>
 							<p><a href="#"><img src="${resource(dir: 'images', file: 'Joe-Reese.jpg')}" alt=""></a></p>
-							<a href="#" class="button">More</a>
+							<a href="#jr" class="button">More</a>
 						</section>
 					</div>
 					<div class="3u">
@@ -134,9 +134,21 @@
               <p>1200 Conference Center Blvd.<br />Murfreesboro, TN, 37129 USA<br />30 minutes from central Nashville, TN</p>
             </section>
 
-							<p>Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget lorem ipsum dolor. Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat. Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat.</p>
-							<p>Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat. Vestibulum pellentesque, justo mollis pretium suscipit, justo nulla blandit libero, in blandit augue justo quis nisl. Fusce mattis viverra elit. Fusce quis tortor. Consectetuer adipiscing elit. Nam pede erat, porta eu, lobortis eget lorem ipsum dolor. Donec placerat odio vel elit. Nullam ante orci, pellentesque eget, tempus quis, ultrices in, est. Curabitur sit amet nulla. Nam in massa. Sed vel tellus. Curabitur sem urna, consequat. Sed etiam vestibulum velit, euismod lacinia quam nisl id lorem. Quisque erat.</p>
-							<a href="#" class="button">More Details</a>
+            <section>
+							<header>
+								<span class="byline">General Session Speakers</span>
+							</header>
+
+              <a name="ma"></a>
+              <p><strong>Mike Attwood</strong> was born in Leeds, England. He was saved by God’s grace at the age of 21. He trained and served with New Tribes Mission and was involved in church planting in the Irish Republic under the auspices of CMML. He has been involved in itinerant Bible teaching and preaching throughout the US, Canada, and overseas. He is married to Ann Marie and they have 5 adult children. Currently they make their home in Springfield, Missouri, USA.</p>
+
+              <a name="nb"></a>
+              <p><strong>Nate Bramsen</strong> was born and raised in Senegal, West Africa. In 2006, he founded <a href="http://www.rockintl.org">ROCK International</a>. ROCK is a non-profit organization seeking to be the &#8220;lap of Jesus&#8221; for children trapped in situations of crisis. Now, he oversees various international development projects, youth discipleship ministries, and carries out a limited itinerant speaking schedule. Today, he calls North Africa &#8220;home&#8221;.</p>
+
+              <a name="jr"></a>
+              <p><strong>Joe Reese</strong> was born and raised in Mississippi, and was born again in 1970. He was commended to full time work in 1983.  He has travelled extensively teaching the Word of God throughout Canada, USA, and other countries of the world. Joe and his wife Ann live in Deacon, Ontario, Canada.</p>
+
+							<!--<a href="#" class="button">More Details</a>-->
 						</section>
 					</div>
 					<div class="3u">
@@ -168,6 +180,15 @@
 								<li>Love the Quiet Place</li>
 								<li>Love Not the World</li>
 								<li>Love Service for the Lord</li>
+								<li>Love for the Flock/Shepherd</li>
+								<li>Love the Home</li>
+								<li>Love Young People</li>
+								<li>Love the World (Missions)</li>
+								<li>Love for Israel</li>
+								<li>Love His Appearing</li>
+								<li>Love My Neighbord</li>
+								<li>Love the Erring One</li>
+								<li>Love the Little Children</li>
 							</ul>
 						</section>
 						<section class="sidebar">
@@ -185,11 +206,9 @@
 								<h2>Young Adult Messages and Q&A</h2>
 							</header>
 							<ul class="style1">
-								<li>Love the Word</li>
-								<li>Love the Assembly</li>
-								<li>Love the Quiet Place</li>
-								<li>Love Not the World</li>
-								<li>Love Service for the Lord</li>
+								<li>Tuesday Night: Nathan Bramsen</li>
+								<li>Wednesday Night: Scott DeGroff</li>
+								<li>Thursday Night: Jesse Gentile</li>
 							</ul>
 						</section>
 						<section class="sidebar">
