@@ -850,7 +850,7 @@
 	{
 		position: relative;
 		padding: 12em 0em;
-		background: url(../images/banner.jpg) no-repeat center;
+		background: url(../images/banner1.png) no-repeat center;
 		background-size: cover;
 		color: #fff;
 	}
@@ -996,6 +996,7 @@
     padding: 20px;
     margin: 30px auto;
     border: 1px solid #000;
+    height: 230px;
   }
 
   div.orderForm table, div.attendeeForm table, div.attendeeInfoForm table {
