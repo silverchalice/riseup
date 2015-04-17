@@ -5,7 +5,7 @@ class Interested {
     String email
 
     static constraints = {
-        name nullable: false, blank: false
+        name nullable: true, blank: true
         email nullable: false, blank: false, email: true, unique: true
     }
 }
