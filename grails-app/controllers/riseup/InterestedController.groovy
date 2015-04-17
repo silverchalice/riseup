@@ -25,7 +25,9 @@ class InterestedController {
 
     def ajaxSave() {
         println "the params are: ... $params"
-        render template: "thanks"
+        def interestedInstance = new Interested(params)
+        interestedInstance.save()
+        render(template: "thanks")
         return false
     }
 
