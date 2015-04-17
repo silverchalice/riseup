@@ -50,7 +50,7 @@
 								<h2>Mike Atwood</h2>
 							</header>
 							<p class="subtitle">Mike Atwood was born in Leeds, England. He was saved by God’s grace at the age of 21.&#8230;</p>
-							<p><a href="#"><img src="${resource(dir: 'images', file: 'Mike-Attwood.jpg')}" alt=""></a></p>
+							<p><a href="#ma"><img src="${resource(dir: 'images', file: 'Mike-Attwood.jpg')}" alt=""></a></p>
 							<a href="#ma" class="button">More</a>
 						</section>
 					</div>
@@ -60,7 +60,7 @@
 								<h2>Nathan Bramsen</h2>
 							</header>
 							<p class="subtitle">Nathan Bramsen was born and raised in Senegal, West Africa. In 2006, he founded&#8230;</p>
-							<p><a href="#"><img src="${resource(dir: 'images', file: 'bramsen_nathan.jpg')}" alt=""></a></p>
+							<p><a href="#nb"><img src="${resource(dir: 'images', file: 'bramsen_nathan.jpg')}" alt=""></a></p>
 							<a href="#nb" class="button">More</a>
 						</section>
 					</div>
@@ -70,7 +70,7 @@
 								<h2>Joe Reese</h2>
 							</header>
 							<p class="subtitle">Joe Reese was born and raised in Mississippi, and was born again in 1970. He was&#8230;</p>
-							<p><a href="#"><img src="${resource(dir: 'images', file: 'Joe-Reese.jpg')}" alt=""></a></p>
+							<p><a href="#jr"><img src="${resource(dir: 'images', file: 'Joe-Reese.jpg')}" alt=""></a></p>
 							<a href="#jr" class="button">More</a>
 						</section>
 					</div>
