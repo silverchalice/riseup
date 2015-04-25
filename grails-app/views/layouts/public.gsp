@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Ex Machina by TEMPLATED</title>
+		<title>Believers Bible Conference 2015</title>
     <g:javascript library="jquery" plugin="jquery"/>
     <g:javascript src="jquery.cycle2.min.js" />
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
