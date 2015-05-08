@@ -1,4 +1,13 @@
 dataSource {
+
+  grails {
+     neo4j {
+         type = "embedded"
+         location = "/var/neo4j"
+         params = []
+     }
+  }
+/*  
     pooled = true
     jmxExport = true
     driverClassName = "org.h2.Driver"
@@ -54,4 +63,5 @@ environments {
             }
         }
     }
+    */
 }

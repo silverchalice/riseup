@@ -45,6 +45,7 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
         mavenRepo 'http://m2.neo4j.org/releases'
+        mavenRepo 'http://m2.neo4j.org/content/repositories/releases/'
     }
 
     dependencies {
@@ -57,16 +58,17 @@ grails.project.dependency.resolution = {
     plugins {
         // plugins for the build system only
         build ":tomcat:7.0.55"
+        compile ":neo4j:2.0.0-M01"
 
         // plugins for the compile step
         compile ":scaffolding:2.1.2"
-        compile ':cache:1.1.7'
+        //compile ':cache:1.1.7'
         compile ":asset-pipeline:1.9.6"
         compile ":jquery-ui:1.10.4"
-
+        
         // plugins needed at runtime but not for compilation
-        runtime ":hibernate4:4.3.5.5" // or ":hibernate:3.6.10.17"
-        runtime ":database-migration:1.4.0"
+        //runtime ":hibernate4:4.3.5.5" // or ":hibernate:3.6.10.17"
+        //runtime ":database-migration:1.4.0"
         runtime ":jquery:1.11.1"
 
         // Uncomment these to enable additional asset-pipeline capabilities
