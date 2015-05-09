@@ -47,9 +47,9 @@
 					<div class="3u">
 						<section style="text-align: center;">
 							<header>
-								<h2>Mike Atwood</h2>
+								<h2>Mike Attwood</h2>
 							</header>
-							<p class="subtitle">Mike Atwood was born in Leeds, England. He was saved by God’s grace at the age of 21.&#8230;</p>
+							<p class="subtitle">Mike Attwood was born in Leeds, England. He was saved by God’s grace at the age of 21.&#8230;</p>
 							<p><a href="#ma"><img src="${resource(dir: 'images', file: 'Mike-Attwood.jpg')}" alt=""></a></p>
 							<a href="#ma" class="button">More</a>
 						</section>
