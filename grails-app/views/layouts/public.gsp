@@ -32,7 +32,7 @@
 					
 				<!-- Logo -->
 					<div id="logo">
-						<img height="117" width="626" src="${resource(dir: 'images', file: 'head.png')}" />
+						<img src="${resource(dir: 'images', file: 'head.png')}" />
 					</div>
 				
 				<!-- Nav -->
