@@ -996,7 +996,7 @@
     padding: 20px;
     margin: 30px auto;
     border: 1px solid #000;
-    height: 230px;
+    height: 430px;
   }
 
   div.orderForm table, div.attendeeForm table, div.attendeeInfoForm table {
@@ -1012,7 +1012,7 @@
   }
 
   div.orderForm table td, div.attendeeForm table td, div.attendeeInfoForm table td {
-    padding: 15px 0;
+    padding: 5px 0;
   }
 
   div.orderForm table td.name {
