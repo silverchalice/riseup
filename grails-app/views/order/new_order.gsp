@@ -48,12 +48,14 @@
 	</head>
 	<body>
 
-		<div id="featured">
-			<div class="container">
+	<!-- Main -->
+		<div id="page">
+				
+			<!-- Main -->
+			<div id="main" class="container">
 				<div class="row">
-					<div class="9u">
+					<div class="6u">
 						<section>
-  
               <div class="orderForm">
                 <h3>Purchaser Information</h3>
                 <table border="1">
@@ -160,8 +162,33 @@
                 <g:render template="attendeeList" />
               </div>
               <p id="r_end"><span class="left"><input type="submit" value="Purchase" /></span><span class="right"><strong>Total:</strong> $456.78</span></p>
+            </div>
+            </section>
+
+				</div>
+			</div>
+			<!-- Main -->
+
+		</div>
+	<!-- /Main -->
+
+
+		<!--
+    <div id="featured">
+			<div class="container">
+				<div class="row">
+					<div class="9u">
+						<section>
+  
 							
 						</section>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    -->
 
 
 	
