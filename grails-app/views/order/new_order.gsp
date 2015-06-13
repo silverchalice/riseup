@@ -18,7 +18,7 @@
     <g:javascript>
       $( document ).ready(function() {
           function addAttendee(){
-              jQuery.ajax({type:'POST', data: $('#attendeeAdd').serialize(), url:'/riseup/order/addAttendee',update: $('#atl'), success:function(data,textStatus){
+              jQuery.ajax({type:'POST', data: $('#attendeeAdd').serialize(), url:'/order/addAttendee',update: $('#atl'), success:function(data,textStatus){
                   $('#atl').html(data);
                   $("#newAttendee").dialog('close');
                   $('#attendeeAdd')[0].reset();
