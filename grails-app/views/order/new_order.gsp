@@ -17,8 +17,6 @@
     <g:javascript src="jquery-ui.min.js" />
     <g:javascript>
       $( document ).ready(function() {
-          alert("Hi!");
-          console.log("Ho");
           function addAttendee(){
               jQuery.ajax({type:'POST', data: $('#attendeeAdd').serialize(), url:'/riseup/order/addAttendee',update: $('#atl'), success:function(data,textStatus){
                   $('#atl').html(data);
