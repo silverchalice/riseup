@@ -5,7 +5,7 @@
 
 body {
   width: 90%;
-  margin: 20px auto 10px;
+  margin: 20px auto 60px;
 }
 
 #logo {
@@ -127,3 +127,6 @@ div#newAttendee {
   color: #FFF;
 }
 
+table.attendeeForm {
+  width: 95%;
+}
