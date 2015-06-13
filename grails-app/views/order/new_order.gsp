@@ -1,14 +1,9 @@
-
 <%@ page import="riseup.TicketType" %>
+
 <!DOCTYPE HTML>
-<!--
-	Autonomy by TEMPLATED
-    templated.co @templatedco
-    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
 <html>
 	<head>
-		<meta name="layout" content="public_order"/>
+		<meta name="layout" content="simple"/>
 		<title>Welcome to Grails</title>
     <g:javascript library="jquery" plugin="jquery"/>
     <g:javascript library="jquery-ui" plugin="jquery-ui"/>
@@ -20,9 +15,10 @@
     <link href="${resource(dir: 'css', file: 'jquery-ui.min.css')}" rel="stylesheet">
     <g:javascript src="jquery-ui.js" />
     <g:javascript src="jquery-ui.min.js" />
-    <g:javascript src="jquery.cycle2.min.js" />
     <g:javascript>
       $( document ).ready(function() {
+          alert("Hi!");
+          console.log("Ho");
           function addAttendee(){
               jQuery.ajax({type:'POST', data: $('#attendeeAdd').serialize(), url:'/riseup/order/addAttendee',update: $('#atl'), success:function(data,textStatus){
                   $('#atl').html(data);
@@ -46,16 +42,9 @@
     </g:javascript>
     
 	</head>
-	<body>
+  <body>
 
-	<!-- Main -->
-		<div id="page">
-				
-			<!-- Main -->
-			<div id="main" class="container">
-				<div class="row">
-					<div class="6u">
-						<section>
+            <h1>Register for Believers Bible Conference</h1>
               <div class="orderForm">
                 <h3>Purchaser Information</h3>
                 <table border="1">
@@ -163,47 +152,5 @@
               </div>
               <p id="r_end"><span class="left"><input type="submit" value="Purchase" /></span><span class="right"><strong>Total:</strong> $456.78</span></p>
             </div>
-            </section>
-
-				</div>
-			</div>
-			<!-- Main -->
-
-		</div>
-	<!-- /Main -->
-
-
-		<!--
-    <div id="featured">
-			<div class="container">
-				<div class="row">
-					<div class="9u">
-						<section>
-  
-							
-						</section>
-
-          </div>
-        </div>
-      </div>
-    </div>
-
-    -->
-
-
-	
-  <g:javascript>
-      $(document).ready(function(){
-        var images = [
-            '<img src="http://malsup.github.io/images/p2.jpg">',
-            '<img src="http://malsup.github.io/images/p3.jpg">',
-            '<img src="http://malsup.github.io/images/p4.jpg">'
-        ];
-
-        for (var i=0; i < images.length; i++) {
-            $('.cycle-slideshow').cycle('add', images[i]);
-        }
-        $(this).prop('disabled', true)
-          });
-  </g:javascript>
+  </body>
 </html>
