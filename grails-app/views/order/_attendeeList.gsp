@@ -1,6 +1,6 @@
               <div class="attendeeForm">
               <h3>Attendee info &nbsp;&nbsp;<input id="addAttendee" type="submit" value="Add attendee" /></h3>
-                <table border="1">
+                <table class="attendeeForm" border="1">
                   <thead>
                     <th>Name</th>
                     <th>Ticket type</th>
