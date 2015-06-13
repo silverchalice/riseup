@@ -18,7 +18,7 @@
     <g:javascript>
       $( document ).ready(function() {
           function addAttendee(){
-              jQuery.ajax({type:'POST', data: $('#attendeeAdd').serialize(), url:'/order/addAttendee',update: $('#atl'), success:function(data,textStatus){
+              jQuery.ajax({type:'POST', data: $('#purchaserInfo,#attendeeAdd').serialize(), url:'/order/addAttendee',update: $('#atl'), success:function(data,textStatus){
                   $('#atl').html(data);
                   $("#newAttendee").dialog('close');
                   $('#attendeeAdd')[0].reset();
@@ -45,50 +45,52 @@
             <h1>Register for Believers Bible Conference</h1>
               <div class="orderForm">
                 <h3>Purchaser Information</h3>
-                <table border="1">
-                  <thead>
-                    <th></th>
-                    <th></th>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="name">Name:</td>
-                      <td><input type="text" name="name" value="Ho!" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name">Email address:</td>
-                      <td><input type="text" name="email" value="Ho!" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name">Password:</td>
-                      <td><input type="password" name="password" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name">Confirm:</td>
-                      <td><input type="password" name="confirm_password" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name">Address:</td>
-                      <td><input type="text" name="address1" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name">City:</td>
-                      <td><input type="text" name="city" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name">State / Province:</td>
-                      <td><input type="text" name="state" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name">Zip / Postal:</td>
-                      <td><input type="text" name="state" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name">Phone number:</td>
-                      <td><input type="text" name="phone" /></td>
-                    </tr>
-                  </tbody>
-                </table>
+                <g:form name="purchaserInfo" id="purchaserInfo" url="[controller: 'order', action: 'addAttendee']">
+                  <table border="1">
+                    <thead>
+                      <th></th>
+                      <th></th>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="name">Name:</td>
+                        <td><input type="text" name="pName" value="Ho!" /></td>
+                      </tr>
+                      <tr>
+                        <td class="name">Email address:</td>
+                        <td><input type="text" name="pEmail" value="Ho!" /></td>
+                      </tr>
+                      <tr>
+                        <td class="name">Password:</td>
+                        <td><input type="password" name="pPassword" /></td>
+                      </tr>
+                      <tr>
+                        <td class="name">Confirm:</td>
+                        <td><input type="password" name="pConfirm_password" /></td>
+                      </tr>
+                      <tr>
+                        <td class="name">Address:</td>
+                        <td><input type="text" name="pAddress1" /></td>
+                      </tr>
+                      <tr>
+                        <td class="name">City:</td>
+                        <td><input type="text" name="pCity" /></td>
+                      </tr>
+                      <tr>
+                        <td class="name">State / Province:</td>
+                        <td><input type="text" name="pState" /></td>
+                      </tr>
+                      <tr>
+                        <td class="name">Zip / Postal:</td>
+                        <td><input type="text" name="pZip" /></td>
+                      </tr>
+                      <tr>
+                        <td class="name">Phone number:</td>
+                        <td><input type="text" name="pPhone" /></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </g:form>
               </div>
             
               <div id="newAttendee" title="Add new attendee">
