@@ -54,11 +54,11 @@
                     <tbody>
                       <tr>
                         <td class="name">Name:</td>
-                        <td><input type="text" name="pName" value="Ho!" /></td>
+                        <td><input type="text" name="pName" value="${buyer?.name}" /></td>
                       </tr>
                       <tr>
                         <td class="name">Email address:</td>
-                        <td><input type="text" name="pEmail" value="Ho!" /></td>
+                        <td><input type="text" name="pEmail" value="${buyer?.email}" /></td>
                       </tr>
                       <tr>
                         <td class="name">Password:</td>
@@ -70,23 +70,27 @@
                       </tr>
                       <tr>
                         <td class="name">Address:</td>
-                        <td><input type="text" name="pAddress1" /></td>
+                        <td><input type="text" name="pAddress1" value="${buyer?.address1}" /></td>
+                      </tr>
+                      <tr>
+                        <td class="name">Address 2:</td>
+                        <td><input type="text" name="pAddress2" value="${buyer?.address2}" /></td>
                       </tr>
                       <tr>
                         <td class="name">City:</td>
-                        <td><input type="text" name="pCity" /></td>
+                        <td><input type="text" name="pCity" value="${buyer?.city}" /></td>
                       </tr>
                       <tr>
                         <td class="name">State / Province:</td>
-                        <td><input type="text" name="pState" /></td>
+                        <td><input type="text" name="pState" value="${buyer?.state}" /></td>
                       </tr>
                       <tr>
                         <td class="name">Zip / Postal:</td>
-                        <td><input type="text" name="pZip" /></td>
+                        <td><input type="text" name="pZip" value="${buyer?.zip}" /></td>
                       </tr>
                       <tr>
                         <td class="name">Phone number:</td>
-                        <td><input type="text" name="pPhone" /></td>
+                        <td><input type="text" name="pPhone" value="${buyer?.phone}" /></td>
                       </tr>
                     </tbody>
                   </table>
