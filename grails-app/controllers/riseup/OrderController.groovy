@@ -26,9 +26,14 @@ class OrderController {
     def new_order() {
         def formatter = java.text.NumberFormat.currencyInstance
 
-        [buyer: session.buyer, attendees: session.confOrder?.attendees,
-         amount: formatter.format(session.confOrder?.attendees*.ticketType*.price.sum()),
-         number: session.confOrder?.attendees?.size()]
+        if(session.confOrder){
+            render view: 'new_order', model: [buyer: session.buyer,
+                                              attendees: session.confOrder?.attendees,
+                                              amount: formatter.format(session.confOrder?.attendees*.ticketType*.price.sum()),
+                                              number: session.confOrder?.attendees?.size()]
+        } else {
+            render view: 'new_order', model: [buyer: new Buyer(params)]
+        }
     }
 
     @Transactional
