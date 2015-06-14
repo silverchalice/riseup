@@ -24,7 +24,11 @@ class OrderController {
     }
 
     def new_order() {
-        respond new ConfOrder(params)
+        def formatter = java.text.NumberFormat.currencyInstance
+
+        [buyer: session.buyer, attendees: session.confOrder?.attendees,
+         amount: formatter.format(session.confOrder?.attendees*.ticketType*.price.sum()),
+         number: session.confOrder?.attendees?.size()]
     }
 
     @Transactional
@@ -99,14 +103,25 @@ class OrderController {
     def addAttendee(){
         println "\n\n\n in addAttendee action. params are:\n \n $params\n\n\n"
         def formatter = java.text.NumberFormat.currencyInstance
+
+        if(!session.buyer){
+          session.buyer = new Buyer(name: params.pName, email: params.pEmail, password: params.pPassword, address1: params.pAddress1, address2: params.pAddress2 ?: '', city: params.pCity, state: params.pState, zip: params.pZip, phone: params.pPhone).save(failOnError:true)
+        }
+        if(!session.confOrder){
+          def buyer = session.buyer
+          session.confOrder = new ConfOrder(buyer: buyer).save()
+        }
+
+        println "the buyer is ${session.buyer}"
+
+        def confOrder = session.confOrder
+
         def attendee = new Attendee(params)
         attendee?.save(failOnError: true)
-        def attendees = []
-        attendees << attendee
-        session.number = 1
+        confOrder.addToAttendees(attendee)
 
-        println "there are ${attendees?.size()} attendees. They are $attendees"
-        render template: 'attendeeList', model: [attendees: attendees, amount: formatter.format(attendee.ticketType?.price), number: session.number]
+        println "there are ${confOrder?.attendees?.size()} attendees. They are ${confOrder.attendees}"
+        render template: 'attendeeList', model: [attendees: confOrder.attendees, amount: formatter.format(confOrder.attendees*.ticketType*.price.sum()), number: session.confOrder.attendees?.size()]
         return false
     }
 
