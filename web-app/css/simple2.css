@@ -102,19 +102,14 @@ h3 {
 div.attendeeForm table th {
   text-align: left;
   font-weight: bolder;
-  padding: 3px 0 30px 0;
+  padding: 3px 0 0 0;
+}
+
+p#r_amt {
 }
 
 p#r_end {
-  padding: 20px 10px 0 0;
-}
 
-p#r_end span.right {
-  float: right;
-}
-
-p#r_end span.left {
-  text-align: left;
 }
 
 div#newAttendee {

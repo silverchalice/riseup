@@ -150,7 +150,6 @@
               <div id="atl">
                 <g:render template="attendeeList" />
               </div>
-              <p id="r_end"><span class="left"><input type="submit" value="Purchase" /></span><span class="right"><strong>Total:</strong> $456.78</span></p>
             </div>
   </body>
 </html>

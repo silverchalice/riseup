@@ -14,4 +14,9 @@
                     </g:each>
                   </tbody>
                 </table>
+                <g:if test="${amount}">
+                  <br />
+                  <p id="r_amt"><strong>Total:</strong> ${amount}</p>
+                </g:if>
               </div>
+              <p id="r_end"><script src="/js/paypal-button.min.js?merchant=WJG3QCJ58UU98" data-button="buynow" data-name="Believers Bible Conf (${number} ${number > 1 ? 'tickets' : 'ticket'})" data-amount="${amount}" async></script></p>
