@@ -7,6 +7,6 @@ class ConfOrder {
     static hasMany = [attendees: Attendee]
 
     static constraints = {
-        paymentType inList: ["PayPal", "Check"]
+        paymentType inList: ["PayPal", "Check"], nullable: true
     }
 }
