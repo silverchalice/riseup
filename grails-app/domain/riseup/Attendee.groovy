@@ -15,6 +15,7 @@ class Attendee {
     Seminar seminar4
     Seminar seminar5
     Seminar seminar6
+    Room assignedRoom
 
     static constraints = {
         firstName nullable: true
@@ -33,5 +34,10 @@ class Attendee {
         seminar4 nullable: true
         seminar5 nullable: true
         seminar6 nullable: true
+        assignedRoom nullable: true
+    }
+
+    String toString(){
+        "$firstName $lastName - $id"
     }
 }

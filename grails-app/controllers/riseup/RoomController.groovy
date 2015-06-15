@@ -8,6 +8,8 @@ import grails.transaction.Transactional
 @Transactional(readOnly = true)
 class RoomController {
 
+    def roomService
+    
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -100,5 +102,13 @@ class RoomController {
             }
             '*'{ render status: NOT_FOUND }
         }
+    }
+
+    def roomAssignment(ConfOrder confOrder){
+        def confOrder = ConfOrder.get(confOrder.id)
+        def buyer = confOrder.buyer
+        def attendees = confOrder.attendees
+        def roomsInUse = roomService.roomsUsedBy(attendees)
+        return [confOrder: confOrder, buyer:buyer, attendees: attendees, roomsInUse: roomsInUse]
     }
 }
