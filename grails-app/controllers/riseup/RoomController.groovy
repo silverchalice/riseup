@@ -9,7 +9,7 @@ import grails.transaction.Transactional
 class RoomController {
 
     def roomService
-    
+
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
@@ -105,10 +105,22 @@ class RoomController {
     }
 
     def roomAssignment(ConfOrder confOrder){
-        def confOrder = ConfOrder.get(confOrder.id)
+        confOrder = ConfOrder.get(confOrder.id)
         def buyer = confOrder.buyer
         def attendees = confOrder.attendees
         def roomsInUse = roomService.roomsUsedBy(attendees)
         return [confOrder: confOrder, buyer:buyer, attendees: attendees, roomsInUse: roomsInUse]
     }
+
+    def loadRooms(){
+        def attendee = Attendee.get(params.id)
+        def rooms = roomService.availableRooms(attendee.ticketType.roomSize)
+        render(template:'roomList', collection:rooms)
+    }
 }
+
+
+
+
+
+

@@ -25,7 +25,7 @@
               },error:function(XMLHttpRequest,textStatus,errorThrown){}});
           }
 
-          $("#addAttendee").on('click', function() {
+          $("#atl").on('click', "#addAttendee", function() {
               var dialogYo = $("#newAttendee").dialog({ modal: true, width: 800, autoOpen: false,  buttons: {
                       "Add to attendee list": addAttendee,
                       Cancel: function() {
