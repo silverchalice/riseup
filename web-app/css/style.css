@@ -1053,3 +1053,16 @@
     color: #FFF;
   }
 
+  .message {
+      font-weight:bold;
+      font-size: larger;
+      background: #f3f8fc;
+      border: 1px solid #b2d1ff;
+      color: #006dba;
+      margin: -50px 0 40px 0;
+      padding: 5px 5px 5px 30px
+  }
+
+  .message a, .message a:visited, .message a:hover {
+      color: #006dba;
+  }
