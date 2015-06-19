@@ -41,6 +41,24 @@
 	<!-- Main -->
 		<div id="page">
 
+      <g:if test="${flash.message}">
+        <div class="message">
+          ${flash.message}
+        </div>
+      </g:if>
+
+      <g:if test="${session.buyer && !flash.message}">
+        <div class="message">
+          Logged in as ${session.buyer}. <g:link controller="home" action="logout">Log out</g:link>
+        </div>
+      </g:if>
+
+      <g:if test="${!session.buyer && !flash.message}">
+        <div class="message">
+          Already registered? <g:link controller="home" action="login">Log in</g:link>
+        </div>
+      </g:if>
+
 			<!-- Extra -->
 			<div id="marketing" class="container">
 				<div class="row">
