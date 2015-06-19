@@ -4,7 +4,7 @@
 <html>
 	<head>
 		<meta name="layout" content="simple"/>
-		<title>Welcome to Grails</title>
+		<title>Believers Bible Conference 2015 // Register</title>
     <g:javascript library="jquery" plugin="jquery"/>
     <g:javascript library="jquery-ui" plugin="jquery-ui"/>
     <link href="${resource(dir: 'css', file: 'jquery-ui.css')}" rel="stylesheet">
@@ -17,6 +17,17 @@
     <g:javascript src="jquery-ui.min.js" />
     <g:javascript>
       $( document ).ready(function() {
+          <g:if test="${!number}">
+          $('#addAttendee').click(function() {
+              $('#firstName').val($('#pFirstName').val());
+              $('#lastName').val($('#pLastName').val());
+              $('#email').val($('#pEmail').val());
+              $('#city').val($('#pCity').val());
+              $('#state').val($('#pState').val());
+              $('#phone').val($('#pPhone').val());
+          });
+          </g:if>
+
           function addAttendee(){
               jQuery.ajax({type:'POST', data: $('#purchaserInfo,#attendeeAdd').serialize(), url:'/order/addAttendee',update: $('#atl'), success:function(data,textStatus){
                   $('#atl').html(data);
@@ -42,7 +53,7 @@
 	</head>
   <body>
 
-            <h1>Register for Believers Bible Conference</h1>
+            <h1>Register</h1>
               <div class="orderForm">
                 <h3>Purchaser Information</h3>
                 <g:form name="purchaserInfo" id="purchaserInfo" url="[controller: 'order', action: 'addAttendee']">
@@ -53,12 +64,16 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td class="name">Name:</td>
-                        <td><input type="text" name="pName" value="${buyer?.name}" /></td>
+                        <td class="name">First name:</td>
+                        <td><input type="text" id="pFirstName" name="pFirstName" value="${buyer?.firstName}" /></td>
+                      </tr>
+                      <tr>
+                        <td class="name">Last name:</td>
+                        <td><input type="text" id="pLastName" name="pLastName" value="${buyer?.lastName}" /></td>
                       </tr>
                       <tr>
                         <td class="name">Email address:</td>
-                        <td><input type="text" name="pEmail" value="${buyer?.email}" /></td>
+                        <td><input type="text" id="pEmail" name="pEmail" value="${buyer?.email}" /></td>
                       </tr>
                       <tr>
                         <td class="name">Password:</td>
@@ -78,11 +93,11 @@
                       </tr>
                       <tr>
                         <td class="name">City:</td>
-                        <td><input type="text" name="pCity" value="${buyer?.city}" /></td>
+                        <td><input type="text" id="pCity" name="pCity" value="${buyer?.city}" /></td>
                       </tr>
                       <tr>
                         <td class="name">State / Province:</td>
-                        <td><input type="text" name="pState" value="${buyer?.state}" /></td>
+                        <td><input type="text" id="pState" name="pState" value="${buyer?.state}" /></td>
                       </tr>
                       <tr>
                         <td class="name">Zip / Postal:</td>
@@ -90,7 +105,7 @@
                       </tr>
                       <tr>
                         <td class="name">Phone number:</td>
-                        <td><input type="text" name="pPhone" value="${buyer?.phone}" /></td>
+                        <td><input type="text" id="pPhone" name="pPhone" value="${buyer?.phone}" /></td>
                       </tr>
                     </tbody>
                   </table>
@@ -108,15 +123,15 @@
                     <tbody>
                       <tr>
                         <td class="name">First name:</td>
-                        <td><input type="text" name="firstName" value="Ho!" /></td>
+                        <td><input type="text" id="firstName" name="firstName" value="" /></td>
                       </tr>
                       <tr>
                         <td class="name">Last name:</td>
-                        <td><input type="text" name="lastName" value="Ho!" /></td>
+                        <td><input type="text" id="lastName" name="lastName" value="" /></td>
                       </tr>
                       <tr>
                         <td class="name">Age:</td>
-                        <td><input type="text" name="age" value="Ho!" /></td>
+                        <td><input type="text" name="age" value="" /></td>
                       </tr>
                       <tr>
                         <td class="name">Gender:</td>
@@ -128,19 +143,19 @@
                       </tr>
                       <tr>
                         <td class="name">Email address:</td>
-                        <td><input type="text" name="email" /></td>
+                        <td><input type="text" id="email" name="email" /></td>
                       </tr>
                       <tr>
                         <td class="name">City:</td>
-                        <td><input type="text" name="city" /></td>
+                        <td><input type="text" id="city" name="city" /></td>
                       </tr>
                       <tr>
                         <td class="name">State:</td>
-                        <td><input type="text" name="state" /></td>
+                        <td><input type="text" id="state" name="state" /></td>
                       </tr>
                       <tr>
                         <td class="name">Phone number:</td>
-                        <td><input type="text" name="phone" /></td>
+                        <td><input type="text" id="phone" name="phone" /></td>
                       </tr>
                       <tr>
                         <td class="name">Ticket type:</td>
