@@ -62,6 +62,7 @@ grails.project.dependency.resolution = {
 
         // plugins for the compile step
         compile ":scaffolding:2.1.2"
+        compile ":mail:1.0.7"
         //compile ':cache:1.1.7'
         compile ":asset-pipeline:1.9.6"
         compile ":jquery-ui:1.10.4"
