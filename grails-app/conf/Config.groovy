@@ -86,13 +86,13 @@ grails.hibernate.pass.readonly = false
 // configure passing read-only to OSIV session by default, requires "singleSession = false" OSIV mode
 grails.hibernate.osiv.readonly = false
 
-  grails {
+  /*grails {
      neo4j {
          type = "embedded"
          location = "/var/neo4j"
          params = []
      }
-  }
+  }*/
   
 environments {
     development {
