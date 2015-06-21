@@ -1,7 +1,8 @@
 package riseup
 
 class Buyer {
-    String name
+    String firstName
+    String lastName
     String email
     String password
     String address1
@@ -16,6 +17,6 @@ class Buyer {
     }
 
     String toString(){
-        name
+        "$firstName $lastName"
     }
 }

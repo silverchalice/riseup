@@ -6,6 +6,8 @@ class Attendee {
     Integer age
     String gender
     String church
+    String city
+    String state
     String email
     String phone
     TicketType ticketType
@@ -25,6 +27,8 @@ class Attendee {
         email nullable: true, blank: true
         phone nullable: true, blank: true
         church nullable: true
+        city nullable: true
+        state nullable: true
         email email: true, nullable: true
         phone nullable: true
         ticketType nullable: true

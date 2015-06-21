@@ -95,6 +95,10 @@ div.orderForm table td.name {
   text-align: right;
 }
 
+div.orderForm table input.button {
+  font-size: larger;
+}
+
 h3 {
   font-weight: bold;
 }
@@ -124,4 +128,18 @@ div#newAttendee {
 
 table.attendeeForm {
   width: 95%;
+}
+
+.message {
+    /* background: #f3f8fc;
+    border: 1px solid #b2d1ff;
+    color: #006dba;
+    margin: 10px 0 5px 0;
+    padding: 5px 5px 5px 30px*/
+    font-weight:bold;
+    font-size: larger;
+    background: #f3f8fc;
+    border: 1px solid #b2d1ff;
+    color: #006dba;
+    padding: 5px 5px 5px 30px
 }

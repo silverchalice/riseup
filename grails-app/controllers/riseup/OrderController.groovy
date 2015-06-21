@@ -110,7 +110,7 @@ class OrderController {
         def formatter = java.text.NumberFormat.currencyInstance
 
         if(!session.buyer){
-          session.buyer = new Buyer(name: params.pName, email: params.pEmail, password: params.pPassword, address1: params.pAddress1, address2: params.pAddress2 ?: '', city: params.pCity, state: params.pState, zip: params.pZip, phone: params.pPhone).save(failOnError:true)
+          session.buyer = new Buyer(firstName: params.pFirstName, lastName: params.pLastName, email: params.pEmail?.toLowerCase(), password: params.pPassword, address1: params.pAddress1, address2: params.pAddress2 ?: '', city: params.pCity, state: params.pState, zip: params.pZip, phone: params.pPhone).save(failOnError:true)
         }
         if(!session.confOrder){
           def buyer = session.buyer
