@@ -1,6 +1,6 @@
 dataSource {
     username = "root"
-    password = ""
+    password = "1234"
     pooled = true
     driverClassName = "com.mysql.jdbc.Driver"
     dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"

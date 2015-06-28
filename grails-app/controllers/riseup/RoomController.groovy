@@ -5,7 +5,7 @@ package riseup
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
-@Transactional(readOnly = true)
+@Transactional(readOnly = false)
 class RoomController {
 
     def roomService
@@ -104,8 +104,8 @@ class RoomController {
         }
     }
 
-    def roomAssignment(ConfOrder confOrder){
-        confOrder = ConfOrder.get(confOrder.id)
+    def roomAssignment(){
+        def confOrder = ConfOrder.get(params.id)
         def buyer = confOrder.buyer
         def attendees = confOrder.attendees
         def roomsInUse = roomService.roomsUsedBy(attendees)

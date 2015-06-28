@@ -15,8 +15,6 @@ class Attendee {
     Seminar seminar2
     Seminar seminar3
     Seminar seminar4
-    Seminar seminar5
-    Seminar seminar6
     Room assignedRoom
 
     static constraints = {
@@ -36,8 +34,6 @@ class Attendee {
         seminar2 nullable: true
         seminar3 nullable: true
         seminar4 nullable: true
-        seminar5 nullable: true
-        seminar6 nullable: true
         assignedRoom nullable: true
     }
 

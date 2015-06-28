@@ -46,7 +46,7 @@ class RoomService {
     	}
     }
 
-    List roomsUsedBy(List attendees){
+    def roomsUsedBy(attendees){
     	def result = []
     	def roomIds = attendees.collect{it.assignedRoom?.id}.unique() - null
     	if (roomIds){

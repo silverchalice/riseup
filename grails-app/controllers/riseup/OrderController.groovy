@@ -5,7 +5,7 @@ package riseup
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
-@Transactional(readOnly = true)
+@Transactional(readOnly = false)
 class OrderController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
@@ -23,14 +23,17 @@ class OrderController {
         respond new ConfOrder(params)
     }
 
-    def new_order() {
+    def order() {
         def formatter = java.text.NumberFormat.currencyInstance
 
         if(session.confOrder){
-            render view: 'new_order', model: [buyer: session.buyer,
-                                              attendees: session.confOrder?.attendees,
-                                              amount: formatter.format(session.confOrder?.attendees*.ticketType*.price.sum()),
-                                              number: session.confOrder?.attendees?.size()]
+            def buyer = Buyer.get(session.buyer.id)
+            def confOrder = ConfOrder.findByBuyer(buyer)
+
+            render view: 'new_order', model: [buyer: buyer,
+                                              attendees: confOrder?.attendees,
+                                              amount: formatter.format(confOrder?.attendees*.ticketType*.price.sum()),
+                                              number: confOrder?.attendees?.size()]
         } else {
             render view: 'new_order', model: [buyer: new Buyer(params)]
         }

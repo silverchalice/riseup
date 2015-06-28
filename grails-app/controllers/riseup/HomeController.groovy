@@ -21,6 +21,7 @@ class HomeController {
         println "the user id is: ${user.id}"
         println user.properties
         session.buyer = user
+        session.confOrder = ConfOrder.findByBuyer(user)
 
         if(user.password == "20believersconf15") {
           flash.message = "Please enter a new password."
@@ -29,7 +30,7 @@ class HomeController {
         }
 
         flash.message = "Welcome back, $user. You are now logged in."
-        redirect action: "index"
+        redirect controller: "order", action: "order", params:[]
       }
     }
 
