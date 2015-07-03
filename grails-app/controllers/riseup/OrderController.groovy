@@ -31,6 +31,7 @@ class OrderController {
             def confOrder = ConfOrder.findByBuyer(buyer)
 
             render view: 'new_order', model: [buyer: buyer,
+                                              confOrder: confOrder,
                                               attendees: confOrder?.attendees,
                                               amount: formatter.format(confOrder?.attendees*.ticketType*.price.sum()),
                                               number: confOrder?.attendees?.size()]
