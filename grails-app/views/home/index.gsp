@@ -115,29 +115,10 @@
               <p><strong>Conference Closing:</strong> Friday, January 1st, 2016 at 11:00 AM</p>
               <p>17 seminars that deal with the practical issues of our day. 3 seminars exclusively for women.</p>
               <p><strong>Sign up</strong> to hear when registration opens:</p>
-            <div id="orderFormYo" class="orderForm">
+            <div id="orderFormYo" style="background-color: #eee; padding: 20px; border: 1px solid #000;">
               <g:form name="interest">
-                <table border="1">
-                  <thead>
-                    <th></th>
-                    <th></th>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="name">Name:</td>
-                      <td><input type="text" name="name" value="" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name">Email address:</td>
-                      <td><input type="text" name="email" value="" /></td>
-                    </tr>
-                    <tr>
-                      <td class="name"></td>
-                      <td><g:submitToRemote controller="interested" action="ajaxSave" update="orderFormYo" name="Keep Me Up-To-Date" value="Keep Me Up-To-Date" /></td>
-                    </tr>
-                  </tbody>
-                </table>
-                
+                      <p>Name: <input type="text" style="width: 180px; name="name" value="" /> &nbsp; &nbsp; &nbsp; &nbsp; Email address: <input type="text" style="width: 180px;" name="email" value="" /></p>
+                    <g:submitToRemote controller="interested" action="ajaxSave" update="orderFormYo" name="Keep Me Up-To-Date" value="Keep Me Up-To-Date" />
               </g:form>
             </div>
             </section>
