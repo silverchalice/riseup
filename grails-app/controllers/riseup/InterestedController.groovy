@@ -23,6 +23,7 @@ class InterestedController {
         respond new Interested(params)
     }
 
+    @Transactional
     def ajaxSave() {
         println "the params are: ... $params"
         def interestedInstance = new Interested(params)
