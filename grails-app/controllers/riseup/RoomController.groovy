@@ -105,7 +105,7 @@ class RoomController {
     }
 
     def roomAssignment(){
-        def confOrder = ConfOrder.get(params.id)
+        def confOrder = session.confOrder ? ConfOrder.get(session.confOrder.id) : ConfOrder.get(params.id)
         def buyer = confOrder.buyer
         def attendees = confOrder.attendees
         def roomsInUse = roomService.roomsUsedBy(attendees)
