@@ -113,8 +113,13 @@ class RoomController {
     }
 
     def loadRooms(){
+        println "loadRooms called with id of ${params.id}"
         def attendee = Attendee.get(params.id)
-        def rooms = roomService.availableRooms(attendee.ticketType.roomSize)
+        def ticketType = attendee?.ticketType
+        println "ticketType for attendee: ${attendee.id} is ${ticketType.id}"
+        def roomSize = ticketType?.roomSize
+        println "roomSize is $roomSize"
+        def rooms = roomService.availableRooms(roomSize)
         render(template:'roomList', collection:rooms)
     }
 }

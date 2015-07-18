@@ -109,6 +109,7 @@ class OrderController {
         }
     }
 
+    @Transactional
     def addAttendee(){
         println "\n\n\n in addAttendee action. params are:\n \n $params\n\n\n"
         def formatter = java.text.NumberFormat.currencyInstance
@@ -130,8 +131,82 @@ class OrderController {
         confOrder.addToAttendees(attendee)
 
         println "there are ${confOrder?.attendees?.size()} attendees. They are ${confOrder.attendees}"
-        render template: 'attendeeList', model: [attendees: confOrder.attendees, amount: formatter.format(confOrder.attendees*.ticketType*.price.sum()), number: session.confOrder.attendees?.size()]
+        render template: 'attendeeList', model: [confOrder: confOrder, attendees: confOrder.attendees, amount: formatter.format(confOrder.attendees*.ticketType*.price.sum()), number: session.confOrder.attendees?.size()]
         return false
+    }
+
+    @Transactional
+    def selectSeminars(){
+        def orderInstance = ConfOrder.get(params.id)
+        def attendees = orderInstance.attendees
+        def seminar1List = [
+            'Love the Word',
+            'Love the Assembly',
+            'Love Not the World',
+            'Love Service for the Lord',
+            'Love for the Flock/Shepherd', 
+            'Love Young People',
+            'Love for Israel',
+            'Love My Neighbor',
+            'Love Hospitality (Women Only)',
+            'N/A - In Children program'
+        ]
+        def seminar2List = [
+            'Love His Appearing',
+            'Love the Erring One',
+            'Love the Little Children',
+            'Love the Lost (Women Only)', 
+            'Love Your Family (Women Only)',
+            'Love the World (Missions)',
+            'Love the Quiet Place', 
+            'Love the Home',
+            'N/A - In Children program'
+        ]
+        def seminar3List = [
+            'Love the Word',
+            'Love Not the World',
+            'Love Service for the Lord',
+            'Love Hospitality (Women Only)',
+            'Love for the Flock/Shepherd',
+            'Love His Appearing',
+            'Love the Lost (Women Only)',
+            'Love the Little Children',
+            'N/A - In Children program'
+        ]
+        def seminar4List = [
+            'Love Young People',
+            'Love the Quiet Place',
+            'Love the Assembly',
+            'Love the World (Missions)',
+            'Love for Israel',
+            'Love My Neighbor',
+            'Love the Erring One',
+            'Love Your Family (Women Only)',
+            'Love the Home',
+            'N/A - In Children program'
+        ]
+        [attendees: attendees, seminar1List: seminar1List, seminar2List: seminar2List,
+         seminar3List: seminar3List, seminar4List: seminar4List]
+    }
+    
+    @Transactional
+    def saveSeminarSelections() {
+        def orderInstance = ConfOrder.get(params.orderId)
+        def attendee = Attendee.get(params.attendeeId)
+        attendee.seminar1 = params.seminar1
+        attendee.seminar2 = params.seminar2
+        attendee.seminar3 = params.seminar3
+        attendee.seminar4 = params.seminar4
+        attendee.save(failOnError: true)
+        redirect(action:'selectSeminars', params:[id: orderInstance.id])
+    }
+
+    def loadSeminarSelectionForm(){
+        println "in loadSeminarSelectionForm id is ${params.id}"
+        def attendee = Attendee.get(params.id)
+        println "attendee is $attendee"
+        def orderInstance = attendee?.confOrder
+        render(template: 'seminarForm', model: [confOrder: orderInstance, attendee: attendee])
     }
 
     protected void notFound() {

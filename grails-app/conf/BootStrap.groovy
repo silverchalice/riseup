@@ -18,11 +18,11 @@ class BootStrap {
             def t4 = new TicketType(description: 'Room with 3 others',
             	                    price: 249.00, roomSize: 4).save(failOnError:true)
             def t5 = new TicketType(description: 'Family rate (adult)',
-            	                    price: 299.00).save(failOnError:true)
+            	                    price: 299.00, roomSize: 5).save(failOnError:true)
             def t6 = new TicketType(description: 'Family rate (child 6-12)',
-            	                    price: 99.00).save(failOnError:true)
+            	                    price: 99.00, roomSize: 5).save(failOnError:true)
             def t7 = new TicketType(description: 'Family rate (child 0-5)',
-            	                    price: 0.00).save(failOnError:true)
+            	                    price: 0.00, roomSize: 5).save(failOnError:true)
             def t8 = new TicketType(description: 'Commuter rate',
             	                    price: 199.00).save(failOnError:true)
             def buyer1 = new Buyer(firstName: 'John', lastName: 'Doe', 
@@ -39,7 +39,7 @@ class BootStrap {
                 city: 'Anytown',
                 state: 'CA',
                 ticketType: t5
-            ).save(failOnError: true)
+            )
             def a2 = new Attendee(
                 firstName: 'Jill',
                 lastName: 'Doe',
@@ -49,7 +49,7 @@ class BootStrap {
                 city: 'Anytown',
                 state: 'CA',
                 ticketType: t5
-            ).save(failOnError: true)
+            )
             def a3 = new Attendee(
                 firstName: 'Jim',
                 lastName: 'Doe',
@@ -59,7 +59,7 @@ class BootStrap {
                 city: 'Anytown',
                 state: 'CA',
                 ticketType: t6
-            ).save(failOnError: true)
+            )
             def a4 = new Attendee(
                 firstName: 'Jane',
                 lastName: 'Doe',
@@ -69,7 +69,7 @@ class BootStrap {
                 city: 'Anytown',
                 state: 'CA',
                 ticketType: t6
-            ).save(failOnError: true)
+            )
             def a5 = new Attendee(
                 firstName: 'Joey',
                 lastName: 'Doe',
@@ -79,7 +79,7 @@ class BootStrap {
                 city: 'Anytown',
                 state: 'CA',
                 ticketType: t7
-            ).save(failOnError: true)
+            )
             confOrder1.addToAttendees(a1)
             confOrder1.addToAttendees(a2)
             confOrder1.addToAttendees(a3)

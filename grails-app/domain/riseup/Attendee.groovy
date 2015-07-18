@@ -11,12 +11,14 @@ class Attendee {
     String email
     String phone
     TicketType ticketType
-    Seminar seminar1
-    Seminar seminar2
-    Seminar seminar3
-    Seminar seminar4
+    String seminar1
+    String seminar2
+    String seminar3
+    String seminar4
     Room assignedRoom
 
+    static belongsTo = [confOrder: ConfOrder]
+    
     static constraints = {
         firstName nullable: true
         lastName nullable: true

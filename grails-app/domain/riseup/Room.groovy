@@ -2,16 +2,16 @@ package riseup
 
 class Room {
     Buyer owner
-    Integer size
+    Integer roomSize
     List occupants
     String roomType
-    Boolean full = false
+    Boolean filled = false
 
     static hasMany = [occupants: Attendee]
 
     static constraints = {
         owner nullable: false
-        size nullable: false
+        roomSize nullable: false
         occupants nullable: true
         roomType nullable: false, inList: [SINGLE, DOUBLE, FAMILY]
     }
@@ -25,6 +25,6 @@ class Room {
     }
 
     Integer vacancies(){
-    	size - occupants.size()
+    	roomSize - occupants.size()
     }
 }
