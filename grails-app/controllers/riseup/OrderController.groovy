@@ -139,6 +139,26 @@ class OrderController {
     def selectSeminars(){
         def orderInstance = ConfOrder.get(params.id)
         def attendees = orderInstance.attendees
+        [attendees: attendees]
+    }
+    
+    @Transactional
+    def saveSeminarSelections() {
+        def orderInstance = ConfOrder.get(params.orderId)
+        def attendee = Attendee.get(params.attendeeId)
+        attendee.seminar1 = params.seminar1
+        attendee.seminar2 = params.seminar2
+        attendee.seminar3 = params.seminar3
+        attendee.seminar4 = params.seminar4
+        attendee.save(failOnError: true)
+        redirect(action:'selectSeminars', params:[id: orderInstance.id])
+    }
+
+    def loadSeminarSelectionForm(){
+        println "in loadSeminarSelectionForm id is ${params.id}"
+        def attendee = Attendee.get(params.id)
+        println "attendee is $attendee"
+        def orderInstance = attendee?.confOrder
         def seminar1List = [
             'Love the Word',
             'Love the Assembly',
@@ -185,28 +205,13 @@ class OrderController {
             'Love the Home',
             'N/A - In Children program'
         ]
-        [attendees: attendees, seminar1List: seminar1List, seminar2List: seminar2List,
-         seminar3List: seminar3List, seminar4List: seminar4List]
-    }
-    
-    @Transactional
-    def saveSeminarSelections() {
-        def orderInstance = ConfOrder.get(params.orderId)
-        def attendee = Attendee.get(params.attendeeId)
-        attendee.seminar1 = params.seminar1
-        attendee.seminar2 = params.seminar2
-        attendee.seminar3 = params.seminar3
-        attendee.seminar4 = params.seminar4
-        attendee.save(failOnError: true)
-        redirect(action:'selectSeminars', params:[id: orderInstance.id])
-    }
 
-    def loadSeminarSelectionForm(){
-        println "in loadSeminarSelectionForm id is ${params.id}"
-        def attendee = Attendee.get(params.id)
-        println "attendee is $attendee"
-        def orderInstance = attendee?.confOrder
-        render(template: 'seminarForm', model: [confOrder: orderInstance, attendee: attendee])
+        render(template: 'seminarForm', model: [confOrder: orderInstance, 
+                                                attendee: attendee,
+                                                seminar1List: seminar1List, 
+                                                seminar2List: seminar2List,
+                                                seminar3List: seminar3List, 
+                                                seminar4List: seminar4List])
     }
 
     protected void notFound() {
