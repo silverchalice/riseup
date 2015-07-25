@@ -206,12 +206,14 @@ class OrderController {
             'N/A - In Children program'
         ]
 
-        render(template: 'seminarForm', model: [confOrder: orderInstance, 
-                                                attendee: attendee,
-                                                seminar1List: seminar1List, 
-                                                seminar2List: seminar2List,
-                                                seminar3List: seminar3List, 
-                                                seminar4List: seminar4List])
+        def model = [confOrder: orderInstance, 
+                     attendee: attendee,
+                     seminar1List: seminar1List, 
+                     seminar2List: seminar2List,
+                     seminar3List: seminar3List, 
+                     seminar4List: seminar4List]
+        println "model is $model"
+        render(template: 'seminarForm', model: model)
     }
 
     protected void notFound() {

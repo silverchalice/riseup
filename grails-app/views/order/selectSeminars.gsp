@@ -9,12 +9,17 @@
 			}
 
 			function ajaxLoadSeminarSelections(attendeeId){
+
 				var url = '/order/loadSeminarSelectionForm/' + attendeeId;
-				$.ajax(url, {
+				$.ajax(url, {cache: false, 
 					success: function(data){
+				
 						$("#seminar-form").html(data);
-					}
-				 })
+					}, error: function(xhr, status, error){alert(xhr.responseText);}
+				 });
+
+			    return false;
+
 			}
 		</script>
 	</head>
@@ -29,7 +34,7 @@
 				<tbody>
 					<g:each in="${attendees}" var="a">
 						<tr>
-							<td><a href="" onclick="ajaxLoadSeminarSelections(${a.id})">
+							<td><a href="" onclick=" return ajaxLoadSeminarSelections(${a.id})">
 							    ${a.firstName} ${a.lastName}
 							</a></td>
 							<td>${a.seminar1 ?: 'Not Selected'}</td>
@@ -42,7 +47,7 @@
 			</table>
 		</div>
 		<div id="seminar-form">
-
+		<h3>seminar-form goes here</h3>
 		</div>
 	</body>
 </html>
