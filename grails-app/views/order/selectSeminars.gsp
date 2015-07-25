@@ -22,32 +22,48 @@
 
 			}
 		</script>
+		<style>
+			#selectedSeminars {
+				border 1px solid black;
+			}
+		    #selectedSeminars td.btn {
+		    	width:4%;
+		    	border-bottom 1px solid black;
+            }
+		    #selectedSeminars td.name {
+		    	width:14%;
+           		border-bottom 1px solid black;
+            }
+		    #selectedSeminars td {	
+		    	width:20%;
+		    	border-bottom:  1px solid black;
+            }
+		</style>
 	</head>
 	<body>
-	<h3>Hello</h3>
+	<h3>Seminar Selection</h3>
 		<div id="attendees">
 		   <p>Click on the attendee name to select seminars or to change selections.</p>
-			<table>
-				<thead>
-					<th><td>Attendee</td><td>Seminar 1</td><td>Seminar 2</td><td>Seminar 3</td><td>Seminar 4</td></th>
-				</thead>
-				<tbody>
-					<g:each in="${attendees}" var="a">
-						<tr>
-							<td><a href="" onclick=" return ajaxLoadSeminarSelections(${a.id})">
-							    ${a.firstName} ${a.lastName}
-							</a></td>
-							<td>${a.seminar1 ?: 'Not Selected'}</td>
-							<td>${a.seminar2 ?: 'Not Selected'}</td>
-							<td>${a.seminar3 ?: 'Not Selected'}</td>
-							<td>${a.seminar4 ?: 'Not Selected'}</td>
-						</tr>
-					</g:each> 
-				</tbody>
+			<table id="selectedSeminars" style="width:100%">
+				<tr>
+					<td class="btn"> </td><td class="name">Attendee</td>
+					<td>Seminar 1</td><td>Seminar 2</td>
+					<td>Seminar 3</td><td>Seminar 4</td>
+				</tr>
+				<g:each in="${attendees}" var="a">
+					<tr>
+					    <td class="btn"><button onclick="ajaxLoadSeminarSelections(${a.id})">Edit</button></td>
+						<td class="name">${a.firstName} ${a.lastName}</td>
+						<td>${a.seminar1 ?: 'Not Selected'}</td>
+						<td>${a.seminar2 ?: 'Not Selected'}</td>
+						<td>${a.seminar3 ?: 'Not Selected'}</td>
+						<td>${a.seminar4 ?: 'Not Selected'}</td>
+					</tr>
+				</g:each> 
 			</table>
 		</div>
 		<div id="seminar-form">
-		<h3>seminar-form goes here</h3>
+		<h3>seminar-form goes here</h3>wyxqho
 		</div>
 	</body>
 </html>
