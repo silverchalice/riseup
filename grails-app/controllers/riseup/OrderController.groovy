@@ -28,7 +28,7 @@ class OrderController {
 
         if(session.confOrder){
             def buyer = Buyer.get(session.buyer.id)
-            def confOrder = ConfOrder.findByBuyer(buyer)
+            def confOrder = ConfOrder.get(session.confOrder.id)
 
             render view: 'new_order', model: [buyer: buyer,
                                               confOrder: confOrder,
@@ -111,7 +111,6 @@ class OrderController {
 
     @Transactional
     def addAttendee(){
-        println "\n\n\n in addAttendee action. params are:\n \n $params\n\n\n"
         def formatter = java.text.NumberFormat.currencyInstance
 
         if(!session.buyer){
@@ -122,15 +121,12 @@ class OrderController {
           session.confOrder = new ConfOrder(buyer: buyer).save()
         }
 
-        println "the buyer is ${session.buyer}"
-
         def confOrder = session.confOrder
 
         def attendee = new Attendee(params)
         attendee?.save(failOnError: true)
         confOrder.addToAttendees(attendee)
 
-        println "there are ${confOrder?.attendees?.size()} attendees. They are ${confOrder.attendees}"
         render template: 'attendeeList', model: [confOrder: confOrder, attendees: confOrder.attendees, amount: formatter.format(confOrder.attendees*.ticketType*.price.sum()), number: session.confOrder.attendees?.size()]
         return false
     }
@@ -139,7 +135,7 @@ class OrderController {
     def selectSeminars(){
         def orderInstance = ConfOrder.get(params.id)
         def attendees = orderInstance.attendees
-        [attendees: attendees]
+        [attendees: attendees, confOrder: orderInstance]
     }
     
     @Transactional
@@ -205,7 +201,6 @@ class OrderController {
             'Love the Home',
             'N/A - In Children program'
         ]
-
         def model = [confOrder: orderInstance, 
                      attendee: attendee,
                      seminar1List: seminar1List, 

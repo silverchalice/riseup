@@ -63,7 +63,10 @@
 			</table>
 		</div>
 		<div id="seminar-form">
-		<h3>seminar-form goes here</h3>wyxqho
+		
 		</div>
+		<g:link action="order" model="${[confOrderId: confOrder.id]}">
+		  <button>Return to Order</button>
+		</g:link>
 	</body>
 </html>
