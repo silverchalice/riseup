@@ -135,7 +135,7 @@ class OrderController {
     def selectSeminars(){
         def orderInstance = ConfOrder.get(params.id)
         def attendees = orderInstance.attendees
-        [attendees: attendees, confOrder: orderInstance]
+        [attendees: attendees.sort{ it.id }, confOrder: orderInstance]
     }
     
     @Transactional
