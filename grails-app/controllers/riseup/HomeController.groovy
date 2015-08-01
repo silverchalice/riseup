@@ -88,6 +88,10 @@ You'll have to change this password once you're logged in.
       }
     }
 
+    def thanks() {
+        println "params in the thanks action are " + params
+    }
+
     def payPals() {
         [amount: 1.75]
     }

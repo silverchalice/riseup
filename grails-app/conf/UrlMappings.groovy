@@ -12,6 +12,11 @@ class UrlMappings {
           action = "order"
         }
 
+        "/thanks/$id?" {
+          controller = "home"
+          action = "thanks"
+        }
+
         "/login" {
           controller = "home"
           action = "login"
