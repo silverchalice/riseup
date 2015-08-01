@@ -52,7 +52,14 @@
 				</tr>
 				<g:each in="${attendees}" var="a">
 					<tr>
-					    <td class="btn"><button onclick="ajaxLoadSeminarSelections(${a.id})">Edit</button></td>
+					    <td class="btn">
+                <g:if test="${a.seminar1}">
+                  <button onclick="ajaxLoadSeminarSelections(${a.id})">Change</button>
+                </g:if>
+                <g:else>
+                  <button onclick="ajaxLoadSeminarSelections(${a.id})">Select</button>
+                </g:else>
+            </td>
 						<td class="name">${a.firstName} ${a.lastName}</td>
 						<td>${a.seminar1 ?: 'Not Selected'}</td>
 						<td>${a.seminar2 ?: 'Not Selected'}</td>
