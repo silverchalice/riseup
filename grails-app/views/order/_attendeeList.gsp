@@ -4,12 +4,14 @@
                   <thead>
                     <th>Name</th>
                     <th>Ticket type</th>
+                    <th>Price</th>
                   </thead>
                   <tbody>
                     <g:each in="${attendees}" var="attendee">
                       <tr>
                         <td>${attendee?.firstName} ${attendee?.lastName}</td>
                         <td>${attendee?.ticketType}</td>
+                        <td><g:formatNumber number="${attendee?.ticketType?.price}" format="\$###,##0.00" /></td>
                       </tr>
                     </g:each>
                   </tbody>

@@ -10,21 +10,21 @@ class BootStrap {
         if(TicketType.count() == 0){
             println "loading data...."
             def t1 = new TicketType(description: 'Room by yourself', 
-            	                    price: 399.00, roomSize: 1).save(failOnError: true)
+            	                    price: 1/*399.00*/, roomSize: 1).save(failOnError: true)
             def t2 = new TicketType(description: 'Room with 1 other', 
-            	                    price: 299.00, roomSize: 2).save(failOnError: true)
+            	                    price: 1/*299.00*/, roomSize: 2).save(failOnError: true)
             def t3 = new TicketType(description: 'Room with 2 others',
-            	                    price: 269.00, roomSize: 3).save(failOnError:true)
+            	                    price: 1/*269.00*/, roomSize: 3).save(failOnError:true)
             def t4 = new TicketType(description: 'Room with 3 others',
-            	                    price: 249.00, roomSize: 4).save(failOnError:true)
+            	                    price: 1/*249.00*/, roomSize: 4).save(failOnError:true)
             def t5 = new TicketType(description: 'Family rate (adult)',
-            	                    price: 299.00, roomSize: 5).save(failOnError:true)
+            	                    price: 1/*299.00*/, roomSize: 5).save(failOnError:true)
             def t6 = new TicketType(description: 'Family rate (child 6-12)',
-            	                    price: 99.00, roomSize: 5).save(failOnError:true)
+            	                    price: 1/*99.00*/, roomSize: 5).save(failOnError:true)
             def t7 = new TicketType(description: 'Family rate (child 0-5)',
             	                    price: 0.00, roomSize: 5).save(failOnError:true)
             def t8 = new TicketType(description: 'Commuter rate',
-            	                    price: 199.00).save(failOnError:true)
+            	                    price: 1/*199.00*/).save(failOnError:true)
             def buyer1 = new Buyer(firstName: 'John', lastName: 'Doe', 
             	                   email: 'jdoe@mail.com', password:'5551212', 
             	                   address1: '123 Main Street', city: 'AnyTown', state: 'MO', 
