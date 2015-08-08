@@ -50,6 +50,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${ticketTypeInstance?.roomSize}">
+				<li class="fieldcontain">
+					<span id="roomSize-label" class="property-label"><g:message code="ticketType.roomSize.label" default="Room Size" /></span>
+					
+						<span class="property-value" aria-labelledby="roomSize-label"><g:fieldValue bean="${ticketTypeInstance}" field="roomSize"/></span>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form url="[resource:ticketTypeInstance, action:'delete']" method="DELETE">
 				<fieldset class="buttons">

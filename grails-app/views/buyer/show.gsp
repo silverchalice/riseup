@@ -23,20 +23,20 @@
 			</g:if>
 			<ol class="property-list buyer">
 			
-				<g:if test="${buyerInstance?.address1}">
-				<li class="fieldcontain">
-					<span id="address1-label" class="property-label"><g:message code="buyer.address1.label" default="Address1" /></span>
-					
-						<span class="property-value" aria-labelledby="address1-label"><g:fieldValue bean="${buyerInstance}" field="address1"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${buyerInstance?.address2}">
 				<li class="fieldcontain">
 					<span id="address2-label" class="property-label"><g:message code="buyer.address2.label" default="Address2" /></span>
 					
 						<span class="property-value" aria-labelledby="address2-label"><g:fieldValue bean="${buyerInstance}" field="address2"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${buyerInstance?.address1}">
+				<li class="fieldcontain">
+					<span id="address1-label" class="property-label"><g:message code="buyer.address1.label" default="Address1" /></span>
+					
+						<span class="property-value" aria-labelledby="address1-label"><g:fieldValue bean="${buyerInstance}" field="address1"/></span>
 					
 				</li>
 				</g:if>
@@ -59,11 +59,20 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${buyerInstance?.name}">
+				<g:if test="${buyerInstance?.firstName}">
 				<li class="fieldcontain">
-					<span id="name-label" class="property-label"><g:message code="buyer.name.label" default="Name" /></span>
+					<span id="firstName-label" class="property-label"><g:message code="buyer.firstName.label" default="First Name" /></span>
 					
-						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${buyerInstance}" field="name"/></span>
+						<span class="property-value" aria-labelledby="firstName-label"><g:fieldValue bean="${buyerInstance}" field="firstName"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${buyerInstance?.lastName}">
+				<li class="fieldcontain">
+					<span id="lastName-label" class="property-label"><g:message code="buyer.lastName.label" default="Last Name" /></span>
+					
+						<span class="property-value" aria-labelledby="lastName-label"><g:fieldValue bean="${buyerInstance}" field="lastName"/></span>
 					
 				</li>
 				</g:if>
@@ -91,6 +100,15 @@
 					<span id="state-label" class="property-label"><g:message code="buyer.state.label" default="State" /></span>
 					
 						<span class="property-value" aria-labelledby="state-label"><g:fieldValue bean="${buyerInstance}" field="state"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${buyerInstance?.zip}">
+				<li class="fieldcontain">
+					<span id="zip-label" class="property-label"><g:message code="buyer.zip.label" default="Zip" /></span>
+					
+						<span class="property-value" aria-labelledby="zip-label"><g:fieldValue bean="${buyerInstance}" field="zip"/></span>
 					
 				</li>
 				</g:if>

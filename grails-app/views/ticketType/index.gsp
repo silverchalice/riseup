@@ -30,6 +30,8 @@
 					
 						<g:sortableColumn property="price" title="${message(code: 'ticketType.price.label', default: 'Price')}" />
 					
+						<g:sortableColumn property="roomSize" title="${message(code: 'ticketType.roomSize.label', default: 'Room Size')}" />
+					
 					</tr>
 				</thead>
 				<tbody>
@@ -41,6 +43,8 @@
 						<td>${fieldValue(bean: ticketTypeInstance, field: "description")}</td>
 					
 						<td>${fieldValue(bean: ticketTypeInstance, field: "price")}</td>
+					
+						<td>${fieldValue(bean: ticketTypeInstance, field: "roomSize")}</td>
 					
 					</tr>
 				</g:each>
