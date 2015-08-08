@@ -2,11 +2,25 @@ import riseup.TicketType
 import riseup.Attendee
 import riseup.Buyer
 import riseup.ConfOrder
-
+import riseup.User
+import riseup.Role
+import riseup.UserRole
 
 class BootStrap {
 
     def init = { servletContext ->
+        if (User.count() < 1){
+            def adminRole = new Role(authority: 'ROLE_ADMIN').save(flush: true, failOnError:true)
+            def userRole = new Role(authority: 'ROLE_USER').save(flush: true, failOnError:true)
+            
+            def testUser = new User(username: 'admin', password: 'r!s3Up')
+            testUser.save(flush: true, failOnError:true)
+
+            new UserRole(user: testUser, role: adminRole).save(flush:true, failOnError:true)
+
+        
+        }
+
         if(TicketType.count() == 0){
             println "loading data...."
             def t1 = new TicketType(description: 'Room by yourself', 

@@ -124,8 +124,8 @@ class OrderController {
         def confOrder = session.confOrder
 
         def attendee = new Attendee(params)
-        attendee?.save(failOnError: true)
         confOrder.addToAttendees(attendee)
+        attendee?.save(failOnError: true)
 
         render template: 'attendeeList', model: [confOrder: confOrder, attendees: confOrder.attendees, amount: formatter.format(confOrder.attendees*.ticketType*.price.sum()), number: session.confOrder.attendees?.size()]
         return false

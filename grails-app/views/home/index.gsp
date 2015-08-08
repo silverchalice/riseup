@@ -57,7 +57,7 @@
 
       <g:if test="${!session.buyer && !flash.message}">
         <div class="message">
-        <g:link controller="order" action="order">Register Now!</g:link> 
+        <g:link controller="order" action="order">Register Now!</g:link>
           Already registered? <g:link controller="home" action="login">Log in</g:link>
         </div>
       </g:if>
