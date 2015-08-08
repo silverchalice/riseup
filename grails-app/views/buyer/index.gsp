@@ -24,17 +24,17 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="address1" title="${message(code: 'buyer.address1.label', default: 'Address1')}" />
-					
 						<g:sortableColumn property="address2" title="${message(code: 'buyer.address2.label', default: 'Address2')}" />
+					
+						<g:sortableColumn property="address1" title="${message(code: 'buyer.address1.label', default: 'Address1')}" />
 					
 						<g:sortableColumn property="city" title="${message(code: 'buyer.city.label', default: 'City')}" />
 					
 						<g:sortableColumn property="email" title="${message(code: 'buyer.email.label', default: 'Email')}" />
 					
-						<g:sortableColumn property="name" title="${message(code: 'buyer.name.label', default: 'Name')}" />
+						<g:sortableColumn property="firstName" title="${message(code: 'buyer.firstName.label', default: 'First Name')}" />
 					
-						<g:sortableColumn property="password" title="${message(code: 'buyer.password.label', default: 'Password')}" />
+						<g:sortableColumn property="lastName" title="${message(code: 'buyer.lastName.label', default: 'Last Name')}" />
 					
 					</tr>
 				</thead>
@@ -42,17 +42,17 @@
 				<g:each in="${buyerInstanceList}" status="i" var="buyerInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${buyerInstance.id}">${fieldValue(bean: buyerInstance, field: "address1")}</g:link></td>
+						<td><g:link action="show" id="${buyerInstance.id}">${fieldValue(bean: buyerInstance, field: "address2")}</g:link></td>
 					
-						<td>${fieldValue(bean: buyerInstance, field: "address2")}</td>
+						<td>${fieldValue(bean: buyerInstance, field: "address1")}</td>
 					
 						<td>${fieldValue(bean: buyerInstance, field: "city")}</td>
 					
 						<td>${fieldValue(bean: buyerInstance, field: "email")}</td>
 					
-						<td>${fieldValue(bean: buyerInstance, field: "name")}</td>
+						<td>${fieldValue(bean: buyerInstance, field: "firstName")}</td>
 					
-						<td>${fieldValue(bean: buyerInstance, field: "password")}</td>
+						<td>${fieldValue(bean: buyerInstance, field: "lastName")}</td>
 					
 					</tr>
 				</g:each>

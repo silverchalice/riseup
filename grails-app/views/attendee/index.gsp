@@ -24,17 +24,17 @@
 			<thead>
 					<tr>
 					
+						<g:sortableColumn property="firstName" title="${message(code: 'attendee.firstName.label', default: 'First Name')}" />
+					
+						<g:sortableColumn property="lastName" title="${message(code: 'attendee.lastName.label', default: 'Last Name')}" />
+					
+						<g:sortableColumn property="age" title="${message(code: 'attendee.age.label', default: 'Age')}" />
+					
 						<g:sortableColumn property="gender" title="${message(code: 'attendee.gender.label', default: 'Gender')}" />
 					
 						<g:sortableColumn property="email" title="${message(code: 'attendee.email.label', default: 'Email')}" />
 					
 						<g:sortableColumn property="phone" title="${message(code: 'attendee.phone.label', default: 'Phone')}" />
-					
-						<g:sortableColumn property="age" title="${message(code: 'attendee.age.label', default: 'Age')}" />
-					
-						<g:sortableColumn property="church" title="${message(code: 'attendee.church.label', default: 'Church')}" />
-					
-						<g:sortableColumn property="firstName" title="${message(code: 'attendee.firstName.label', default: 'First Name')}" />
 					
 					</tr>
 				</thead>
@@ -42,17 +42,17 @@
 				<g:each in="${attendeeInstanceList}" status="i" var="attendeeInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${attendeeInstance.id}">${fieldValue(bean: attendeeInstance, field: "gender")}</g:link></td>
+						<td><g:link action="show" id="${attendeeInstance.id}">${fieldValue(bean: attendeeInstance, field: "firstName")}</g:link></td>
+					
+						<td>${fieldValue(bean: attendeeInstance, field: "lastName")}</td>
+					
+						<td>${fieldValue(bean: attendeeInstance, field: "age")}</td>
+					
+						<td>${fieldValue(bean: attendeeInstance, field: "gender")}</td>
 					
 						<td>${fieldValue(bean: attendeeInstance, field: "email")}</td>
 					
 						<td>${fieldValue(bean: attendeeInstance, field: "phone")}</td>
-					
-						<td>${fieldValue(bean: attendeeInstance, field: "age")}</td>
-					
-						<td>${fieldValue(bean: attendeeInstance, field: "church")}</td>
-					
-						<td>${fieldValue(bean: attendeeInstance, field: "firstName")}</td>
 					
 					</tr>
 				</g:each>
