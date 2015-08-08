@@ -2,12 +2,12 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: ticketTypeInstance, field: 'comments', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: ticketTypeInstance, field: 'comments', 'error')} ">
 	<label for="comments">
 		<g:message code="ticketType.comments.label" default="Comments" />
-		<span class="required-indicator">*</span>
+		
 	</label>
-	<g:textField name="comments" required="" value="${ticketTypeInstance?.comments}"/>
+	<g:textField name="comments" value="${ticketTypeInstance?.comments}"/>
 
 </div>
 
@@ -26,6 +26,15 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:field name="price" type="number" value="${ticketTypeInstance.price}" required=""/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: ticketTypeInstance, field: 'roomSize', 'error')} required">
+	<label for="roomSize">
+		<g:message code="ticketType.roomSize.label" default="Room Size" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field name="roomSize" type="number" value="${ticketTypeInstance.roomSize}" required=""/>
 
 </div>
 

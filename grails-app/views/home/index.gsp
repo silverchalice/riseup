@@ -117,13 +117,6 @@
               <p><strong>First General Session:</strong> Tuesday, December 29th, 2015 at 7:30 PM</p>
               <p><strong>Conference Closing:</strong> Friday, January 1st, 2016 at 11:00 AM</p>
               <p>17 seminars that deal with the practical issues of our day. 3 seminars exclusively for women.</p>
-              <p><strong>Sign up</strong> to hear when registration opens:</p>
-            <div id="orderFormYo" style="background-color: #eee; padding: 20px; border: 1px solid #000;">
-              <g:form name="interest">
-                      <p>Name: <input type="text" style="width: 180px; name="name" value="" /> &nbsp; &nbsp; &nbsp; &nbsp; Email address: <input type="text" style="width: 180px;" name="email" value="" /></p>
-                    <g:submitToRemote controller="interested" action="ajaxSave" update="orderFormYo" name="Keep Me Up-To-Date" value="Keep Me Up-To-Date" />
-              </g:form>
-            </div>
             </section>
 
             <section>

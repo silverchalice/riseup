@@ -33,7 +33,7 @@ class OrderController {
             render view: 'new_order', model: [buyer: buyer,
                                               confOrder: confOrder,
                                               attendees: confOrder?.attendees,
-                                              amount: formatter.format(confOrder?.attendees*.ticketType*.price.sum()),
+                                              amount: formatter.format(confOrder?.attendees*.ticketType*.price?.sum()),
                                               number: confOrder?.attendees?.size()]
         } else {
             render view: 'new_order', model: [buyer: new Buyer(params)]
@@ -111,6 +111,9 @@ class OrderController {
 
     @Transactional
     def addAttendee(){
+        println "addAttendee..."
+        println params.pZip
+
         def formatter = java.text.NumberFormat.currencyInstance
 
         if(!session.buyer){
@@ -126,6 +129,9 @@ class OrderController {
         def attendee = new Attendee(params)
         confOrder.addToAttendees(attendee)
         attendee?.save(failOnError: true)
+
+        attendee?.save(failOnError: true)
+
 
         render template: 'attendeeList', model: [confOrder: confOrder, attendees: confOrder.attendees, amount: formatter.format(confOrder.attendees*.ticketType*.price.sum()), number: session.confOrder.attendees?.size()]
         return false
