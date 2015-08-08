@@ -6,8 +6,11 @@
 // to create separate JavaScript files as needed.
 //
 //= require jquery
+//= require bootstrap
 //= require_tree .
+//= require jquery-ui-1.10.4.custom.min
 //= require_self
+
 
 if (typeof jQuery !== 'undefined') {
 	(function($) {
