@@ -194,8 +194,9 @@
                             </div>
 
                             <div>
-                              <textarea name="roomNotes" rows="5" cols="40">
-                              </textarea>
+                                <label for="roomNotes">Guestroom Notes (Roommate names, special needs, etc.):</label>
+                                <textarea id="roomNotes" name="roomNotes" rows="5" cols="40">
+                                </textarea>
                             </div>
 
                         </div>
