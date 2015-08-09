@@ -9,4 +9,12 @@ class ConfOrder {
     static constraints = {
         paymentType inList: ["PayPal", "Check"], nullable: true
     }
+
+    Long calcTotalPrice(){
+    	def amt = 0
+    	attendees.each{
+    		amt += it.ticketType?.price
+    	}
+    	return amt
+    }
 }

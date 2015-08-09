@@ -34,6 +34,7 @@
                     error: function (XMLHttpRequest, textStatus, errorThrown) {
                     }
                 });
+                return false;
             });
 
             $("#atl").on('click', "#addAttendee", function () {
@@ -114,8 +115,7 @@
         <div class="modal fade" id="newAttendee">
             <div class="modal-dialog">
 
-                <g:formRemote name="attendeeAdd" id="attendeeAdd" url="[controller: 'order', action: 'addAttendee']"
-                              update="atl">
+                <g:form name="attendeeAdd" id="attendeeAdd" >
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
@@ -202,7 +202,7 @@
                             <input type="submit" value="Save Selections" class="btn btn-success" id="saveNewAttendee"/>
                         </div>
                     </div><!-- /.modal-content -->
-                </g:formRemote>
+                </g:form>
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
 

@@ -112,8 +112,8 @@ class OrderController {
     @Transactional
     def addAttendee(){
         println "addAttendee..."
-        println params.pZip
-
+        params.each{key, val -> println "$key == $val"}
+        
         def formatter = java.text.NumberFormat.currencyInstance
 
         if(!session.buyer){
@@ -124,16 +124,14 @@ class OrderController {
           session.confOrder = new ConfOrder(buyer: buyer).save()
         }
 
-        def confOrder = session.confOrder
+        def confOrder = ConfOrder.get(session.confOrder.id)
 
         def attendee = new Attendee(params)
         confOrder.addToAttendees(attendee)
         attendee?.save(failOnError: true)
+        confOrder.save()
 
-        attendee?.save(failOnError: true)
-
-
-        render template: 'attendeeList', model: [confOrder: confOrder, attendees: confOrder.attendees, amount: formatter.format(confOrder.attendees*.ticketType*.price.sum()), number: session.confOrder.attendees?.size()]
+        render template: 'attendeeList', model: [confOrder: confOrder, attendees: confOrder.attendees, amount: formatter.format(confOrder.calcTotalPrice()), number: session.confOrder.attendees?.size()]
         return false
     }
 

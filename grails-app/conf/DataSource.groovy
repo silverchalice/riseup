@@ -1,14 +1,14 @@
 dataSource {
-    username = "riseup"
+  /*  username = "riseup"
     password = "1234"
     pooled = true
     driverClassName = "com.mysql.jdbc.Driver"
     dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
-/*    pooled = true
+*/    pooled = true
     driverClassName = "org.h2.Driver"
     username = "sa"
     password = ""
-*/
+
 }
 
 hibernate {
@@ -25,8 +25,8 @@ environments {
     development {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
-//            url = "jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
-            url = "jdbc:mysql://localhost:3306/riseup?useUnicode=yes&characterEncoding=UTF-8"
+            url = "jdbc:h2:mem:testDb;MVCC=TRUE;LOCK_TIMEOUT=10000;DB_CLOSE_ON_EXIT=FALSE"
+            //url = "jdbc:mysql://localhost:3306/riseup?useUnicode=yes&characterEncoding=UTF-8"
         }
     }
     test {
