@@ -158,6 +158,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${attendeeInstance?.roomNotes}">
+				<li class="fieldcontain">
+					<span id="roomNotes-label" class="property-label"><g:message code="attendee.roomNotes.label" default="Room Notes" /></span>
+					
+						<span class="property-value" aria-labelledby="roomNotes-label"><g:fieldValue bean="${attendeeInstance}" field="roomNotes"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${attendeeInstance?.confOrder}">
 				<li class="fieldcontain">
 					<span id="confOrder-label" class="property-label"><g:message code="attendee.confOrder.label" default="Conf Order" /></span>

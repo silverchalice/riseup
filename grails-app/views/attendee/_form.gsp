@@ -137,6 +137,15 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: attendeeInstance, field: 'roomNotes', 'error')} ">
+	<label for="roomNotes">
+		<g:message code="attendee.roomNotes.label" default="Room Notes" />
+		
+	</label>
+	<g:textArea name="roomNotes" cols="40" rows="5" maxlength="5000" value="${attendeeInstance?.roomNotes}"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: attendeeInstance, field: 'confOrder', 'error')} required">
 	<label for="confOrder">
 		<g:message code="attendee.confOrder.label" default="Conf Order" />

@@ -111,8 +111,8 @@ class OrderController {
 
     @Transactional
     def addAttendee(){
-        println "addAttendee..."
-        params.each{key, val -> println "$key == $val"}
+        //println "addAttendee..."
+        //params.each{key, val -> println "$key == $val"}
         
         def formatter = java.text.NumberFormat.currencyInstance
 
@@ -131,7 +131,8 @@ class OrderController {
         attendee?.save(failOnError: true)
         confOrder.save()
 
-        render template: 'attendeeList', model: [confOrder: confOrder, attendees: confOrder.attendees, amount: formatter.format(confOrder.calcTotalPrice()), number: session.confOrder.attendees?.size()]
+
+        render template: 'attendeeList', model: [confOrder: confOrder, attendees: confOrder.attendees, amount: formatter.format(confOrder.calcTotalPrice()), number: session.confOrder.attendees?.size(), allRoomNotes: confOrder.allRoomNotes]
         return false
     }
 

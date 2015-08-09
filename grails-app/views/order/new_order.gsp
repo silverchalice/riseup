@@ -111,7 +111,6 @@
             </g:form>
         </div>
 
-
         <div class="modal fade" id="newAttendee">
             <div class="modal-dialog">
 
@@ -138,7 +137,6 @@
                                 </div>
 
                             </div>
-
 
                             <div class="form-group row">
                                 <div class="col-sm-6">
@@ -193,6 +191,11 @@
                                     <g:select name="ticketType" from="${TicketType.list()}" optionKey="id"
                                               class="form-control"/>
                                 </div>
+                            </div>
+
+                            <div>
+                              <textarea name="roomNotes" rows="5" cols="40">
+                              </textarea>
                             </div>
 
                         </div>

@@ -17,4 +17,11 @@ class ConfOrder {
     	}
     	return amt
     }
+
+    def getAllRoomNotes(){
+        def result = ''
+        attendees.each{
+            result +=  it.roomNotes + '\n'
+        }
+    }
 }
