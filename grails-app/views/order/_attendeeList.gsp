@@ -1,6 +1,5 @@
               <div class="attendeeForm">
-              <h3>Attendee info &nbsp;&nbsp;<input id="addAttendee" type="submit" value="Add attendee"  class="btn btn-primary"/></h3>
-                <table class="attendeeForm" border="1" class="table table-striped table-hover">
+              <table border="1" class="attendeeForm table table-striped table-hover">
                   <thead>
                     <th>Name</th>
                     <th>Ticket type</th>
@@ -21,11 +20,5 @@
                   <p id="r_amt"><strong>Total:</strong> ${amount}</p>
                 </g:if>
               </div>
-              <p id="r_end"><script src="/js/paypal-button.min.js?merchant=WJG3QCJ58UU98" data-button="buynow" data-name="Believers Bible Conf (${number} ${number > 1 ? 'tickets' : 'ticket'})" data-callback="http://bibleconferences.org:9090/thanks/${buyer?.id}" data-cancel_return="http://bibleconferences.org:9090" data-return="http://bibleconferences.org:9090/thanks" data-amount="${amount}" async></script></p>
-              <div>
-                <g:link controller='order' action="selectSeminars" params="${[id: confOrder?.id]}">
-                    <button class="btn btn-success">Select Seminars</button>
-                </g:link>
-              </div>
+              <input id="addAttendee" type="submit" value="Add attendee" class="btn btn-primary"/>
 
-              

@@ -9,6 +9,8 @@
 //= require bootstrap
 //= require_tree .
 //= require jquery-ui-1.10.4.custom.min
+//= require jquery.validate.min
+//= require jquery.validate.min
 //= require_self
 
 
