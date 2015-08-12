@@ -20,7 +20,7 @@
             });
             </g:if>
 
-            $("#saveNewAttendee").click(function () {
+            $("#saveNewAttendee").click(function() {
 
                 if($("#purchaseInfo").valid()) {
                     jQuery.ajax({
@@ -37,7 +37,6 @@
                         }
                     });
                 }
-
                 return false;
             });
 
@@ -250,7 +249,10 @@
                             <label>Church:</label>
                             <input type="text" name="church" class="form-control"  />
 
-                        </div>
+                            <div>
+                              <textarea name="roomNotes" rows="5" cols="40">
+                              </textarea>
+                            </div>
 
                         <div class="col-sm-6">
                             <label>Email address:</label>
@@ -287,7 +289,7 @@
 
                     <div class="form-group row">
                         <div class="col-sm-12">
-                            <label for="roomNotes">Lodging Requests/Notes:</label>
+                            <label for="roomNotes">Guestroom Notes (Roommate names, special needs, etc.):</label>
                             <textarea id="roomNotes" rows="5" cols="60" class="form-control">
                             </textarea></div>
                     </div>
