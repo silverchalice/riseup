@@ -157,10 +157,18 @@ class OrderController {
         def attendee = new Attendee(params)
         confOrder.addToAttendees(attendee)
         attendee?.save(failOnError: true)
-        confOrder.save()
+        if (!confOrder.save()){
+            println "Error in addAttendee at confOrder.save()"
+            confOrder.errors.allErrors.each{println it}
+        }
+        def attendees = ConfOrder.get(confOrder.id)?.attendees
 
-
-        render template: 'attendeeList', model: [confOrder: confOrder, attendees: confOrder.attendees, amount: formatter.format(confOrder.calcTotalPrice()), number: session.confOrder.attendees?.size(), allRoomNotes: confOrder.allRoomNotes]
+        render template: 'attendeeList', 
+               model: [confOrder: confOrder, 
+                       attendees: attendees, 
+                       amount: formatter.format(confOrder.calcTotalPrice()), 
+                       number: attendees?.size(), 
+                       allRoomNotes: confOrder.allRoomNotes]
         return false
     }
 
