@@ -6,13 +6,23 @@
                     <th>Price</th>
                   </thead>
                   <tbody>
-                    <g:each in="${attendees}" var="attendee">
+
+                  <g:if test="${attendees?.size() < 1}">
                       <tr>
-                        <td>${attendee?.firstName} ${attendee?.lastName}</td>
-                        <td>${attendee?.ticketType}</td>
-                        <td><g:formatNumber number="${attendee?.ticketType?.price}" format="\$###,##0.00" /></td>
+                          <td colspan="3">Please add any additional persons who will be attending the conference under this registration</td>
                       </tr>
-                    </g:each>
+
+                  </g:if>
+                  <g:else>
+                      <g:each in="${attendees}" var="attendee">
+                          <tr>
+                              <td>${attendee?.firstName} ${attendee?.lastName}</td>
+                              <td>${attendee?.ticketType}</td>
+                              <td><g:formatNumber number="${attendee?.ticketType?.price}" format="\$###,##0.00" /></td>
+                          </tr>
+                      </g:each>
+                  </g:else>
+
                   </tbody>
                 </table>
                 <g:if test="${amount}">

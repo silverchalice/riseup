@@ -9,7 +9,7 @@ class UrlMappings {
 
         "/register" {
           controller = "order"
-          action = "order"
+          action = "register"
         }
 
         "/thanks/$id?" {

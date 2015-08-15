@@ -1,6 +1,6 @@
 package riseup
 
-
+import java.text.NumberFormat
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
@@ -23,22 +23,50 @@ class OrderController {
         respond new ConfOrder(params)
     }
 
-    def order() {
-        def formatter = java.text.NumberFormat.currencyInstance
+    def register() {
+        def formatter = NumberFormat.currencyInstance
 
         if(session.confOrder){
             def buyer = Buyer.get(session.buyer.id)
             def confOrder = ConfOrder.get(session.confOrder.id)
 
-            render view: 'new_order', model: [buyer: buyer,
-                                              confOrder: confOrder,
-                                              attendees: confOrder?.attendees,
-                                              amount: formatter.format(confOrder?.attendees*.ticketType*.price?.sum()),
-                                              number: confOrder?.attendees?.size()]
+            [buyer: buyer,
+             confOrder: confOrder,
+             attendees: confOrder?.attendees,
+             amount: formatter.format(confOrder?.attendees*.ticketType*.price?.sum()),
+             number: confOrder?.attendees?.size()]
         } else {
-            render view: 'new_order', model: [buyer: new Buyer(params)]
+            [buyer: new Buyer(params)]
         }
     }
+
+    def saveRegistration() {
+        println "OrderController:saveRegistration... ${params}"
+
+        def buyer  = new Buyer(firstName: params.pFirstName, lastName: params.pLastName, email: params.pEmail?.toLowerCase(), password: params.pPassword, address1: params.pAddress1, address2: params.pAddress2 ?: '', city: params.pCity, state: params.pState, zip: params.pZip, phone: params.pPhone)
+        if(buyer.save(flush: true)) {
+            session.buyer = buyer
+            redirect action: "attendees"
+        } else {
+            flash.message = "Sorry, we could not save your information"
+
+            buyer.errors.allErrors.each { println it }
+
+            redirect action: "register"
+        }
+    }
+
+
+    def attendees() {
+
+    }
+
+    def thanks() {
+        def buyer = Buyer.get(params.id)
+
+        [buyer: buyer]
+    }
+
 
     @Transactional
     def save(ConfOrder orderInstance) {
@@ -119,12 +147,12 @@ class OrderController {
         if(!session.buyer){
           session.buyer = new Buyer(firstName: params.pFirstName, lastName: params.pLastName, email: params.pEmail?.toLowerCase(), password: params.pPassword, address1: params.pAddress1, address2: params.pAddress2 ?: '', city: params.pCity, state: params.pState, zip: params.pZip, phone: params.pPhone).save(failOnError:true)
         }
-        if(!session.confOrder){
+        else if(!session.confOrder){
           def buyer = session.buyer
           session.confOrder = new ConfOrder(buyer: buyer).save()
         }
 
-        def confOrder = ConfOrder.get(session.confOrder.id)
+        def confOrder = ConfOrder.get(session.confOrder?.id)
 
         def attendee = new Attendee(params)
         confOrder.addToAttendees(attendee)
@@ -137,22 +165,28 @@ class OrderController {
     }
 
     @Transactional
-    def selectSeminars(){
-        def orderInstance = ConfOrder.get(params.id)
-        def attendees = orderInstance.attendees
-        [attendees: attendees.sort{ it.id }, confOrder: orderInstance]
+    def seminars() {
+        def buyer = Buyer.get(params.id)
+        def confOrder = ConfOrder.findByBuyer(buyer)
+        def attendees = confOrder.attendees
+
+        [attendees: attendees.sort{ it.id }, confOrder: confOrder]
     }
     
     @Transactional
     def saveSeminarSelections() {
         def orderInstance = ConfOrder.get(params.orderId)
         def attendee = Attendee.get(params.attendeeId)
-        attendee.seminar1 = params.seminar1
-        attendee.seminar2 = params.seminar2
-        attendee.seminar3 = params.seminar3
-        attendee.seminar4 = params.seminar4
-        attendee.save(failOnError: true)
-        redirect(action:'selectSeminars', params:[id: orderInstance.id])
+
+        attendee.with {
+            seminar1 = params.seminar1
+            seminar2 = params.seminar2
+            seminar3 = params.seminar3
+            seminar4 = params.seminar4
+            save(failOnError: true)
+        }
+
+        redirect(action:'seminars', params:[id: orderInstance.id])
     }
 
     def loadSeminarSelectionForm(){

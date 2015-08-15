@@ -30,7 +30,7 @@ class HomeController {
         }
 
         flash.message = "Welcome back, $user. You are now logged in."
-        redirect controller: "order", action: "order", params:[]
+        redirect controller: "order", action: "register", params:[]
       }
     }
 

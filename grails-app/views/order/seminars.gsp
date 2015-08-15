@@ -69,15 +69,11 @@
 
     <div class="row">
         <div class="col-md-12">
-            <g:link action="order" model="${[confOrderId: confOrder.id]}">
+            <g:link action="register" model="${[confOrderId: confOrder.id]}">
                 <button class="btn btn-primary">Return to Order</button>
             </g:link>
-            </div>
-
-
+        </div>
     </div>
-
-
 
 	</body>
 </html>
