@@ -20,12 +20,7 @@
                     pEmail: {
                         required: true
                     },
-                    pPassword: {
-                        required: true
-                    },
-                    pConfirm_password: {
-                        required: true
-                    },
+    
                     pAddress1: {
                         required: true
                     },

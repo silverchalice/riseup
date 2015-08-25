@@ -60,24 +60,8 @@
     <div class="col-md-10 col-md-offset-1">
 
         <h3>Attendees</h3>
-
-        <div id="atl" class="well">
-            <g:render template="attendeeList"/>
-        </div>
-    </div>
-
-</div>
-
-
-<div class="row">
-
-    <div class="col-md-10 col-md-offset-1">
-        <div class="well">
-            <script src="/js/paypal-button.min.js?merchant=WJG3QCJ58UU98" data-button="buynow"
-                    data-name="Believers Bible Conf (${number} ${number > 1 ? 'tickets' : 'ticket'})"
-                    data-callback="http://bibleconferences.org/thanks/${buyer?.id}"
-                    data-cancel_return="http://bibleconferences.org" data-return="http://bibleconferences.org/thanks"
-                    data-amount="${amount}" async></script>
+        <div id="atl" >
+          <g:render template="attendeeList"/>
         </div>
     </div>
 
@@ -170,13 +154,11 @@
                             <textarea id="roomNotes" rows="5" cols="60" class="form-control">
                             </textarea></div>
                     </div>
-
                 </div>
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
                     <input type="submit" value="Save Selections" class="btn btn-success" id="saveNewAttendee"/>
-
                 </div>
 
             </div><!-- /.modal-content -->

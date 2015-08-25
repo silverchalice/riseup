@@ -2,7 +2,7 @@ package riseup
 
 class TicketType {
     String description
-    Integer price
+    Double price
     String comments
     Integer roomSize = 0
 

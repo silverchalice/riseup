@@ -42,11 +42,29 @@ class OrderController {
 
     def saveRegistration() {
         println "OrderController:saveRegistration... ${params}"
-
-        def buyer  = new Buyer(firstName: params.pFirstName, lastName: params.pLastName, email: params.pEmail?.toLowerCase(), password: params.pPassword, address1: params.pAddress1, address2: params.pAddress2 ?: '', city: params.pCity, state: params.pState, zip: params.pZip, phone: params.pPhone)
+        def buyer
+        def order 
+        if (session.buyer){
+            buyer = Buyer.get(session.buyer.id)
+            order = ConfOrder.findByBuyer(buyer)
+            updateBuyerWithParams(buyer, params)
+        } else{
+            buyer  = new Buyer(firstName: params.pFirstName, 
+                               lastName: params.pLastName, 
+                               email: params.pEmail?.toLowerCase(), 
+                               password: params.pPassword, 
+                               address1: params.pAddress1, 
+                               address2: params.pAddress2 ?: '', 
+                               city: params.pCity, state: params.pState, 
+                               zip: params.pZip, phone: params.pPhone)
+        }
         if(buyer.save(flush: true)) {
             session.buyer = buyer
-            redirect action: "attendees"
+            if (!order){
+                order = new ConfOrder(buyer: buyer).save()
+                session.confOrder = order
+            }
+            redirect action: "attendees", params: [orderId: order.id]
         } else {
             flash.message = "Sorry, we could not save your information"
 
@@ -56,15 +74,47 @@ class OrderController {
         }
     }
 
+    private void updateBuyerWithParams(buyer, params){
+        if (params.pFirstName){buyer.firstName = params.pFirstName}
+        if (params.pLastName){buyer.lastName = params.pLastName}
+        if (params.pEmail){buyer.email = params.pEmail.toLowerCase()}
+        if (params.pAddress1){buyer.address1 = params.pAddress1}
+        if (params.pAddress2){buyer.address2 = params.pAddress2}
+        if (params.pCity){buyer.city = params.pCity}
+        if (params.pState){buyer.state = params.pState}
+        if (params.pZip){buyer.zip = params.pZip}
+        if (params.pPhone){buyer.phone = params.pPhone}
+        if (params.pPassword){
+            if(params.pPassword == params.pConfirm_password){
+                buyer.password = params.pPassword
+            }
+        }
+    }
 
     def attendees() {
-
+        def order = ConfOrder.get(params.orderId)
+        def buyer
+        def attendees
+        if (order){
+            attendees = order.attendees
+            buyer = order.buyer
+        }
+        [attendees: attendees, confOrder: order, buyer: buyer]
     }
 
     def thanks() {
         def buyer = Buyer.get(params.id)
-
-        [buyer: buyer]
+        def order = ConfOrder.findByBuyer(buyer)
+        if (params.paymentType == 'check'){
+            order.paymentType = "Check"
+        }
+        order.paid = true
+        if (!order.save(flush:true)){
+            println "Error saving order for buyer: ${buyer.firstName} ${buyer.lastName} - ${buyer.email}"
+            order.errors.allErrors.each{println it}
+        }
+        return [buyer: buyer, order: order, check: (order.paymentType == "Check"),
+                amount: formatter.format(confOrder.calcTotalPrice())]
     }
 
 
