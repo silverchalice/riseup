@@ -13,7 +13,7 @@ class UrlMappings {
         }
 
         "/thanks/$id?" {
-          controller = "home"
+          controller = "order"
           action = "thanks"
         }
 

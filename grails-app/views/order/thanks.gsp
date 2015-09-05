@@ -17,11 +17,11 @@
 <div class="row">
     <g:if test="${check}">
       <div class="col-md-10 col-md-offset-1">
-        <p>Please send your check or money order, payable to <i>Believers Bible Conference</i> and send it to:
+        <p>Please send your check or money order, payable to <i>Believers Bible Conference</i>,to:
         </p>
         <p>
-        Believers Bible Conference 2015
-        61 Harneywold Drive
+        Believers Bible Conference 2015<br/>
+        61 Harneywold Drive<br/>
         Saint Louis, MO 63136
         </p>
       </div>

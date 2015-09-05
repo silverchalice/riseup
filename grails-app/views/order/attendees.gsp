@@ -158,7 +158,7 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
-                    <input type="submit" value="Save Selections" class="btn btn-success" id="saveNewAttendee"/>
+                    <input type="submit" value="Save Attendee" class="btn btn-success" id="saveNewAttendee"/>
                 </div>
 
             </div><!-- /.modal-content -->

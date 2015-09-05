@@ -37,17 +37,18 @@
           </div>
 
       <g:if test="${!confOrder.paid}">
-        <div class="well" style="height:70px;">
-            <div style="width:150px;float:left;">
-            <script src="/js/paypal-button.min.js?merchant=WJG3QCJ58UU98"
-                    data-name="Believers Bible Conf (${number} ${number > 1 ? 'tickets' : 'ticket'})"
-                    data-callback="http://bibleconferences.org/thanks/${buyer?.id}"
-                    data-cancel_return="http://bibleconferences.org" data-return="http://bibleconferences.org/thanks"
-                    data-amount="${amount}" async></script>
+        <div class="well" style="height:90px;">
+            <div style="width:200px;float:left;">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="2R2UMSPZ23N66">
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
             </div>
-            <div style="width:200px; float:left;">
+            <div style="width:200px; float:left; margin-top:20px;">
             <g:link action="thanks" id="${buyer?.id}" 
-                     params="[paymentType:'check', oderId: confOrder.id]">
+                     params="[paymentType:'check', orderId: confOrder.id]">
                 <button type="button">Pay By Check</button>
             </g:link>
             </div>

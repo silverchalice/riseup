@@ -58,11 +58,13 @@ class OrderController {
                                city: params.pCity, state: params.pState, 
                                zip: params.pZip, phone: params.pPhone)
         }
-        if(buyer.save(flush: true)) {
+        if(buyer.save(flush: true, failOnError:true)) {
             session.buyer = buyer
             if (!order){
-                order = new ConfOrder(buyer: buyer).save()
+                order = new ConfOrder(buyer: buyer).save(flush:true)
                 session.confOrder = order
+                println "order #${order?.id} has been saved."
+                println "order.buyer is ${order?.buyer}"
             }
             redirect action: "attendees", params: [orderId: order.id]
         } else {
@@ -98,13 +100,20 @@ class OrderController {
         if (order){
             attendees = order.attendees
             buyer = order.buyer
+            println "In attendees action: order is ${order} and buyer is ${buyer}"
+        } else{
+            flash. message = "No order in progress, please enter buyer information."
+            redirect action: 'register'
+            return
         }
         [attendees: attendees, confOrder: order, buyer: buyer]
     }
 
     def thanks() {
-        def buyer = Buyer.get(params.id)
-        def order = ConfOrder.findByBuyer(buyer)
+        def formatter = java.text.NumberFormat.currencyInstance
+        params.each{key, val -> println "$key == $val"}
+        def order = ConfOrder.get(params.orderId.toInteger())
+        def buyer = order.buyer
         if (params.paymentType == 'check'){
             order.paymentType = "Check"
         }
@@ -114,7 +123,7 @@ class OrderController {
             order.errors.allErrors.each{println it}
         }
         return [buyer: buyer, order: order, check: (order.paymentType == "Check"),
-                amount: formatter.format(confOrder.calcTotalPrice())]
+                amount: formatter.format(order.calcTotalPrice())]
     }
 
 

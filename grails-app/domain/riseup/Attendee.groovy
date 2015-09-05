@@ -30,7 +30,7 @@ class Attendee {
         church nullable: true
         city nullable: true
         state nullable: true
-        email email: true, nullable: true
+        email nullable: true
         phone nullable: true
         ticketType nullable: true
         seminar1 nullable: true
