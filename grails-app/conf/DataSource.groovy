@@ -1,16 +1,16 @@
 dataSource {
-/*
+
     username = "riseup"
     password = "1234"
     pooled = true
     driverClassName = "com.mysql.jdbc.Driver"
     dialect = "org.hibernate.dialect.MySQL5InnoDBDialect"
-*/ 
+ /*
     pooled = true
     driverClassName = "org.h2.Driver"
     username = "sa"
     password = ""
-
+*/
 }
 
 hibernate {
