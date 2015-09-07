@@ -10,7 +10,7 @@
 
                   <g:if test="${attendees?.size() < 1}">
                       <tr>
-                          <td colspan="3">Please add any additional persons who will be attending the conference under this registration</td>
+                          <td colspan="3">Please add each person who will be attending the conference under this registration.</td>
                       </tr>
 
                   </g:if>
