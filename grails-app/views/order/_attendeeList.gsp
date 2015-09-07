@@ -46,13 +46,14 @@
                 <input type="hidden" name="currency_code" value="USD">
                 <input type="hidden" name="item_name" value="Believers Conference Registration">
                 <input type="hidden" name="amount" value="${amount}" />
+                <input type="hidden" name="return" value="http://bibleconferences.org:9090/thanks/${confOrder?.id}"
                 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
                 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
             </form>
             </div>
             <div style="width:200px; float:left; margin-top:20px;">
-            <g:link action="thanks" id="${buyer?.id}" 
-                     params="[paymentType:'check', orderId: confOrder.id]">
+            <g:link action="thanks" id="${confOrder?.id}" 
+                     params="[paymentType:'check']">
                 <button type="button">Pay By Check</button>
             </g:link>
             </div>

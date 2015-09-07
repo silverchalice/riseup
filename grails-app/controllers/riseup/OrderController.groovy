@@ -112,7 +112,7 @@ class OrderController {
     def thanks() {
         def formatter = java.text.NumberFormat.currencyInstance
         params.each{key, val -> println "$key == $val"}
-        def order = ConfOrder.get(params.orderId.toInteger())
+        def order = ConfOrder.get(params.id.toInteger())
         def buyer = order.buyer
         if (params.paymentType == 'check'){
             order.paymentType = "Check"
