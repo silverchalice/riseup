@@ -34,14 +34,18 @@
               <g:if test="${!confOrder.paid}">
                 <input id="addAttendee" type="submit" value="Add attendee" class="btn btn-primary"/>
               </g:if>
+              ${amount}
           </div>
 
       <g:if test="${!confOrder.paid}">
         <div class="well" style="height:90px;">
             <div style="width:200px;float:left;">
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_s-xclick">
-                <input type="hidden" name="hosted_button_id" value="2R2UMSPZ23N66">
+                <input type="hidden" name="cmd" value="_xclick" />
+                <input type="hidden" name="business" value="info@assemblycare.org">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="item_name" value="Believers Conference Registration">
+                <input type="hidden" name="amount" value="${amount}" />
                 <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
                 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
             </form>
@@ -57,7 +61,7 @@
       <g:else>
         <div class="well" style="height:70px;">
           <g:link controller='order' action="seminars" params="${[id: buyer?.id]}">
-            Select of Change Seminars - ${confOrder.paid}
+            Select or Change Seminars
           </g:link>
         </div>
       </g:else>
