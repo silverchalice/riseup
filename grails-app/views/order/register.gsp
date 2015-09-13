@@ -133,7 +133,14 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="well">
-                <g:submitButton name="submit" value="Save and Add Attendees" class="btn btn-primary"/>
+                <g:if test="${confOrder.paid}">
+                    <g:link controller='order' action="seminars" params="${[id: buyer?.id]}">
+                        Select or Change Seminars
+                    </g:link>
+                </g:if>
+                <g:else>
+                    <g:submitButton name="submit" value="Save and Add Attendees" class="btn btn-primary"/>
+                </g:else>
             </div>
 
         </div>

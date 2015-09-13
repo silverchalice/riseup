@@ -27,14 +27,15 @@
       </div>
     </g:if>
     <div class="col-md-10 col-md-offset-1">
-        <p>Now would be a great time to make your seminar selections.</p>
+        <p>If you have not done so already, now would be a great time to make your seminar selections.</p>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
         <div class="well">
-            <g:link controller='order' action="seminars" params="${[id: buyer?.id]}">Select Seminars</g:link>
+            <g:link controller='order' action="seminars" params="${[id: order?.id]}">Select or Change Seminars</g:link>
+            <g:link controller="home" action="index">Return to Home Page</g:link>
         </div>
     </div>
 </div>

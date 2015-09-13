@@ -31,6 +31,9 @@
 			<div class="row">
                 <div class="col-md-12">
                     <h3>Seminar Selection</h3>
+                    <g:if test="${confOrder.paid}">
+                        <p>Your registration is complete, but you can still make seminar selections or change your selections.</p>
+                    </g:if>
                     <div id="attendees">
                         <p>Click on the attendee name to select seminars or to change selections.</p>
                         <table id="selectedSeminars" class="table table-striped table-hover">
@@ -69,11 +72,40 @@
 
     <div class="row">
         <div class="col-md-12">
-            <g:link action="register" model="${[confOrderId: confOrder.id]}">
-                <button class="btn btn-primary">Return to Order</button>
+            <g:link controller="home" action="index" >
+                <button class="btn btn-primary">Home</button>
             </g:link>
+            <g:if test="${!confOrder.paid}">
+                <g:link action="register" model="${[confOrderId: confOrder.id]}">
+                    <button class="btn btn-primary">Return to Order</button>
+                </g:link>
+            </g:if>
         </div>
     </div>
 
-	</body>
+    <g:if test="${!confOrder.paid}">
+        <div class="well" style="height:90px;">
+            <div style="width:200px;float:left;">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <input type="hidden" name="cmd" value="_xclick" />
+                    <input type="hidden" name="business" value="info@assemblycare.org">
+                    <input type="hidden" name="currency_code" value="USD">
+                    <input type="hidden" name="item_name" value="Believers Conference Registration">
+                    <input type="hidden" name="amount" value="${amount}" />
+                    <input type="hidden" name="return" value="http://bibleconferences.org:9090/thanks/${confOrder?.id}" />
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                </form>
+            </div>
+            <div style="width:200px; float:left; margin-top:20px;">
+                <g:link action="thanks" id="${confOrder?.id}"
+                        params="[paymentType:'check']">
+                    <button type="button">Pay By Check</button>
+                </g:link>
+            </div>
+        </div>
+    </g:if>
+
+
+    </body>
 </html>

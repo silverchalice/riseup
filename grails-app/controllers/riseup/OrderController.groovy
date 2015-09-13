@@ -25,19 +25,31 @@ class OrderController {
 
     def register() {
         def formatter = NumberFormat.currencyInstance
-
+        def buyer
+        def confOrder
         if(session.confOrder){
-            def buyer = Buyer.get(session.buyer.id)
-            def confOrder = ConfOrder.get(session.confOrder.id)
+            buyer = Buyer.get(session.buyer.id)
+            confOrder = ConfOrder.get(session.confOrder.id)
 
-            [buyer: buyer,
-             confOrder: confOrder,
-             attendees: confOrder?.attendees,
-             amount: formatter.format(confOrder?.attendees*.ticketType*.price?.sum()),
-             number: confOrder?.attendees?.size()]
+            return [buyer: buyer,
+                    confOrder: confOrder,
+                    attendees: confOrder?.attendees,
+                    amount: formatter.format(confOrder?.attendees*.ticketType*.price?.sum()),
+                    number: confOrder?.attendees?.size()]
+        } else if (params.confOrderId){
+            confOrder = ConfOrder.get(params.confOrderId.toInteger())
+            buyer = confOrder.buyer
+            return [buyer: buyer,
+                    confOrder: confOrder,
+                    attendees: confOrder?.attendees,
+                    amount: formatter.format(confOrder?.attendees*.ticketType*.price?.sum()),
+                    number: confOrder?.attendees?.size()]
         } else {
-            [buyer: new Buyer(params)]
+            buyer = new Buyer(params)
+            confOrder = new ConfOrder(buyer: buyer)
+            [buyer: buyer, confOrder: confOrder]
         }
+
     }
 
     def saveRegistration() {
@@ -233,11 +245,14 @@ class OrderController {
 
     @Transactional
     def seminars() {
-        def buyer = Buyer.get(params.id)
-        def confOrder = ConfOrder.findByBuyer(buyer)
+        def confOrder = ConfOrder.get(params.id)
+        def buyer = confOrder.buyer
         def attendees = confOrder.attendees
+        def formatter = java.text.NumberFormat.currencyInstance
 
-        [attendees: attendees.sort{ it.id }, confOrder: confOrder]
+        [attendees: attendees.sort{ it.id }, confOrder: confOrder,
+         buyer: buyer, amount: formatter.format(confOrder.calcTotalPrice()),
+         number: attendees?.size()]
     }
     
     @Transactional
@@ -262,50 +277,52 @@ class OrderController {
         println "attendee is $attendee"
         def orderInstance = attendee?.confOrder
         def seminar1List = [
-            'Love the Word',
-            'Love the Assembly',
-            'Love Not the World',
-            'Love Service for the Lord',
-            'Love for the Flock/Shepherd', 
-            'Love Young People',
-            'Love for Israel',
-            'Love My Neighbor',
-            'Love Hospitality (Women Only)',
-            'N/A - In Children program'
+            'Love the Word - Rex Trogdon',
+            'Love the Assembly - Brian Gunning',
+            'Love Not the World - Scott DeGroff',
+            'Love Service for the Lord - Joe Reese',
+            'Love the Lord with all Your Mind - Jesse Gentile',
+            'Love for the Flock/Shepherd - Steve Price',
+            'Love Young People - Nate Bramsen',
+            'Love for Israel - Bruce Scott',
+            'Love My Neighbor - Robert Brown',
+            'Love Hospitality (Women Only) - Nancy Trogdon',
+            "Under 13 - In Children's program"
         ]
         def seminar2List = [
-            'Love His Appearing',
-            'Love the Erring One',
-            'Love the Little Children',
-            'Love the Lost (Women Only)', 
-            'Love Your Family (Women Only)',
-            'Love the World (Missions)',
-            'Love the Quiet Place', 
-            'Love the Home',
-            'N/A - In Children program'
+            'Love His Appearing - Mike Attwood',
+            'Love My Neighbor - Robert Brown',
+            'Love the Little Children - Grady Dollar',
+            'Love the Lost (Women Only) - Joyce Barinowski',
+            'Love Your Family (Women Only) - Marlene Gunning',
+            'Love the World (Missions) - Bob Dadd',
+            'Love the Word - Rex Trogdon',
+            'Love for the Flock/Shepherd - Steve Price',
+            'Love Your Muslim Neighbor - Paul Bramsen',
+            "Under 13 - In Children's program"
         ]
         def seminar3List = [
-            'Love the Word',
-            'Love Not the World',
-            'Love Service for the Lord',
-            'Love Hospitality (Women Only)',
-            'Love for the Flock/Shepherd',
-            'Love His Appearing',
-            'Love the Lost (Women Only)',
+            'Love the Quiet Place - Rex Trogdon',
+            'Love Not the World - Scott DeGroff',
+            'Love Service for the Lord - Joe Reese',
+            'Love Hospitality (Women Only) - Nancy Trogdon',
+            'Love Your Muslim Neighbor - Paul Bramsen',
+            'Love the Home - Steve Price',
+            'Love His Appearing - Mike Attwood',
+            'Love the Lost (Women Only) - Joyce Barinowski',
             'Love the Little Children',
-            'N/A - In Children program'
+            "Under 13 - In Children's program"
         ]
         def seminar4List = [
-            'Love Young People',
-            'Love the Quiet Place',
-            'Love the Assembly',
-            'Love the World (Missions)',
-            'Love for Israel',
-            'Love My Neighbor',
-            'Love the Erring One',
-            'Love Your Family (Women Only)',
-            'Love the Home',
-            'N/A - In Children program'
+            'Love Young People - Nate Bramsen',
+            'Love the Quiet Place - Rex Trogdon',
+            'Love the Assembly - Brian Gunning',
+            'Love the World (Missions) - Bob Dadd',
+            'Love for Israel - Bruce Scott',
+            'Love the Lord with all Your Mind - Jesse Gentile',
+            'Love Your Family (Women Only) - Marlene Gunning',
+            'Love the Home - Steve Price',
+            "Under 13 - In Children's program"
         ]
         def model = [confOrder: orderInstance, 
                      attendee: attendee,

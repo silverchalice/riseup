@@ -36,7 +36,8 @@ class HomeController {
 
     def logout() {
       session.buyer = null
-      flash.message = "You are now logged out."
+      session.confOrder = null
+      //flash.message = "You are now logged out."
       redirect action: "index"
     }
 
