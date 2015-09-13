@@ -37,7 +37,7 @@
               <g:if test="${!confOrder.paid}">
                 <input id="addAttendee" type="submit" value="Add attendee" class="btn btn-primary"/>
               </g:if>
-              ${amount}
+            
           </div>
 
 
