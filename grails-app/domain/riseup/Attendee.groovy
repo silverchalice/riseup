@@ -17,6 +17,7 @@ class Attendee {
     String seminar4
     Room assignedRoom
     String roomNotes
+    String volunteer
 
     static belongsTo = [confOrder: ConfOrder]
     
@@ -39,6 +40,7 @@ class Attendee {
         seminar4 nullable: true
         assignedRoom nullable: true
         roomNotes nullable:true, maxSize:5000
+        volunteer nullable:true
     }
 
     String toString(){

@@ -139,19 +139,28 @@
 					
 				</li>
 				</g:if>
-			
+
 				<g:if test="${attendeeInstance?.seminar4}">
-				<li class="fieldcontain">
-					<span id="seminar4-label" class="property-label"><g:message code="attendee.seminar4.label" default="Seminar4" /></span>
-					
+					<li class="fieldcontain">
+						<span id="seminar4-label" class="property-label"><g:message code="attendee.seminar4.label" default="Seminar4" /></span>
+
 						<span class="property-value" aria-labelledby="seminar4-label"><g:fieldValue bean="${attendeeInstance}" field="seminar4"/></span>
-					
-				</li>
+
+					</li>
 				</g:if>
-			
+
+				<g:if test="${attendeeInstance?.volunteer}">
+					<li class="fieldcontain">
+						<span id="volunteer-label" class="property-label"><g:message code="attendee.volunteer.label" default="Volunteer" /></span>
+
+						<span class="property-value" aria-labelledby="volunteer-label"><g:fieldValue bean="${attendeeInstance}" field="volunteer"/></span>
+
+					</li>
+				</g:if>
+
 				<g:if test="${attendeeInstance?.assignedRoom}">
 				<li class="fieldcontain">
-					<span id="assignedRoom-label" class="property-label"><g:message code="attendee.assignedRoom.label" default="Assigned Room" /></span>
+					<span id="volunteer-label" class="property-label"><g:message code="attendee.assignedRoom.label" default="Assigned Room" /></span>
 					
 						<span class="property-value" aria-labelledby="assignedRoom-label"><g:link controller="room" action="show" id="${attendeeInstance?.assignedRoom?.id}">${attendeeInstance?.assignedRoom?.encodeAsHTML()}</g:link></span>
 					

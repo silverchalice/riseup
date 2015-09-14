@@ -137,10 +137,10 @@
 
                     <div class="form-group row">
                         <div class="col-sm-6">
-                            <label>Phone number:</label>
-                            <input type="text" id="phone" name="phone" class="form-control"/>
+                            <label>Willing to volunteer:</label>
+                            <g:select name="volunteer" from="${['Book Room', 'Wherever needed']}"
+                                      noSelection="['':'-select an area of need-']" class="form-control"/>
                         </div>
-
                         <div class="col-sm-6">
                             <label>Ticket type:</label>
                             <g:select name="ticketType" from="${TicketType.list()}" optionKey="id"
@@ -151,8 +151,8 @@
                     <div class="form-group row">
                         <div class="col-sm-12">
                             <label for="roomNotes">Guestroom Notes (Roommate names, special needs, etc.):</label>
-                            <textarea id="roomNotes" rows="5" cols="60" class="form-control">
-                            </textarea></div>
+                            <textarea id="roomNotes" rows="5" cols="60" class="form-control"></textarea>
+                        </div>
                     </div>
                 </div>
 

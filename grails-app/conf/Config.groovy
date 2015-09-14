@@ -145,20 +145,25 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'riseup.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'riseup.UserRole'
 grails.plugin.springsecurity.authority.className = 'riseup.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
-	'/':                ['permitAll'],
-	'/index':           ['permitAll'],
-	'/index.gsp':       ['permitAll'],
-	'/assets/**':       ['permitAll'],
-	'/**/js/**':        ['permitAll'],
-	'/**/css/**':       ['permitAll'],
-	'/**/images/**':    ['permitAll'],
-	'/**/favicon.ico':  ['permitAll'],
-  '/home/**':         ['permitAll'],
-  '/register/**':     ['permitAll'],
-  '/order/order':     ['permitAll'],
-  '/order/**':        ['permitAll'],
-  '/interested/**':   ['ROLE_ADMIN'],
-  
+	'/':                  ['permitAll'],
+	'/index':             ['permitAll'],
+	'/index.gsp':         ['permitAll'],
+	'/assets/**':         ['permitAll'],
+	'/**/js/**':          ['permitAll'],
+	'/**/css/**':         ['permitAll'],
+	'/**/images/**':      ['permitAll'],
+	'/**/favicon.ico':    ['permitAll'],
+    '/home/**':           ['permitAll'],
+    '/register/**':       ['permitAll'],
+    '/order/order':       ['permitAll'],
+    '/order/**':          ['permitAll'],
+    '/interested/**':     ['ROLE_ADMIN'],
+    '/attendee/**':       ['ROLE_ADMIN'],
+    '/buyer/**':          ['ROLE_ADMIN'],
+    '/ticketType/**':     ['ROLE_ADMIN'],
+    '/confOrder/**':      ['ROLE_ADMIN'],
+
+
 ]
 
 

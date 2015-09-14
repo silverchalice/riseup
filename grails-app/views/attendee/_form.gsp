@@ -128,6 +128,15 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: attendeeInstance, field: 'volunteer', 'error')} ">
+	<label for="volunteer">
+		<g:message code="attendee.volunteer.label" default="Volunteer" />
+
+	</label>
+	<g:textField name="volunteer" value="${attendeeInstance?.volunteer}"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: attendeeInstance, field: 'assignedRoom', 'error')} ">
 	<label for="assignedRoom">
 		<g:message code="attendee.assignedRoom.label" default="Assigned Room" />
