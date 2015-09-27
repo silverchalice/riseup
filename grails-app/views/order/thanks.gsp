@@ -34,7 +34,7 @@
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
         <div class="well">
-            <g:link controller='order' action="seminars" params="${[id: order?.id]}">Select or Change Seminars</g:link>
+            <g:link controller='order' action="seminars" params="${[id: order?.id]}">Select or Change Seminars</g:link>&nbsp;&nbsp;&nbsp;&nbsp;
             <g:link controller="home" action="index">Return to Home Page</g:link>
         </div>
     </div>
