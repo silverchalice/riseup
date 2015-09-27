@@ -50,7 +50,7 @@
       <g:if test="${session.buyer && !flash.message}">
         <div class="message">
           Logged in as ${session.buyer}. 
-          <g:link controller="order" action="register">Go to Registration Page</g:link>
+          <g:link controller="order" action="seminars" params="${[id: session.buyer?.id]}">Go to Registration Page</g:link>
           <g:link controller="home" action="logout">Log out</g:link>
         </div>
       </g:if>

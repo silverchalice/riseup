@@ -49,7 +49,7 @@
 <body>
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
-        <h1>Register</h1>
+        <h1>Register ${confOrder?.paid ? ' - You are already registered.' : ''}</h1>
     </div>
 </div>
 

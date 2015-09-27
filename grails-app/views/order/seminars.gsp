@@ -30,10 +30,11 @@
 
 			<div class="row">
                 <div class="col-md-12">
-                    <h3>Seminar Selection</h3>
                     <g:if test="${confOrder.paid}">
-                        <p>Your registration is complete, but you can still make seminar selections or change your selections.</p>
+                        <h1>Registration Complete</h1>
+                        <p><strong>Your registration is complete</strong>, but you can still make seminar selections or change your selections.</p>
                     </g:if>
+                    <h3>Seminar Selection</h3>
                     <div id="attendees">
                         <p>Click on the attendee name to select seminars or to change selections.</p>
                         <table id="selectedSeminars" class="table table-striped table-hover">

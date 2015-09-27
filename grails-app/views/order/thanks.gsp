@@ -11,7 +11,7 @@
 <body>
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
-        <h1>Thank you!</h1>
+        <h1>Thank you!</h1><h3>You are now registered</h3>
     </div>
 </div>
 <div class="row">
