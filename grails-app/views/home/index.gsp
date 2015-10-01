@@ -161,6 +161,41 @@
 									<p>New this year! Optional young adult message and Q&A time after the evening general sessions!
 </p>
 								</li>
+								<li>
+									<p>Registration Rates</p>
+									<table>
+										<tr>
+											<td>Single</td><td>$399</td>
+										</tr>
+										<tr>
+											<td>Double</td><td>$299</td>
+										</tr>
+										<tr>
+											<td>Triple</td><td>$269</td>
+										</tr>
+										<tr>
+											<td>Quad</td><td>$249</td>
+										</tr>
+										<tr>
+											<td>Family (2 Adults)</td><td>$299 ea</td>
+										</tr>
+										<tr>
+											<td>Child (5 - 12)</td><td>$99</td>
+										</tr>
+										<tr>
+											<td>Child (under 5)</td><td>Free</td>
+										</tr>
+										<tr>
+											<td>Commuter</td><td>$199</td>
+										</tr>
+										<tr>
+											<td>Commuter (1 day)</td><td>$89</td>
+										</tr>
+									</table>
+								</li>
+								<li>
+									<h3><a href="images/BBC2015.pdf">Download the full conference brochure!</a></h3>
+								</li>
 							</ul>						
 						</section>
 					</div>
