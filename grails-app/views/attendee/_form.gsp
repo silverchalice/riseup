@@ -43,7 +43,7 @@
 		<g:message code="attendee.email.label" default="Email" />
 		
 	</label>
-	<g:field type="email" name="email" value="${attendeeInstance?.email}"/>
+	<g:textField name="email" value="${attendeeInstance?.email}"/>
 
 </div>
 
@@ -128,15 +128,6 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: attendeeInstance, field: 'volunteer', 'error')} ">
-	<label for="volunteer">
-		<g:message code="attendee.volunteer.label" default="Volunteer" />
-
-	</label>
-	<g:textField name="volunteer" value="${attendeeInstance?.volunteer}"/>
-
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: attendeeInstance, field: 'assignedRoom', 'error')} ">
 	<label for="assignedRoom">
 		<g:message code="attendee.assignedRoom.label" default="Assigned Room" />
@@ -152,6 +143,15 @@
 		
 	</label>
 	<g:textArea name="roomNotes" cols="40" rows="5" maxlength="5000" value="${attendeeInstance?.roomNotes}"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: attendeeInstance, field: 'volunteer', 'error')} ">
+	<label for="volunteer">
+		<g:message code="attendee.volunteer.label" default="Volunteer" />
+		
+	</label>
+	<g:textField name="volunteer" value="${attendeeInstance?.volunteer}"/>
 
 </div>
 

@@ -5,7 +5,7 @@ package riseup
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
 
-@Transactional(readOnly = false)
+@Transactional(readOnly = true)
 class BuyerController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
