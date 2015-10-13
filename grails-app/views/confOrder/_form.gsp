@@ -11,6 +11,15 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: confOrderInstance, field: 'checkReceived', 'error')} ">
+	<label for="checkReceived">
+		<g:message code="confOrder.checkReceived.label" default="Check Received" />
+		
+	</label>
+	<g:checkBox name="checkReceived" value="${confOrderInstance?.checkReceived}" />
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: confOrderInstance, field: 'attendees', 'error')} ">
 	<label for="attendees">
 		<g:message code="confOrder.attendees.label" default="Attendees" />
@@ -35,6 +44,15 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="buyer" name="buyer.id" from="${riseup.Buyer.list()}" optionKey="id" required="" value="${confOrderInstance?.buyer?.id}" class="many-to-one"/>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: confOrderInstance, field: 'paid', 'error')} ">
+	<label for="paid">
+		<g:message code="confOrder.paid.label" default="Paid" />
+		
+	</label>
+	<g:checkBox name="paid" value="${confOrderInstance?.paid}" />
 
 </div>
 

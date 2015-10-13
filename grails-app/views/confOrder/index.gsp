@@ -26,7 +26,11 @@
 					
 						<g:sortableColumn property="paymentType" title="${message(code: 'confOrder.paymentType.label', default: 'Payment Type')}" />
 					
+						<g:sortableColumn property="checkReceived" title="${message(code: 'confOrder.checkReceived.label', default: 'Check Received')}" />
+					
 						<th><g:message code="confOrder.buyer.label" default="Buyer" /></th>
+					
+						<g:sortableColumn property="paid" title="${message(code: 'confOrder.paid.label', default: 'Paid')}" />
 					
 					</tr>
 				</thead>
@@ -36,7 +40,11 @@
 					
 						<td><g:link action="show" id="${confOrderInstance.id}">${fieldValue(bean: confOrderInstance, field: "paymentType")}</g:link></td>
 					
+						<td><g:formatBoolean boolean="${confOrderInstance.checkReceived}" /></td>
+					
 						<td>${fieldValue(bean: confOrderInstance, field: "buyer")}</td>
+					
+						<td><g:formatBoolean boolean="${confOrderInstance.paid}" /></td>
 					
 					</tr>
 				</g:each>

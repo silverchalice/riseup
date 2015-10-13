@@ -32,6 +32,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${confOrderInstance?.checkReceived}">
+				<li class="fieldcontain">
+					<span id="checkReceived-label" class="property-label"><g:message code="confOrder.checkReceived.label" default="Check Received" /></span>
+					
+						<span class="property-value" aria-labelledby="checkReceived-label"><g:formatBoolean boolean="${confOrderInstance?.checkReceived}" /></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${confOrderInstance?.attendees}">
 				<li class="fieldcontain">
 					<span id="attendees-label" class="property-label"><g:message code="confOrder.attendees.label" default="Attendees" /></span>
@@ -48,6 +57,15 @@
 					<span id="buyer-label" class="property-label"><g:message code="confOrder.buyer.label" default="Buyer" /></span>
 					
 						<span class="property-value" aria-labelledby="buyer-label"><g:link controller="buyer" action="show" id="${confOrderInstance?.buyer?.id}">${confOrderInstance?.buyer?.encodeAsHTML()}</g:link></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${confOrderInstance?.paid}">
+				<li class="fieldcontain">
+					<span id="paid-label" class="property-label"><g:message code="confOrder.paid.label" default="Paid" /></span>
+					
+						<span class="property-value" aria-labelledby="paid-label"><g:formatBoolean boolean="${confOrderInstance?.paid}" /></span>
 					
 				</li>
 				</g:if>
