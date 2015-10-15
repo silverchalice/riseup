@@ -24,7 +24,10 @@
                               <td>${attendee?.firstName} ${attendee?.lastName}</td>
                               <td>${attendee?.ticketType}</td>
                               <td><g:formatNumber number="${attendee?.ticketType?.price}" format="\$###,##0.00" /></td>
+                              <g:if test="${!confOrder.paid}">
                               <td><g:link action="removeAttendee" id="${attendee.id}" params="${[orderId:confOrder?.id]}"><button>X</button></g:link></td>
+                              </g:if>
+                              <g:else><td><button>X</button></td></g:else>
                           </tr>
                       </g:each>
                   </g:else>
