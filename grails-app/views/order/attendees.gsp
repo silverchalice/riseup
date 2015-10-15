@@ -151,7 +151,14 @@
                     <div class="form-group row">
                         <div class="col-sm-12">
                             <label for="roomNotes">Guestroom Notes (Roommate names, special needs, etc.):</label>
-                            <textarea id="roomNotes" rows="5" cols="60" class="form-control"></textarea>
+                            <textarea id="roomNotes" name="roomNotes" rows="5" cols="60" class="form-control"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <label for="shuttle">Need a ride from the aiport? Enter arrival time and airline:</label>
+                            <textarea id="shuttle" name="shuttle" rows="2" cols="60" class="form-control"></textarea>
                         </div>
                     </div>
                 </div>

@@ -106,19 +106,31 @@ class OrderController {
     }
 
     def attendees() {
+        def formatter = java.text.NumberFormat.currencyInstance
         def order = ConfOrder.get(params.orderId)
         def buyer
         def attendees
+        def amount 
+        def number
+
         if (order){
             attendees = order.attendees
             buyer = order.buyer
+            number = attendees?.size() ?: 0
+            amount = formatter.format(order.calcTotalPrice())
+            /*
+            confOrder: confOrder, 
+                       attendees: attendees, 
+                       amount: formatter.format(confOrder.calcTotalPrice()), 
+                       number: attendees?.size(), 
+                       allRoomNotes: confOrder.allRoomNotes*/
             println "In attendees action: order is ${order} and buyer is ${buyer}"
         } else{
             flash. message = "No order in progress, please enter buyer information."
             redirect action: 'register'
             return
         }
-        [attendees: attendees, confOrder: order, buyer: buyer]
+        [attendees: attendees, confOrder: order, buyer: buyer, number:number, amount:amount]
     }
 
     def thanks() {
@@ -241,6 +253,18 @@ class OrderController {
                        number: attendees?.size(), 
                        allRoomNotes: confOrder.allRoomNotes]
         return false
+    }
+
+    @Transactional
+    def removeAttendee(){
+        def attendee = Attendee.get(params.id)
+        def confOrder = ConfOrder.get(params.orderId)
+        if (attendee && confOrder){
+            confOrder.removeFromAttendees(attendee)
+            attendee.delete()
+            confOrder.save()
+        }
+        redirect(action:'attendees', params:[orderId: confOrder.id])
     }
 
     @Transactional

@@ -24,13 +24,15 @@
 			<thead>
 					<tr>
 					
-						<g:sortableColumn property="paymentType" title="${message(code: 'confOrder.paymentType.label', default: 'Payment Type')}" />
-					
-						<g:sortableColumn property="checkReceived" title="${message(code: 'confOrder.checkReceived.label', default: 'Check Received')}" />
-					
 						<th><g:message code="confOrder.buyer.label" default="Buyer" /></th>
 					
+						<g:sortableColumn property="paymentType" title="${message(code: 'confOrder.paymentType.label', default: 'Payment Type')}" />
+					
 						<g:sortableColumn property="paid" title="${message(code: 'confOrder.paid.label', default: 'Paid')}" />
+					
+						<g:sortableColumn property="checkReceived" title="${message(code: 'confOrder.checkReceived.label', default: 'Got chk?')}" />
+
+						<th>Count</th>
 					
 					</tr>
 				</thead>
@@ -38,13 +40,15 @@
 				<g:each in="${confOrderInstanceList}" status="i" var="confOrderInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${confOrderInstance.id}">${fieldValue(bean: confOrderInstance, field: "paymentType")}</g:link></td>
+						<td><g:link action="show" id="${confOrderInstance.id}">${fieldValue(bean: confOrderInstance, field: "buyer")}</g:link></td>
 					
-						<td><g:formatBoolean boolean="${confOrderInstance.checkReceived}" /></td>
-					
-						<td>${fieldValue(bean: confOrderInstance, field: "buyer")}</td>
+						<td>${fieldValue(bean: confOrderInstance, field: "paymentType")}</td>
 					
 						<td><g:formatBoolean boolean="${confOrderInstance.paid}" /></td>
+					
+						<td><g:formatBoolean boolean="${confOrderInstance.checkReceived}" /></td>
+
+						<td>${confOrderInstance?.attendees?.size()}
 					
 					</tr>
 				</g:each>

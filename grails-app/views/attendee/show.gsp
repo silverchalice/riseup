@@ -167,6 +167,15 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${attendeeInstance?.shuttle}">
+				<li class="fieldcontain">
+					<span id="shuttle-label" class="property-label"><g:message code="attendee.volunteer.shuttle" default="Shuttle" /></span>
+					
+						<span class="property-value" aria-labelledby="shuttle-label"><g:fieldValue bean="${attendeeInstance}" field="shuttle"/></span>
+					
+				</li>
+				</g:if>
+
 				<g:if test="${attendeeInstance?.volunteer}">
 				<li class="fieldcontain">
 					<span id="volunteer-label" class="property-label"><g:message code="attendee.volunteer.label" default="Volunteer" /></span>

@@ -5,15 +5,16 @@
                     <th>Name</th>
                     <th>Ticket type</th>
                     <th>Price</th>
+                    <th>Remove</th>
                   </thead>
                   <tbody>
 
                   <g:if test="${attendees?.size() < 1}">
                       <tr>
-                          <td colspan="3">Please add each person who will be attending the conference under this registration.</td>
+                          <td colspan="4">Please add each person who will be attending the conference under this registration.</td>
                       </tr>
                       <tr>
-                          <td colspan="3">Adding attendees at a later time will require a new order with a new email address.</td>
+                          <td colspan="4">Adding attendees at a later time will require a new order with a new email address.</td>
                       </tr>
 
                   </g:if>
@@ -23,6 +24,7 @@
                               <td>${attendee?.firstName} ${attendee?.lastName}</td>
                               <td>${attendee?.ticketType}</td>
                               <td><g:formatNumber number="${attendee?.ticketType?.price}" format="\$###,##0.00" /></td>
+                              <td><g:link action="removeAttendee" id="${attendee.id}" params="${[orderId:confOrder?.id]}"><button>X</button></g:link></td>
                           </tr>
                       </g:each>
                   </g:else>
