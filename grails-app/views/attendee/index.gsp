@@ -28,13 +28,13 @@
 					
 						<g:sortableColumn property="lastName" title="${message(code: 'attendee.lastName.label', default: 'Last Name')}" />
 					
-						<g:sortableColumn property="age" title="${message(code: 'attendee.age.label', default: 'Age')}" />
-					
-						<g:sortableColumn property="gender" title="${message(code: 'attendee.gender.label', default: 'Gender')}" />
+						<g:sortableColumn property="volunteer" title="${message(code: 'attendee.volunteer.label', default: 'Volunteer')}" />
 					
 						<g:sortableColumn property="email" title="${message(code: 'attendee.email.label', default: 'Email')}" />
 					
 						<g:sortableColumn property="phone" title="${message(code: 'attendee.phone.label', default: 'Phone')}" />
+
+						<g:sortableColumn property="shuttle" title="Shuttle" />
 					
 					</tr>
 				</thead>
@@ -46,14 +46,17 @@
 					
 						<td>${fieldValue(bean: attendeeInstance, field: "lastName")}</td>
 					
-						<td>${fieldValue(bean: attendeeInstance, field: "age")}</td>
-					
-						<td>${fieldValue(bean: attendeeInstance, field: "gender")}</td>
+						<td>${fieldValue(bean: attendeeInstance, field: "volunteer")}</td>
 					
 						<td>${fieldValue(bean: attendeeInstance, field: "email")}</td>
 					
 						<td>${fieldValue(bean: attendeeInstance, field: "phone")}</td>
+
+						<td>${fieldValue(bean: attendeeInstance, field: "shuttle")}</td>
 					
+					</tr>
+					<tr>
+						<td colspan="6">${fieldValue(bean: attendeeInstance, field: "roomNotes")}</td>
 					</tr>
 				</g:each>
 				</tbody>

@@ -15,6 +15,11 @@ class OrderController {
         respond ConfOrder.list(params), model:[orderInstanceCount: ConfOrder.count()]
     }
 
+    def mainReport(){
+        def orders = ConfOrder.list()
+        [orders:orders]
+    }
+
     def show(ConfOrder orderInstance) {
         respond orderInstance
     }
