@@ -35,11 +35,11 @@ class OrderController {
         if(session.confOrder){
             buyer = Buyer.get(session.buyer.id)
             confOrder = ConfOrder.get(session.confOrder.id)
-
+            
             return [buyer: buyer,
                     confOrder: confOrder,
                     attendees: confOrder?.attendees,
-                    amount: formatter.format(confOrder?.attendees*.ticketType*.price?.sum()),
+                    amount: formatter.format(confOrder?.calcTotalPrice()),
                     number: confOrder?.attendees?.size()]
         } else if (params.confOrderId){
             confOrder = ConfOrder.get(params.confOrderId.toInteger())
@@ -47,7 +47,7 @@ class OrderController {
             return [buyer: buyer,
                     confOrder: confOrder,
                     attendees: confOrder?.attendees,
-                    amount: formatter.format(confOrder?.attendees*.ticketType*.price?.sum()),
+                    amount: formatter.format(confOrder?.calcTotalPrice()),
                     number: confOrder?.attendees?.size()]
         } else {
             buyer = new Buyer(params)
