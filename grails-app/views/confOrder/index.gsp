@@ -25,7 +25,9 @@
 					<tr>
 						<th>id</th>
 					
-						<th><g:message code="confOrder.buyer.label" default="Buyer" /></th>
+						<th><g:message code="confOrder.buyer.label" default="Buyer ID" /></th>
+					
+						<g:sortableColumn property="Buyer" title="${message(code: 'confOrder.buyer.label', default: 'Buyer Name')}" />
 					
 						<g:sortableColumn property="paymentType" title="${message(code: 'confOrder.paymentType.label', default: 'Payment Type')}" />
 					
@@ -44,6 +46,7 @@
 						<td><g:link action="show" id="${confOrderInstance.id}">${fieldValue(bean: confOrderInstance, field: "id")}</g:link></td>
 						<td><g:link controller="buyer" action="show" id="${confOrderInstance.buyer?.id}">${confOrderInstance.buyer?.id}</g:link></td>
 					
+						<td>${fieldValue(bean: confOrderInstance, field: "buyer")}</td>
 						<td>${fieldValue(bean: confOrderInstance, field: "paymentType")}</td>
 					
 						<td><g:formatBoolean boolean="${confOrderInstance.paid}" /></td>
