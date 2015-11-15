@@ -23,6 +23,7 @@
 			<table>
 			<thead>
 					<tr>
+						<th>id</th>
 					
 						<th><g:message code="confOrder.buyer.label" default="Buyer" /></th>
 					
@@ -40,7 +41,8 @@
 				<g:each in="${confOrderInstanceList}" status="i" var="confOrderInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${confOrderInstance.id}">${fieldValue(bean: confOrderInstance, field: "buyer")}</g:link></td>
+						<td><g:link action="show" id="${confOrderInstance.id}">${fieldValue(bean: confOrderInstance, field: "id")}</g:link></td>
+						<td><g:link controller="buyer" action="show" id="${confOrderInstance.buyer?.id}">${confOrderInstance.buyer?.id}</g:link></td>
 					
 						<td>${fieldValue(bean: confOrderInstance, field: "paymentType")}</td>
 					
