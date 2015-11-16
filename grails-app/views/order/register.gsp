@@ -134,7 +134,7 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="well">
                 <g:if test="${confOrder.paid}">
-                    <g:link controller='order' action="seminars" params="${[id: buyer?.id]}">
+                    <g:link controller='order' action="seminars" params="${[id: confOrder?.id]}">
                         Select or Change Seminars
                     </g:link>
                 </g:if>
