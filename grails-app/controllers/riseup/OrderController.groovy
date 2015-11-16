@@ -58,6 +58,7 @@ class OrderController {
     }
 
     def saveRegistration() {
+        def buyerExists = false
         println "OrderController:saveRegistration... ${params}"
         def buyer
         def order 
@@ -65,8 +66,22 @@ class OrderController {
             buyer = Buyer.get(session.buyer.id)
             order = ConfOrder.findByBuyer(buyer)
             updateBuyerWithParams(buyer, params)
-        } else{
-            buyer  = new Buyer(firstName: params.pFirstName, 
+        } else {
+            buyer = Buyer.findByEmail(params.pEmail?.toLowerCase())
+            if (buyer){
+                buyerExists = true
+                buyer.firstName = params.pFirstName 
+                buyer.lastName = params.pLastName 
+                buyer.email = params.pEmail?.toLowerCase() 
+                buyer.password = params.pPassword 
+                buyer.address1 = params.pAddress1 
+                buyer.address2 = params.pAddress2 ?: '' 
+                buyer.city = params.pCity 
+                buyer.state = params.pState 
+                buyer.zip = params.pZip
+                buyer.phone = params.pPhone
+            } else{
+                buyer  = new Buyer(firstName: params.pFirstName, 
                                lastName: params.pLastName, 
                                email: params.pEmail?.toLowerCase(), 
                                password: params.pPassword, 
@@ -74,9 +89,13 @@ class OrderController {
                                address2: params.pAddress2 ?: '', 
                                city: params.pCity, state: params.pState, 
                                zip: params.pZip, phone: params.pPhone)
+            }
         }
         if(buyer.save(flush: true, failOnError:true)) {
             session.buyer = buyer
+            if (buyerExists){
+                order = ConfOrder.findByBuyer(buyer)
+            }
             if (!order){
                 order = new ConfOrder(buyer: buyer).save(flush:true)
                 session.confOrder = order
