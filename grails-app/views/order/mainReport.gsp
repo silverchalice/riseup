@@ -5,6 +5,7 @@
 		<title>BBC Registration Report</title>
 	</head>
 	<body>
+		<h3>Registration Report</h3>
 		<table>
 			<tr>
 				<td>OrderId</td>
@@ -29,5 +30,10 @@
 				</tr>
 			</g:each>
 		</table>
+		<h3>Summary</h3>
+		<ul>
+			<li>Total Registrations: ${count}</li>
+			<li>Total Paid: ${paidCount}</li>
+		</ul>
 	</body>
 </html>
