@@ -19,7 +19,8 @@ class OrderController {
         def orders = ConfOrder.list()
         def paidCount = ConfOrder.countByPaidAndCheckReceived(true, true)
         def count = orders.size()
-        [orders:orders, count:count, paidCount:paidCount]
+        def attendeeCount = orders.collect{it.attendees?.size()}.sum()
+        [orders:orders, count:count, paidCount:paidCount, attendeeCount: attendeeCount]
     }
 
     def show(ConfOrder orderInstance) {

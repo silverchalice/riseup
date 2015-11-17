@@ -34,6 +34,7 @@
 		<ul>
 			<li>Total Registrations: ${count}</li>
 			<li>Total Paid: ${paidCount}</li>
+			<li>Paid Attendees: ${attendeeCount}</li>
 		</ul>
 	</body>
 </html>
