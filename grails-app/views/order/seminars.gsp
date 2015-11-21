@@ -107,6 +107,14 @@
         </div>
     </g:if>
 
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well">
+                <p>For registration questions or problems with the website, please email <a href="mailto:registration@bibleconferences.org">registration@bibleconferences.org</a>
+                </p>
+            </div>
+        </div>
+    </div>    
 
     </body>
 </html>
