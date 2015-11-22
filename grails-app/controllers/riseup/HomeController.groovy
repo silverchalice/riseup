@@ -19,7 +19,6 @@ class HomeController {
         return
       } else {
         println "the user id is: ${user.id}"
-        println user.properties
         session.buyer = user
         session.confOrder = ConfOrder.findByBuyer(user)
 
@@ -30,7 +29,7 @@ class HomeController {
         }
 
         flash.message = "Welcome back, $user. You are now logged in."
-        redirect controller: "order", action: "register", params:[]
+        redirect controller: "order", action: "register", params:[confOrderId:session.confOrder?.id]
       }
     }
 
