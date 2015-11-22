@@ -62,7 +62,7 @@
                     </form>
                     </div>
                     <div style="width:200px; float:left; margin-top:20px;">
-                    <g:link action="thanks" id="${confOrder?.id}"
+                    <g:link action="thanks" id="${confOrder?.id}" onclick="return confirm('This will mark your registration as paid and awaiting check. You will not be able to add or remove attendees. Click OK to continue.');"
                              params="[paymentType:'check']">
                         <button type="button">Pay By Check</button>
                     </g:link>

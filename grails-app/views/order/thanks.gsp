@@ -40,5 +40,14 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="well">
+            <p>For registration questions or problems with the website, or if you would prefer not to pay by check, please email <a href="mailto:registration@bibleconferences.org">registration@bibleconferences.org</a>
+            </p>
+        </div>
+    </div>
+</div>    
+
 </body>
 </html>
