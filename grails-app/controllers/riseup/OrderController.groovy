@@ -145,12 +145,6 @@ class OrderController {
             buyer = order.buyer
             number = attendees?.size() ?: 0
             amount = formatter.format(order.calcTotalPrice())
-            /*
-            confOrder: confOrder, 
-                       attendees: attendees, 
-                       amount: formatter.format(confOrder.calcTotalPrice()), 
-                       number: attendees?.size(), 
-                       allRoomNotes: confOrder.allRoomNotes*/
             println "In attendees action: order is ${order} and buyer is ${buyer}"
         } else{
             flash. message = "No order in progress, please enter buyer information."

@@ -8,17 +8,14 @@ class HomeController {
 
     def log_user_in() {
       def email = params.email?.toLowerCase()
-      println "the email is $email"
-      println "\n\n"
-      Buyer.list().each { println "$it (${it.password})" }
-      println "\n\n"
+      println "Logging in: email is $email"
       def user = Buyer.findByEmail(email)
       if(!user || params.password != user?.password) {
         flash.message = "Oops! Incorrect email address or password. Please try again."
         redirect action: "login"
         return
       } else {
-        println "the user id is: ${user.id}"
+        println "Logging in: user id is: ${user.id}"
         session.buyer = user
         session.confOrder = ConfOrder.findByBuyer(user)
 
@@ -29,7 +26,8 @@ class HomeController {
         }
 
         flash.message = "Welcome back, $user. You are now logged in."
-        redirect controller: "order", action: "register", params:[confOrderId:session.confOrder?.id]
+        println "logged in.  redirecting to attendees."
+        redirect controller: "order", action: "attendees", params:[orderId:session.confOrder?.id]
       }
     }
 
