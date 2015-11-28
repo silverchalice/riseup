@@ -30,7 +30,7 @@
                                 <td><g:link action="removeAttendee" id="${attendee.id}" params="${[orderId:confOrder?.id]}"><button>X</button></g:link></td>
                               </g:if>
                               <g:else>
-                                <td><button>X</button></td>
+                                <td>N/A</td>
                               </g:else>
                           </tr>
                       </g:each>
