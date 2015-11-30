@@ -276,6 +276,14 @@ class OrderController {
         return false
     }
 
+
+    def editAttendee = {
+
+        def attendee = Attendee.get params.id
+        if(attendee)
+            render template: 'editAttendeeForm', model: [attendee: attendee]
+    }
+
     @Transactional
     def removeAttendee(){
         def attendee = Attendee.get(params.id)

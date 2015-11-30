@@ -25,7 +25,7 @@
                               <td>${attendee?.firstName} ${attendee?.lastName}</td>
                               <td>${attendee?.ticketType}</td>
                               <td><g:formatNumber number="${attendee?.ticketType?.price}" format="\$###,##0.00" /></td>
-                              <td><button>Change</button></td>
+                              <td><button data-toggle="modal" href="${g.createLink(controller: 'order', action: 'editAttendee', params: [id: attendee.id])}" data-target="#changeAttendee">Change</button></td>
                               <g:if test="${!confOrder.paid}">
                                 <td><g:link action="removeAttendee" id="${attendee.id}" params="${[orderId:confOrder?.id]}"><button>X</button></g:link></td>
                               </g:if>

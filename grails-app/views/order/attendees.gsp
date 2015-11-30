@@ -11,12 +11,12 @@
 
             <g:if test="${!number}">
             $('#addAttendee').click(function () {
-                $('#firstName').val($('#pFirstName').val());
-                $('#lastName').val($('#pLastName').val());
-                $('#email').val($('#pEmail').val());
-                $('#city').val($('#pCity').val());
-                $('#state').val($('#pState').val());
-                $('#phone').val($('#pPhone').val());
+                $('#firstName').val('${buyer.firstName}');
+                $('#lastName').val('${buyer.lastName}');
+                $('#email').val('${buyer.email}');
+                $('#city').val('${buyer.city}');
+                $('#state').val('${buyer.state}');
+                $('#phone').val('${buyer.phone}');
             });
             </g:if>
 
@@ -37,6 +37,10 @@
                 });
 
                 return false;
+            });
+
+            $('body').on('hidden.bs.modal', '.modal', function () {
+                $(this).removeData('bs.modal');
             });
 
             $("#atl").on('click', "#addAttendee", function () {
@@ -172,6 +176,23 @@
         </g:form>
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+
+
+
+<div class="modal fade" id="changeAttendee">
+    <div class="modal-dialog">
+
+        <g:form name="changeAttendee" id="changeAttendee">
+            <div class="modal-content">
+
+            </div><!-- /.modal-content -->
+        </g:form>
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="well">
